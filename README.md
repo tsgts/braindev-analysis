@@ -11,5 +11,9 @@ For the developing mouse genes, there is no single download file of expression v
 http://help.brain-map.org/display/api/Example+Queries+for+Experiment+Metadata#ExampleQueriesforExperimentMetadata-AllDevelopingMouseBrainGenesincommadelimitedformat
 ```
 A copy of this list may be found in this repository at allen_data/dev_mouse/all_the_genes.csv.
+Alternatively, an XML list of all 2107 genes may be found at
+```
+http://api.brain-map.org/api/v2/data/Gene/query.xml?criteria=products[id$eq3]&num_rows=3000
+```
 ## Methodology
 Unsupervised image clustering will be implemented using the TensorFlow framework.
