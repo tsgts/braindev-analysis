@@ -27,10 +27,10 @@ This query returns the expression values for FOXP2 and SHH in seven developmenta
 
 When querying the API, a useful reference is the class hierarchy page (http://api.brain-map.org/class_hierarchy), which details the attributes of each parameter. 
 
-For instance, expression of FOXP2 and SHH in the seven stages, but only in the rostral secondary prosencephalon may be found through 
+The search may also be restricted to a subset of the eleven regions. For instance, expression of FOXP2 and SHH in the seven stages, but only in the rostral secondary prosencephalon may be found at 
 
 ```
-http://api.brain-map.org/api/v2/data/query.xml?criteria=model::StructureUnionize,rma::criteria,section_data_set[delegate$eqfalse](genes[id$in%2776994%27,%2720186%27],specimen(donor(age[name$in%27E11.5%27,%27E13.5%27,%27E15.5%27,%27E18.5%27,%27P4%27,%27P14%27,%27P28%27]))),structure(structure_sets_structures(structure[acronym$in%27RSP%27]))&tabular=genes.id,ages.days,structures.acronym,structures.name,structures.graph_order,structure_unionizes.expression_energy&num_rows=10000000
+http://api.brain-map.org/api/v2/data/query.csv?criteria=model::StructureUnionize,rma::criteria,section_data_set[delegate$eqfalse](genes[id$in%2776994%27,%2720186%27],specimen(donor(age[name$in%27E11.5%27,%27E13.5%27,%27E15.5%27,%27E18.5%27,%27P4%27,%27P14%27,%27P28%27]))),structure(structure_sets_structures(structure[acronym$in%27RSP%27]))&tabular=genes.id,ages.days,structures.acronym,structures.name,structures.graph_order,structure_unionizes.expression_energy&num_rows=10000000
 ```
 
 ## Methodology
