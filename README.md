@@ -16,4 +16,4 @@ Alternatively, an XML list of all 2107 genes may be found at
 http://api.brain-map.org/api/v2/data/Gene/query.xml?criteria=products[id$eq3]&num_rows=3000
 ```
 ## Methodology
-Unsupervised image clustering will be implemented using the TensorFlow framework.
+Unsupervised image clustering will be implemented using the TensorFlow framework. Specifically, a t-SNE dimensionality reduction will be conducted for both datasets (an example may be found at http://oduerr.github.io/blog/2016/04/06/Deep-Learning_for_lazybones).
