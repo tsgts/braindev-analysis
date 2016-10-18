@@ -7,13 +7,21 @@ This project focuses on the analysis of two formats of data: matrices displaying
 The genes in human development may be downloaded from http://www.brainspan.org/static/download.html through the "RNA-Seq Gencode v10 summarized to genes" option (http://www.brainspan.org/api/v2/well_known_file_download/267666525) as a .zip file. The unpacked file is in this repository at allen_data/dev_human/normalized_genes. The matrix of expression values is zipped in order to comply with GitHub's file size limits.
 ### Genes in Mouse Brain Development
 For the developing mouse genes, there is no single download file of expression values, meaning that a list of genes must first be obtained. The "Example Queries for Experiment Metadata" page (http://help.brain-map.org/display/api/Example+Queries+for+Experiment+Metadata) provides a link for how to obtain this preliminary list, which is found at:
+
 ```
 http://help.brain-map.org/display/api/Example+Queries+for+Experiment+Metadata#ExampleQueriesforExperimentMetadata-AllDevelopingMouseBrainGenesincommadelimitedformat
 ```
+
 A copy of this list may be found in this repository at allen_data/dev_mouse/all_the_genes.csv.
-Alternatively, an XML list of all 2107 genes may be found at
+Alternatively, a comma-separated-values (csv, openable in Excel) list of all 2107 genes may be found at
 ```
-http://api.brain-map.org/api/v2/data/Gene/query.xml?criteria=products[id$eq3]&num_rows=3000
+http://api.brain-map.org/api/v2/data/Gene/query.csv?criteria=products[id$eq3]&num_rows=3000
 ```
+The expression matrix data for genes may be downloaded using the provided RESTful Model Access (RMA) pipeline. For instance, expression values for FOXP2 and SHH (with IDs 76994 and 20186, from all_the_genes.csv) can be found using the below query:
+
+```
+http://api.brain-map.org/api/v2/data/query.xml?criteria=model::StructureUnionize,rma::criteria,section_data_set[delegate$eqfalse]%28genes[id$in%2776994%27,%2720186%27],specimen%28donor%28age[name$in%27E11.5%27,%27E13.5%27,%27E15.5%27,%27E18.5%27,%27P4%27,%27P14%27,%27P28%27]%29%29%29,structure%28structure_sets_structures%28structure_set[name$eq%27Developing%20Mouse%20-%20Coarse%27]%29%29&tabular=genes.id,ages.days,structures.acronym,structures.name,structures.graph_order,structure_unionizes.expression_energy&num_rows=10000000
+```
+
 ## Methodology
 Unsupervised image clustering will be implemented using the TensorFlow framework. Specifically, a t-SNE dimensionality reduction will be conducted for both datasets (an example may be found at http://oduerr.github.io/blog/2016/04/06/Deep-Learning_for_lazybones).
