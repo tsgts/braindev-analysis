@@ -1,26 +1,26 @@
-amygdaloid complex
-anterior (rostral) cingulate (medial prefrontal) cortex
-caudal ganglionic eminence
-cerebellar cortex
-cerebellum
-dorsal thalamus
-dorsolateral prefrontal cortex
-hippocampus (hippocampal formation)
-inferolateral temporal cortex (area TEv, area 20)
-lateral ganglionic eminence
-medial ganglionic eminence
-mediodorsal nucleus of thalamus
-occipital neocortex
-orbital frontal cortex
-parietal neocortex
-posterior (caudal) superior temporal cortex (area 22c)
-posteroventral (inferior) parietal cortex
-primary auditory cortex (core)
-primary motor cortex (area M1, area 4)
-primary motor-sensory cortex (samples)
-primary somatosensory cortex (area S1, areas 3,1,2)
-primary visual cortex (striate cortex, area V1/17)
-striatum
-temporal neocortex
-upper (rostral) rhombic lip
-ventrolateral prefrontal cortex
+amygdaloid complex (AMY)
+anterior (rostral) cingulate (medial prefrontal) cortex (MFC)
+caudal ganglionic eminence (CGE)
+cerebellar cortex (CBC)
+cerebellum (CB)
+dorsal thalamus (DTH)
+dorsolateral prefrontal cortex (DFC)
+hippocampus (hippocampal formation) (HIP)
+inferolateral temporal cortex (area TEv, area 20) (ITC)
+lateral ganglionic eminence (LGE)
+medial ganglionic eminence (MGE)
+mediodorsal nucleus of thalamus (MD)
+occipital neocortex (Ocx)
+orbital frontal cortex (OFC)
+parietal neocortex (PCx)
+posterior (caudal) superior temporal cortex (area 22c) (STC)
+posteroventral (inferior) parietal cortex (IPC)
+primary auditory cortex (core) (A1C)
+primary motor cortex (area M1, area 4) (M1C)
+primary motor-sensory cortex (samples) (M1C-S1C)
+primary somatosensory cortex (area S1, areas 3,1,2) (S1C)
+primary visual cortex (striate cortex, area V1/17) (V1C)
+striatum (STR)
+temporal neocortex (TCx)
+upper (rostral) rhombic lip (URL)
+ventrolateral prefrontal cortex (VFC)
