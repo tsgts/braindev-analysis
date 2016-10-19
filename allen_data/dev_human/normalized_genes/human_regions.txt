@@ -1,0 +1,26 @@
+amygdaloid complex
+anterior (rostral) cingulate (medial prefrontal) cortex
+caudal ganglionic eminence
+cerebellar cortex
+cerebellum
+dorsal thalamus
+dorsolateral prefrontal cortex
+hippocampus (hippocampal formation)
+inferolateral temporal cortex (area TEv, area 20)
+lateral ganglionic eminence
+medial ganglionic eminence
+mediodorsal nucleus of thalamus
+occipital neocortex
+orbital frontal cortex
+parietal neocortex
+posterior (caudal) superior temporal cortex (area 22c)
+posteroventral (inferior) parietal cortex
+primary auditory cortex (core)
+primary motor cortex (area M1, area 4)
+primary motor-sensory cortex (samples)
+primary somatosensory cortex (area S1, areas 3,1,2)
+primary visual cortex (striate cortex, area V1/17)
+striatum
+temporal neocortex
+upper (rostral) rhombic lip
+ventrolateral prefrontal cortex
