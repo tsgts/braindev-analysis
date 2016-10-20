@@ -7,22 +7,33 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
+data = csv.reader(open("allen_data/dev_mouse/devmouse_histogram_values.csv"))
+col1 = next(data)
+regions = col1[6:]
+
 def safe_log(x):
-   if x<=0:
-    return None
-   else:
-   	return math.log10(x)
+	if x=='':
+		return 0
+	x = float(x)
+	if x<=0:
+		return 0
+	else:
+   		return math.log10(x)
+
+region_expressions = {}
 
 def col_vals(col):
 	expression_data = open("allen_data/dev_mouse/devmouse_histogram_values.csv")
 	return [row[col] for row in DictReader(expression_data)]
 
 def log_float(vals):
-	return [safe_log(float(val)) for val in vals]
+	return [safe_log(val) for val in vals]
 
-RSP = log_float(col_vals("RSP"))
-Tel = log_float(col_vals("RSP"))
+for region in regions:
+	print("Completed " + region)
+	region_expressions[region] = log_float(col_vals(region))
+	
+sns.distplot(region_expressions["RSP"], kde=False, rug=False)
 
 sns.set(color_codes=True)
-sns.distplot(RSP, kde=False, rug=False)
 plt.show()
