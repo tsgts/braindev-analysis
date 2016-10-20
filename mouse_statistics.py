@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import pandas as pd
-
+from scipy.stats import kendalltau
 
 expression_data = pd.read_csv("allen_data/dev_mouse/devmouse_histogram_values.csv")
 
@@ -29,7 +29,6 @@ def histograms():
 		sns.distplot(expression_data[region], kde=False, rug=False)
 
 		plt.savefig("figures/dev_mouse/histograms/"+region+".png")
-		plt.clf()
 
 #correlations between the regions
 def correlations():
@@ -37,8 +36,14 @@ def correlations():
 		for region2 in regions:
 			print(region1 + "-" + region2)
 			plt.figure(figsize=(60, 30))
-			sns.regplot(x=region1, y=region2, data=expression_data)
+			sns.jointplot(x=region1, y=region2, data=expression_data,kind="reg")
 			plt.savefig("figures/dev_mouse/linregs/"+region1+"-"+region2+".png")
-			plt.clf()
-
-correlations()
+#hexplot with plot density
+def hexplots():
+	for region1 in regions:
+		for region2 in regions:
+			print(region1 + "-" + region2)
+			plt.figure(figsize=(60, 30))
+			sns.jointplot(x=region1, y=region2, data=expression_data,kind="hex", stat_func=kendalltau, color="#c0392b")
+			plt.savefig("figures/dev_mouse/hexplots/"+region1+"-"+region2+".png")
+hexplots()
