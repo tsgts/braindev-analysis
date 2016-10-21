@@ -26,10 +26,17 @@ def histograms():
 	for region in regions:
 		print(region)
 		plt.figure(figsize=(60, 30))
-		sns.distplot(expression_data[region], kde=False, rug=False)
+		sns.distplot(expression_data[region], rug=False)
 
 		plt.savefig("figures/dev_mouse/histograms/"+region+".png")
-
+#all on one figure		
+def all_histograms():
+	sns.set(color_codes=True)
+	plt.figure(figsize=(60, 30))
+	for region in regions:
+		print(region)
+		sns.distplot(expression_data[region], rug=False)
+		plt.savefig("figures/dev_mouse/histograms/all.png")
 #correlations between the regions
 def correlations():
 	for region1 in regions:
@@ -45,7 +52,6 @@ def hexplots():
 		for region2 in regions:
 			if region1 != region2:
 				print(region1 + "-" + region2)
-				plt.figure(figsize=(60, 30))
 				sns.jointplot(x=region1, y=region2, data=expression_data,kind="hex", stat_func=kendalltau, color="#c0392b")
 				plt.savefig("figures/dev_mouse/hexplots/"+region1+"-"+region2+".png")
 #contours
@@ -54,8 +60,14 @@ def contours():
 		for region2 in regions:
 			if region1 != region2:
 				print(region1 + "-" + region2)
-				plt.figure(figsize=(60, 30))
 				sns.jointplot(x=region1, y=region2, data=expression_data,kind="kde", color="g")
 				plt.savefig("figures/dev_mouse/contours/"+region1+"-"+region2+".png")
-def fullcontour()
-contours()
+
+
+print(expression_data["days"])
+index=0
+for age in expression_data["days"]:
+	if age in [4.0,14.0,28.0]:
+		expression_data.loc[index,"days"]=age+19
+	index+=1
+print(expression_data["days"])
