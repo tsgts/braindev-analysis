@@ -63,11 +63,28 @@ def contours():
 				sns.jointplot(x=region1, y=region2, data=expression_data,kind="kde", color="g")
 				plt.savefig("figures/dev_mouse/contours/"+region1+"-"+region2+".png")
 
-
-print(expression_data["days"])
+#adjust post-birth ages
 index=0
 for age in expression_data["days"]:
 	if age in [4.0,14.0,28.0]:
 		expression_data.loc[index,"days"]=age+19
 	index+=1
-print(expression_data["days"])
+print("Completed age adjustment.")
+
+def ages_linregs():
+	sns.set(color_codes=True)
+	plt.figure(figsize=(60, 30))
+	for region in regions:
+		print(region)
+		sns.jointplot(x="days", y=region, data=expression_data,kind="reg")
+		plt.savefig("figures/dev_mouse/time_linregs/"+region+".png")
+def ages_contours():
+	sns.set(color_codes=True)
+	plt.figure(figsize=(60, 30))
+	for region in regions:
+		print(region)
+		sns.jointplot(x="days", y=region, data=expression_data,kind="kde")
+		plt.savefig("figures/dev_mouse/time_contours/"+region+".png")
+
+
+ages_contours()
