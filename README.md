@@ -1,5 +1,5 @@
 # braindev-analysis
-Deep learning analysis of prenatal gene expression in neurological animal models.
+Deep learning analysis of spatiotemporal gene expression in neurological animal models.
 ## The Data
 This project focuses on the analysis of two formats of data: matrices displaying normalized expression of a gene over several stages of development, over neuroanatomical regions, and raw images of ISH (in situ hybridization) results for genes over brain sections. 
 ## Sources and Downloading
@@ -33,5 +33,9 @@ The search may also be restricted to a subset of the eleven regions. For instanc
 http://api.brain-map.org/api/v2/data/query.csv?criteria=model::StructureUnionize,rma::criteria,section_data_set[delegate$eqfalse](genes[id$in%2776994%27,%2720186%27],specimen(donor(age[name$in%27E11.5%27,%27E13.5%27,%27E15.5%27,%27E18.5%27,%27P4%27,%27P14%27,%27P28%27]))),structure(structure_sets_structures(structure[acronym$in%27RSP%27]))&tabular=genes.id,ages.days,structures.acronym,structures.name,structures.graph_order,structure_unionizes.expression_energy&num_rows=10000000
 ```
 
+The image URLs for the expression matrices also follow a regular format, which is developingmouse.brain-map.org/expressionSummaries/[GENE_ID].png. The matrix_downloader.py script automatically downloads these images from the website into the dev_mouse/expression_matrices/ directory. 
+
+Additionally, the precise numerical values may be downloaded using a Ruby script supplied by the Allen Institute's [API example repository](https://github.com/AllenBrainAtlas/api-examples). The devmouse_histogram_values.rb program was used to compile the devmouse_histogram_values.csv file.
+
 ## Methodology
-Unsupervised image clustering will be implemented using the TensorFlow framework. Specifically, a t-SNE dimensionality reduction will be conducted for both datasets (an example may be found at http://oduerr.github.io/blog/2016/04/06/Deep-Learning_for_lazybones).
+Unsupervised image clustering will be implemented using the TensorFlow framework. 
