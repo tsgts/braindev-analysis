@@ -34,16 +34,28 @@ def histograms():
 def correlations():
 	for region1 in regions:
 		for region2 in regions:
-			print(region1 + "-" + region2)
-			plt.figure(figsize=(60, 30))
-			sns.jointplot(x=region1, y=region2, data=expression_data,kind="reg")
-			plt.savefig("figures/dev_mouse/linregs/"+region1+"-"+region2+".png")
+			if region1 != region2:
+				print(region1 + "-" + region2)
+				plt.figure(figsize=(60, 30))
+				sns.jointplot(x=region1, y=region2, data=expression_data,kind="reg")
+				plt.savefig("figures/dev_mouse/linregs/"+region1+"-"+region2+".png")
 #hexplot with plot density
 def hexplots():
 	for region1 in regions:
 		for region2 in regions:
-			print(region1 + "-" + region2)
-			plt.figure(figsize=(60, 30))
-			sns.jointplot(x=region1, y=region2, data=expression_data,kind="hex", stat_func=kendalltau, color="#c0392b")
-			plt.savefig("figures/dev_mouse/hexplots/"+region1+"-"+region2+".png")
-hexplots()
+			if region1 != region2:
+				print(region1 + "-" + region2)
+				plt.figure(figsize=(60, 30))
+				sns.jointplot(x=region1, y=region2, data=expression_data,kind="hex", stat_func=kendalltau, color="#c0392b")
+				plt.savefig("figures/dev_mouse/hexplots/"+region1+"-"+region2+".png")
+#contours
+def contours():
+	for region1 in regions:
+		for region2 in regions:
+			if region1 != region2:
+				print(region1 + "-" + region2)
+				plt.figure(figsize=(60, 30))
+				sns.jointplot(x=region1, y=region2, data=expression_data,kind="kde", color="g")
+				plt.savefig("figures/dev_mouse/contours/"+region1+"-"+region2+".png")
+def fullcontour()
+contours()
