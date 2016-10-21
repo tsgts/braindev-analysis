@@ -85,6 +85,12 @@ def ages_contours():
 		print(region)
 		sns.jointplot(x="days", y=region, data=expression_data,kind="kde")
 		plt.savefig("figures/dev_mouse/time_contours/"+region+".png")
+def ages_quartregs():
+	sns.set(color_codes=True)
+	plt.figure(figsize=(60, 30))
+	for region in regions:
+		print(region)
+		sns.lmplot(x="days", y=region, data=expression_data,order=4)
+		plt.savefig("figures/dev_mouse/time_quartregs/"+region+".png")
 
-
-ages_contours()
+ages_quartregs()
