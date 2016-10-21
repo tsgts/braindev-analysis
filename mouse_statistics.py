@@ -44,7 +44,7 @@ def correlations():
 			if region1 != region2:
 				print(region1 + "-" + region2)
 				plt.figure(figsize=(60, 30))
-				sns.jointplot(x=region1, y=region2, data=expression_data,kind="reg")
+				sns.jointplot(x=region1, y=region2, data=expression_data,kind="reg", marker=".")
 				plt.savefig("figures/dev_mouse/linregs/"+region1+"-"+region2+".png")
 #hexplot with plot density
 def hexplots():
@@ -52,7 +52,7 @@ def hexplots():
 		for region2 in regions:
 			if region1 != region2:
 				print(region1 + "-" + region2)
-				sns.jointplot(x=region1, y=region2, data=expression_data,kind="hex", stat_func=kendalltau, color="#c0392b")
+				sns.jointplot(x=region1, y=region2, data=expression_data,kind="hex", stat_func=spearmanr, color="#c0392b")
 				plt.savefig("figures/dev_mouse/hexplots/"+region1+"-"+region2+".png")
 #contours
 def contours():
@@ -60,8 +60,16 @@ def contours():
 		for region2 in regions:
 			if region1 != region2:
 				print(region1 + "-" + region2)
-				sns.jointplot(x=region1, y=region2, data=expression_data,kind="kde", color="g")
+				sns.jointplot(x=region1, y=region2, data=expression_data,kind="kde", color="g", stat_func=spearmanr)
 				plt.savefig("figures/dev_mouse/contours/"+region1+"-"+region2+".png")
+
+def scatter_contours():
+	for region1 in regions:
+		for region2 in regions:
+			if region1 != region2:
+				print(region1 + "-" + region2)
+				sns.jointplot(region1, region2, data=expression_data, color="b", marker="+",s=4).plot_joint(sns.kdeplot, zorder=0, n_levels=6)
+				plt.savefig("figures/dev_mouse/scatter_contours/"+region1+"-"+region2+".png")
 
 #adjust post-birth ages
 index=0
@@ -76,21 +84,27 @@ def ages_linregs():
 	plt.figure(figsize=(60, 30))
 	for region in regions:
 		print(region)
-		sns.jointplot(x="days", y=region, data=expression_data,kind="reg")
+		sns.jointplot(x="days", y=region, data=expression_data,kind="reg", stat_func=spearmanr)
 		plt.savefig("figures/dev_mouse/time_linregs/"+region+".png")
 def ages_contours():
 	sns.set(color_codes=True)
 	plt.figure(figsize=(60, 30))
 	for region in regions:
 		print(region)
-		sns.jointplot(x="days", y=region, data=expression_data,kind="kde")
+		sns.jointplot(x="days", y=region, data=expression_data,kind="kde", stat_func=spearmanr)
 		plt.savefig("figures/dev_mouse/time_contours/"+region+".png")
 def ages_quartregs():
 	sns.set(color_codes=True)
 	plt.figure(figsize=(60, 30))
 	for region in regions:
 		print(region)
-		sns.lmplot(x="days", y=region, data=expression_data,order=4)
+		sns.lmplot(x="days", y=region, data=expression_data,order=4, stat_func=spearmanr)
 		plt.savefig("figures/dev_mouse/time_quartregs/"+region+".png")
-
-ages_quartregs()
+def time_swarm():
+	sns.set(color_codes=True)
+	plt.figure(figsize=(60, 30))
+	for region in regions:
+		print(region)
+		sns.swarmplot(x="days", y=region, data=expression_data)
+		plt.savefig("figures/dev_mouse/time_swarm/"+region+".png")
+correlations()
