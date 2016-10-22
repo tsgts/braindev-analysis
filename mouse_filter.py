@@ -3,7 +3,7 @@ import math
 import pandas as pd
 from collections import Counter
 
-expression_data = pd.read_csv("allen_data/dev_mouse/devmouse_histogram_values.csv")
+expression_data = pd.read_csv("allen_data/dev_mouse/log_expression_values.csv")
 genes = expression_data["gene_acronym"]
 
 gene_counts = Counter(genes)
