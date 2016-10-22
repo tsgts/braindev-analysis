@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import pandas as pd
-from scipy.stats import kendalltau
 
 expression_data = pd.read_csv("allen_data/dev_mouse/filtered_expression_values.csv")
 
