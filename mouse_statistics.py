@@ -70,6 +70,8 @@ for age in expression_data["days"]:
 	index+=1
 print("Completed age adjustment.")
 
+print(expression_data)
+
 #linear regression between age, expression
 def ages_linregs():
 	sns.set(color_codes=True)
