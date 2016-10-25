@@ -1,5 +1,5 @@
 # braindev-analysis
-Deep learning analysis of spatiotemporal gene expression in neurological animal models.
+Unsupervised analysis of gene expression in neurological animal models.
 ## The Data
 This project focuses on the analysis of two formats of data: matrices displaying normalized expression of a gene over several stages of development, over neuroanatomical regions, and raw images of ISH (in situ hybridization) results for genes over brain sections. 
 ## Sources and Downloading
