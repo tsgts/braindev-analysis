@@ -32,5 +32,5 @@ for gene in list(genes):
 	heatmap_raw = list(heatmap_raw.values.tolist())
 	matrix[gene] = heatmap_raw
 
-print(matrix)
+
 json.dump(matrix, open("allen_data/dev_mouse/raw_dictionary.txt",'w'))
