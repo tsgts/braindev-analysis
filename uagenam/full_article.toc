@@ -7,10 +7,10 @@
 \contentsline {subsection}{\numberline {2.4}Gene expression measurement}{6}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Gene expression analysis}{7}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}The Allen Brain Atlas}{7}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Neural networks}{8}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.7}Neural networks}{9}{subsection.2.7}
 \contentsline {subsection}{\numberline {2.8}Unsupervised learning}{10}{subsection.2.8}
 \contentsline {subsection}{\numberline {2.9}Clustering}{10}{subsection.2.9}
-\contentsline {section}{\numberline {3}Research plan}{10}{section.3}
-\contentsline {subsection}{\numberline {3.1}Researchable question}{10}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Hypothesis}{10}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Procedure}{10}{subsection.3.3}
+\contentsline {section}{\numberline {3}Research plan}{11}{section.3}
+\contentsline {subsection}{\numberline {3.1}Researchable question}{11}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Hypothesis}{11}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Procedure}{11}{subsection.3.3}
