@@ -64,12 +64,6 @@ Peemen, M., Mesman, B., and Corporaal, H. (2011).
   Networks}.
 \newblock {\em International Automotive Congress}.
 
-\bibitem[\protect\astroncite{Srivastava et~al.}{2014}]{JMLR:v15:srivastava14a}
-Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov,
-  R. (2014).
-\newblock {Dropout: A Simple Way to Prevent Neural Networks from Overfitting}.
-\newblock {\em Journal of Machine Learning Research}, 15:1929--1958.
-
 \bibitem[\protect\astroncite{Thompson et~al.}{2014}]{Thompson_2014}
 Thompson, C.~L., Ng, L., Menon, V., Martinez, S., Lee, C.-K., Glattfelder, K.,
   Sunkin, S.~M., Henry, A., Lau, C., Dang, C., Garcia-Lopez, R.,

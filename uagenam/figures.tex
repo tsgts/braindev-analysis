@@ -14,47 +14,246 @@
 \DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG}
 \usepackage[a4paper,top=1in,bottom=1in,left=1in,right=1in,marginparwidth=0cm]{geometry}
 \begin{document}
-\begin{tikzpicture}[
-plain/.style={
-  draw=none,
-  fill=none,
-  },
-net/.style={
-  matrix of nodes,
-  nodes={
-    draw,
-    circle,
-    inner sep=10pt
-    },
-  nodes in empty cells,
-  column sep=2cm,
-  row sep=-9pt
-  },
->=latex
-]
-\matrix[net] (mat)
-{
-|[plain]| \parbox{1.3cm}{\centering Input\\layer} & |[plain]| \parbox{1.3cm}{\centering Hidden\\layer} & |[plain]| \parbox{1.3cm}{\centering Output\\layer} \\
-& |[plain]| \\
-|[plain]| & \\
-& |[plain]| \\
-|[plain]| & |[plain]| \\
-& & \\
-|[plain]| & |[plain]| \\
-& |[plain]| \\
-|[plain]| & \\
-& |[plain]| \\
-};
-\foreach \ai [count=\mi ]in {2,4,...,10}
-  \draw[<-] (mat-\ai-1) -- node[above] {Input \mi} +(-2cm,0);
-\foreach \ai in {2,4,...,10}
-{\foreach \aii in {3,6,9}
-  \draw[->] (mat-\ai-1) -- (mat-\aii-2);
-}
-\foreach \ai in {3,6,9}
-  \draw[->] (mat-\ai-2) -- (mat-6-3);
-\draw[->] (mat-6-3) -- node[above] {Ouput} +(2cm,0);
+\begin{tikzpicture}[every path/.style={>=latex},every node/.style={draw,circle}]
+
+  \node[draw=none]            (i1) at (-2,1)  {};
+  \node[draw=none]            (i2) at (-2,-1)  {};
+
+  %inputs
+  \node            (x1) at (0,1)  { $x$ };
+  \node            (x2) at (0,-1)  { $y$ };
+  \node            (xb) at (0,-3) {\tiny$+b_{1}$};
+
+  %layer 2
+  \node            (h11) at (3,3)  { };
+  \node            (h12) at (3,1)  { };
+  \node            (h13) at (3,-1) { };
+  \node            (h14) at (3,-3) { };
+  \node            (h1b) at (3,-5) {\tiny$+b_{2}$};
+
+  %layer 3
+  \node            (h21) at (5,3.5)  { };
+  \node            (h22) at (5,2.5)  { };
+  \node            (h23) at (5,1.5) { };
+  \node            (h24) at (5,0.5) { };
+  \node            (h25) at (5,-0.5)  { };
+  \node            (h26) at (5,-1.5)  { };
+  \node            (h27) at (5,-2.5) { };
+  \node            (h28) at (5,-3.5) { };
+  \node            (h2b) at (5,-5.5) {\tiny$+b_{3}$};
+
+  %layer 4
+  \node            (h31) at (7,3.5)  { };
+  \node            (h32) at (7,2.5)  { };
+  \node            (h33) at (7,1.5) { };
+  \node            (h34) at (7,0.5) { };
+  \node            (h35) at (7,-0.5)  { };
+  \node            (h36) at (7,-1.5)  { };
+  \node            (h37) at (7,-2.5) { };
+  \node            (h38) at (7,-3.5) { };
+  \node            (h3b) at (7,-5.5) {\tiny$+b_{4}$};
+
+  %output nodes
+  \node            (y1) at (10,2)  {};
+  \node            (y2) at (10,0)  {};
+  \node            (y3) at (10,-2)  {};
+
+  %output node activations
+  \node[draw=none] (o1) at (13,2)  {R};
+  \node[draw=none] (o2) at (13,0)  {G};
+  \node[draw=none] (o3) at (13,-2)  {B};
+
+  \draw[->] (i1) edge (x1);
+  \draw[->] (i2) edge (x2);
+
+  %inputs to layer 2
+  \draw[->] (x1) edge (h11);
+  \draw[->] (x1) edge (h12);
+  \draw[->] (x1) edge (h13);
+  \draw[->] (x1) edge (h14);
+
+  \draw[->] (x2) edge (h11);
+  \draw[->] (x2) edge (h12);
+  \draw[->] (x2) edge (h13);
+  \draw[->] (x2) edge (h14);
+
+  \draw[->] (xb) edge (h11);
+  \draw[->] (xb) edge (h12);
+  \draw[->] (xb) edge (h13);
+  \draw[->] (xb) edge (h14);
+
+  %layer 2 to layer 3
+  \draw[->] (h11) edge (h21);
+  \draw[->] (h11) edge (h22);
+  \draw[->] (h11) edge (h23);
+  \draw[->] (h11) edge (h24);
+  \draw[->] (h11) edge (h25);
+  \draw[->] (h11) edge (h26);
+  \draw[->] (h11) edge (h27);
+  \draw[->] (h11) edge (h28);
+
+  \draw[->] (h12) edge (h21);
+  \draw[->] (h12) edge (h22);
+  \draw[->] (h12) edge (h23);
+  \draw[->] (h12) edge (h24);
+  \draw[->] (h12) edge (h25);
+  \draw[->] (h12) edge (h26);
+  \draw[->] (h12) edge (h27);
+  \draw[->] (h12) edge (h28);
+
+  \draw[->] (h13) edge (h21);
+  \draw[->] (h13) edge (h22);
+  \draw[->] (h13) edge (h23);
+  \draw[->] (h13) edge (h24);
+  \draw[->] (h13) edge (h25);
+  \draw[->] (h13) edge (h26);
+  \draw[->] (h13) edge (h27);
+  \draw[->] (h13) edge (h28);
+
+  \draw[->] (h14) edge (h21);
+  \draw[->] (h14) edge (h22);
+  \draw[->] (h14) edge (h23);
+  \draw[->] (h14) edge (h24);
+  \draw[->] (h14) edge (h25);
+  \draw[->] (h14) edge (h26);
+  \draw[->] (h14) edge (h27);
+  \draw[->] (h14) edge (h28);
+
+  \draw[->] (h1b) edge (h21);
+  \draw[->] (h1b) edge (h22);
+  \draw[->] (h1b) edge (h23);
+  \draw[->] (h1b) edge (h24);
+  \draw[->] (h1b) edge (h25);
+  \draw[->] (h1b) edge (h26);
+  \draw[->] (h1b) edge (h27);
+  \draw[->] (h1b) edge (h28);
+
+  %layer 3 to layer 4
+  \draw[->] (h21) edge (h31);
+  \draw[->] (h21) edge (h32);
+  \draw[->] (h21) edge (h33);
+  \draw[->] (h21) edge (h34);
+  \draw[->] (h21) edge (h35);
+  \draw[->] (h21) edge (h36);
+  \draw[->] (h21) edge (h37);
+  \draw[->] (h21) edge (h38);
+
+  \draw[->] (h22) edge (h31);
+  \draw[->] (h22) edge (h32);
+  \draw[->] (h22) edge (h33);
+  \draw[->] (h22) edge (h34);
+  \draw[->] (h22) edge (h35);
+  \draw[->] (h22) edge (h36);
+  \draw[->] (h22) edge (h37);
+  \draw[->] (h22) edge (h38);
+
+  \draw[->] (h23) edge (h31);
+  \draw[->] (h23) edge (h32);
+  \draw[->] (h23) edge (h33);
+  \draw[->] (h23) edge (h34);
+  \draw[->] (h23) edge (h35);
+  \draw[->] (h23) edge (h36);
+  \draw[->] (h23) edge (h37);
+  \draw[->] (h23) edge (h38);
+
+  \draw[->] (h24) edge (h31);
+  \draw[->] (h24) edge (h32);
+  \draw[->] (h24) edge (h33);
+  \draw[->] (h24) edge (h34);
+  \draw[->] (h24) edge (h35);
+  \draw[->] (h24) edge (h36);
+  \draw[->] (h24) edge (h37);
+  \draw[->] (h24) edge (h38);
+
+  \draw[->] (h25) edge (h31);
+  \draw[->] (h25) edge (h32);
+  \draw[->] (h25) edge (h33);
+  \draw[->] (h25) edge (h34);
+  \draw[->] (h25) edge (h35);
+  \draw[->] (h25) edge (h36);
+  \draw[->] (h25) edge (h37);
+  \draw[->] (h25) edge (h38);
+
+  \draw[->] (h26) edge (h31);
+  \draw[->] (h26) edge (h32);
+  \draw[->] (h26) edge (h33);
+  \draw[->] (h26) edge (h34);
+  \draw[->] (h26) edge (h35);
+  \draw[->] (h26) edge (h36);
+  \draw[->] (h26) edge (h37);
+  \draw[->] (h26) edge (h38);
+
+  \draw[->] (h27) edge (h31);
+  \draw[->] (h27) edge (h32);
+  \draw[->] (h27) edge (h33);
+  \draw[->] (h27) edge (h34);
+  \draw[->] (h27) edge (h35);
+  \draw[->] (h27) edge (h36);
+  \draw[->] (h27) edge (h37);
+  \draw[->] (h27) edge (h38);
+
+  \draw[->] (h28) edge (h31);
+  \draw[->] (h28) edge (h32);
+  \draw[->] (h28) edge (h33);
+  \draw[->] (h28) edge (h34);
+  \draw[->] (h28) edge (h35);
+  \draw[->] (h28) edge (h36);
+  \draw[->] (h28) edge (h37);
+  \draw[->] (h28) edge (h38);
+
+  \draw[->] (h2b) edge (h31);
+  \draw[->] (h2b) edge (h32);
+  \draw[->] (h2b) edge (h33);
+  \draw[->] (h2b) edge (h34);
+  \draw[->] (h2b) edge (h35);
+  \draw[->] (h2b) edge (h36);
+  \draw[->] (h2b) edge (h37);
+  \draw[->] (h2b) edge (h38);
+
+  %layer 4 to output
+  \draw[->] (h31) edge (y1);
+  \draw[->] (h32) edge (y1);
+  \draw[->] (h33) edge (y1);
+  \draw[->] (h34) edge (y1);
+  \draw[->] (h35) edge (y1);
+  \draw[->] (h36) edge (y1);
+  \draw[->] (h37) edge (y1);
+  \draw[->] (h38) edge (y1);
+  \draw[->] (h3b) edge (y1);
+
+  \draw[->] (h31) edge (y2);
+  \draw[->] (h32) edge (y2);
+  \draw[->] (h33) edge (y2);
+  \draw[->] (h34) edge (y2);
+  \draw[->] (h35) edge (y2);
+  \draw[->] (h36) edge (y2);
+  \draw[->] (h37) edge (y2);
+  \draw[->] (h38) edge (y2);
+  \draw[->] (h3b) edge (y2);
+
+  \draw[->] (h31) edge (y3);
+  \draw[->] (h32) edge (y3);
+  \draw[->] (h33) edge (y3);
+  \draw[->] (h34) edge (y3);
+  \draw[->] (h35) edge (y3);
+  \draw[->] (h36) edge (y3);
+  \draw[->] (h37) edge (y3);
+  \draw[->] (h38) edge (y3);
+  \draw[->] (h3b) edge (y3);
+
+  %outputs
+  \draw[->] (y1) edge (o1);
+  \draw[->] (y2) edge (o2);
+  \draw[->] (y3) edge (o3);
+
+  \draw [thick,decorate,decoration={brace,amplitude=6pt,mirror},xshift=0pt,yshift=-0pt](-1,-5) -- (1,-5) node[draw=none,yshift=-0.6cm,xshift=-1cm] {\footnotesize input layer};
+
+  \draw [thick,decorate,decoration={brace,amplitude=10pt,mirror},xshift=0pt,yshift=-0pt](2,-7) -- (8,-7) node[draw=none,yshift=-0.6cm,xshift=-3cm] {\footnotesize hidden layer};
+
+  \draw [thick,decorate,decoration={brace,amplitude=6pt,mirror},xshift=0pt,yshift=-0pt](9,-5) -- (11,-5) node[draw=none,yshift=-0.6cm,xshift=-1cm] {\footnotesize output layer};
+
 \end{tikzpicture}
+
 
 \begin{tikzpicture}[
 init/.style={

@@ -12,6 +12,7 @@
 \usepackage{etoolbox}
 \usepackage{lmodern}
 \usepackage{caption,setspace}
+\usepackage{svg}
 \captionsetup{font={small,it,stretch=1.25},labelfont=bf}
 
 \renewcommand\Authfont{\fontsize{14}{14}\selectfont}
@@ -124,11 +125,12 @@ explicitly programmed," said by Arthur Samuel in 1959. Today neural networks are
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/neuralnets/neuralnets}
-\caption{\textbf{A.} A depiction of a single neuron $z_i^{(l+1)}$ and its inputs from $y_3^{(l)}$, $y_2^{(l)}$, and $y_1^{(l)}$ with weight $w_i^{(l+1)}$ and bias $b_i^{(l+1)}$. The output function $f$ is the output to unit $y_i^{(l+1)}$. \textbf{B.} The general structure of a multi-layer neural network with units depicted as circles and outputs depicted as arrows. \citep{JMLR:v15:srivastava14a}%
+\includegraphics[width=0.7\columnwidth]{figures/doodle}
+\caption{An example of a multi-layer CNN for classifying handwritten digits from the MNIST dataset. The feature extraction section repeatedly convolves the input image to higher level features, which are fed as inputs to the classification stage. In this case, the classification stage is composed of two fully connected layers, with the final layer outputting the predicted digit classification. \citep{peemen_mesman_corporaal_2011}%
 }
 \end{center}
 \end{figure}
+
 
 \begin{figure}[h!]
 \begin{center}
@@ -138,6 +140,7 @@ explicitly programmed," said by Arthur Samuel in 1959. Today neural networks are
 \end{center}
 \end{figure}
 
+Hello my name is Kevin.
 \subsection{Unsupervised learning}
 
 

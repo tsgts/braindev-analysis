@@ -1,4 +1,4 @@
-PWD /Users/kevinhu/Desktop/uagenam
+PWD /Users/kevinhu/Desktop/github/braindev-analysis/uagenam
 INPUT /usr/local/texlive/2016/texmf.cnf
 INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -248,11 +248,9 @@ INPUT ./figures/ISH/ISH.png
 INPUT figures/Abl1/Abl1.png
 INPUT ./figures/Abl1/Abl1.png
 INPUT ./figures/Abl1/Abl1.png
-INPUT figures/neuralnets/neuralnets.png
-INPUT ./figures/neuralnets/neuralnets.png
-INPUT ./figures/neuralnets/neuralnets.png
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT figures/doodle.png
+INPUT ./figures/doodle.png
+INPUT ./figures/doodle.png
 INPUT figures/CNN/CNN.png
 INPUT ./figures/CNN/CNN.png
 INPUT ./figures/CNN/CNN.png
@@ -261,16 +259,12 @@ INPUT full_article.bbl
 INPUT full_article.aux
 INPUT ./full_article.out
 INPUT ./full_article.out
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb
