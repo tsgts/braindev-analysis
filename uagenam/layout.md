@@ -1,0 +1,23 @@
+abstract.tex
+introduction.tex
+section_Literature_review__.tex
+subsection_Neurological_disease_modeling_cite__.tex
+figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png
+subsection_The_developing_brain_cite__.tex
+figures/160913_thompson_atlas/160913_thompson_atlas.png
+subsection_Gene_expression_regulation_Gene__.tex
+figures/Untitled/Untitled.png
+subsection_Gene_expression_measurement_Numerous__.tex
+figures/Screen Shot 2016-11-09 at 12.35.32 PM/Screen Shot 2016-11-09 at 12.35.32 PM.png
+subsection_Gene_expression_analysis__.tex
+subsection_The_Allen_Brain_Atlas__.tex
+figures/Abl1/Abl1.png
+subsection_Neural_networks_The_field__.tex
+figures/neuralnets/neuralnets.png
+figures/Screen Shot 2016-11-07 at 3.36.06 PM/Screen Shot 2016-11-07 at 3.36.06 PM.png
+subsection_Unsupervised_learning__.tex
+subsection_Clustering_cite_yangCVPR2016joint__.tex
+section_Research_plan__.tex
+subsection_Researchable_question_Are_there__.tex
+subsection_Hypothesis_It_is_hypothesized__.tex
+subsection_Procedure_This_project_will__.tex

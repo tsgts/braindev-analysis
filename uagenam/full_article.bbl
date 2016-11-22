@@ -1,0 +1,97 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Angerer and Angerer}{1991}]{Angerer_1991}
+Angerer, L.~M. and Angerer, R.~C. (1991).
+\newblock {In Situ Hybridization{\textemdash}A Guided Tour}.
+\newblock {\em Toxicology Methods}, 1(1):2--29.
+
+\bibitem[\protect\astroncite{Bakken et~al.}{2015}]{Bakken_2015}
+Bakken, T.~E., Miller, J.~A., Luo, R., Bernard, A., Bennett, J.~L., Lee, C.-K.,
+  Bertagnolli, D., Parikshak, N.~N., Smith, K.~A., Sunkin, S.~M., Amaral,
+  D.~G., Geschwind, D.~H., and Lein, E.~S. (2015).
+\newblock {Spatiotemporal dynamics of the postnatal developing primate brain
+  transcriptome}.
+\newblock {\em Hum. Mol. Genet.}, 24(15):4327--4339.
+
+\bibitem[\protect\astroncite{Bisceglia}{2010}]{bisceglia_2010}
+Bisceglia, N. (2010).
+\newblock {\em {Regulation of gene expression}}.
+\newblock Nature Education.
+
+\bibitem[\protect\astroncite{Burns et~al.}{2015}]{Burns_2015}
+Burns, T.~C., Li, M.~D., Mehta, S., Awad, A.~J., and Morgan, A.~A. (2015).
+\newblock {Mouse models rarely mimic the transcriptome of human
+  neurodegenerative diseases: A systematic bioinformatics-based critique of
+  preclinical models}.
+\newblock {\em European Journal of Pharmacology}, 759:101--117.
+
+\bibitem[\protect\astroncite{Lin et~al.}{2014}]{Lin_2014}
+Lin, S., Lin, Y., Nery, J.~R., Urich, M.~A., Breschi, A., Davis, C.~A., Dobin,
+  A., Zaleski, C., Beer, M.~A., Chapman, W.~C., Gingeras, T.~R., Ecker, J.~R.,
+  and Snyder, M.~P. (2014).
+\newblock {Comparison of the transcriptional landscapes between human and mouse
+  tissues}.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  111(48):17224--17229.
+
+\bibitem[\protect\astroncite{Miller et~al.}{2014}]{24695229}
+Miller, J., Ding, S., Sunkin, S., Smith, K., Ng, L., Szafer, A., Ebbert, A.,
+  Riley, Z., Royall, J., Aiona, K., Arnold, J., Bennet, C., Bertagnolli, D.,
+  Brouner, K., Butler, S., Caldejon, S., Carey, A., Cuhaciyan, C., Dalley, R.,
+  Dee, N., Dolbeare, T., Facer, B., Feng, D., Fliss, T., Gee, G., Goldy, J.,
+  Gourley, L., Gregor, B., Gu, G., Howard, R., Jochim, J., Kuan, C., Lau, C.,
+  Lee, C., Lee, F., Lemon, T., Lesnar, P., McMurray, B., Mastan, N., Mosqueda,
+  N., Naluai-Cecchini, T., Ngo, N., Nyhus, J., Oldre, A., Olson, E., Parente,
+  J., Parker, P., Parry, S., Stevens, A., Pletikos, M., Reding, M., Roll, K.,
+  Sandman, D., Sarreal, M., Shapouri, S., Shapovalova, N., Shen, E., Sjoquist,
+  N., Slaughterbeck, C., Smith, M., Sodt, A., Williams, D., Zöllei, L.,
+  Fischl, B., Gerstein, M., Geschwind, D., Glass, I., Hawrylycz, M., Hevner,
+  R., Huang, H., Jones, A., Knowles, J., Levitt, P., Phillips, J., Sestan, N.,
+  Wohnoutka, P., Dang, C., Bernard, A., Hohmann, J., and Lein, E. (2014).
+\newblock {Transcriptional landscape of the prenatal human brain.}
+\newblock {\em Nature}, 508:199--206.
+
+\bibitem[\protect\astroncite{Nguyen
+  et~al.}{2015}]{nguyen_wang_nikolakopoulou_2015}
+Nguyen, L., Wang, Y., and Nikolakopoulou, A. (2015).
+\newblock {\em {Cerebral organoid derived from ALS patient stem cells}}.
+\newblock University of Southern California.
+
+\bibitem[\protect\astroncite{Peemen
+  et~al.}{2011}]{peemen_mesman_corporaal_2011}
+Peemen, M., Mesman, B., and Corporaal, H. (2011).
+\newblock {Speed Sign Detection and Recognition by Convolutional Neural
+  Networks}.
+\newblock {\em International Automotive Congress}.
+
+\bibitem[\protect\astroncite{Srivastava et~al.}{2014}]{JMLR:v15:srivastava14a}
+Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov,
+  R. (2014).
+\newblock {Dropout: A Simple Way to Prevent Neural Networks from Overfitting}.
+\newblock {\em Journal of Machine Learning Research}, 15:1929--1958.
+
+\bibitem[\protect\astroncite{Thompson et~al.}{2014}]{Thompson_2014}
+Thompson, C.~L., Ng, L., Menon, V., Martinez, S., Lee, C.-K., Glattfelder, K.,
+  Sunkin, S.~M., Henry, A., Lau, C., Dang, C., Garcia-Lopez, R.,
+  Martinez-Ferre, A., Pombero, A., Rubenstein, J.~L., Wakeman, W.~B., Hohmann,
+  J., Dee, N., Sodt, A.~J., Young, R., Smith, K., Nguyen, T.-N., Kidney, J.,
+  Kuan, L., Jeromin, A., Kaykas, A., Miller, J., Page, D., Orta, G., Bernard,
+  A., Riley, Z., Smith, S., Wohnoutka, P., Hawrylycz, M.~J., Puelles, L., and
+  Jones, A.~R. (2014).
+\newblock {A High-Resolution Spatiotemporal Atlas of Gene Expression of the
+  Developing Mouse Brain}.
+\newblock {\em Neuron}, 83(2):309--323.
+
+\bibitem[\protect\astroncite{Wang et~al.}{2009}]{Wang_2009}
+Wang, Z., Gerstein, M., and Snyder, M. (2009).
+\newblock {{RNA}-Seq: a revolutionary tool for transcriptomics}.
+\newblock {\em Nature Reviews Genetics}, 10(1):57--63.
+
+\bibitem[\protect\astroncite{Yang et~al.}{2016}]{yangCVPR2016joint}
+Yang, J., Parikh, D., and Batra, D. (2016).
+\newblock {Joint Unsupervised Learning of Deep Representations and Image
+  Clusters}.
+\newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}.
+
+\end{thebibliography}
