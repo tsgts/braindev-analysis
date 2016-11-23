@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 NOV 2016 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 NOV 2016 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -964,7 +964,7 @@ Package pdftex.def Info: figures/Untitled/Untitled.png used on input line 87.
 <figures/ISH/ISH.png, id=196, 1433.355pt x 473.77pt>
 File: figures/ISH/ISH.png Graphic file (type png)
  <use figures/ISH/ISH.png>
-Package pdftex.def Info: figures/ISH/ISH.png used on input line 104.
+Package pdftex.def Info: figures/ISH/ISH.png used on input line 102.
 (pdftex.def)             Requested size: 362.37569pt x 119.77237pt.
 
 
@@ -974,59 +974,73 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: figures/Abl1/Abl1.png Graphic file (type png)
 
 <use figures/Abl1/Abl1.png>
-Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 122.
+Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 120.
 (pdftex.def)             Requested size: 362.37569pt x 249.23196pt.
  [9 <./figures/ISH/ISH.png>]
 <figures/activations.png, id=217, 1013.7875pt x 496.85625pt>
 File: figures/activations.png Graphic file (type png)
 
 <use figures/activations.png>
-Package pdftex.def Info: figures/activations.png used on input line 133.
+Package pdftex.def Info: figures/activations.png used on input line 131.
 (pdftex.def)             Requested size: 362.37569pt x 177.59442pt.
  [10 <./figures/Abl1/Abl1.png>]
 <figures/doodle.png, id=227, 1142.2675pt x 878.28125pt>
 File: figures/doodle.png Graphic file (type png)
 
 <use figures/doodle.png>
-Package pdftex.def Info: figures/doodle.png used on input line 152.
+Package pdftex.def Info: figures/doodle.png used on input line 150.
 (pdftex.def)             Requested size: 362.37569pt x 278.63008pt.
  [11 <./figures/activations.png>]
 <figures/doodle_images.png, id=244, 1772.0604pt x 760.2804pt>
 File: figures/doodle_images.png Graphic file (type png)
 
 <use figures/doodle_images.png>
-Package pdftex.def Info: figures/doodle_images.png used on input line 161.
+Package pdftex.def Info: figures/doodle_images.png used on input line 159.
 (pdftex.def)             Requested size: 362.37569pt x 155.46405pt.
 
 <figures/convnet.png, id=247, 1730.8665pt x 1005.2757pt>
 File: figures/convnet.png Graphic file (type png)
 
 <use figures/convnet.png>
-Package pdftex.def Info: figures/convnet.png used on input line 169.
+Package pdftex.def Info: figures/convnet.png used on input line 167.
 (pdftex.def)             Requested size: 362.37569pt x 210.45453pt.
  [12 <./figures/doodle.png> <./figures/doodle_images.png>] <figures/CNN/CNN.png
 , id=256, 767.86874pt x 343.2825pt>
 File: figures/CNN/CNN.png Graphic file (type png)
 
 <use figures/CNN/CNN.png>
-Package pdftex.def Info: figures/CNN/CNN.png used on input line 176.
+Package pdftex.def Info: figures/CNN/CNN.png used on input line 174.
 (pdftex.def)             Requested size: 362.37569pt x 162.00803pt.
- [13 <./figures/convnet.png> <./figures/CNN/CNN.png>]
-[14] (./full_article.bbl [15] [16]) [17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 222.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 222.
+
+<figures/learningtypes.png, id=261, 986.4855pt x 458.9145pt>
+File: figures/learningtypes.png Graphic file (type png)
+
+<use figures/learningtypes.png>
+Package pdftex.def Info: figures/learningtypes.png used on input line 184.
+(pdftex.def)             Requested size: 362.37569pt x 168.57727pt.
+ [13 <./figures/convnet.png> <./figures/CNN/CNN.png>] <figures/tsne.png, id=272
+, 1038.5199pt x 438.6789pt>
+File: figures/tsne.png Graphic file (type png)
+
+<use figures/tsne.png>
+Package pdftex.def Info: figures/tsne.png used on input line 194.
+(pdftex.def)             Requested size: 362.37569pt x 153.07135pt.
+ [14 <./figures/learningtypes.png> <./figures/tsne.png>]
+[15] (./full_article.bbl [16] [17]) [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
  (./full_article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 222.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 222.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
 Package rerunfilecheck Info: File `full_article.out' has not changed.
 (rerunfilecheck)             Checksum: 8D59249CC81649D13D4558F4DA6BC73B;1303.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 222.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
  ) 
 Here is how much of TeX's memory you used:
- 29847 strings out of 493014
- 736489 string characters out of 6133351
- 902686 words of memory out of 5000000
- 32819 multiletter control sequences out of 15000+600000
+ 29864 strings out of 493014
+ 736878 string characters out of 6133351
+ 902720 words of memory out of 5000000
+ 32830 multiletter control sequences out of 15000+600000
  54174 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,77p,1710b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1046,10 +1060,10 @@ mri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on full_article.pdf (17 pages, 7776467 bytes).
+Output written on full_article.pdf (18 pages, 8684275 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

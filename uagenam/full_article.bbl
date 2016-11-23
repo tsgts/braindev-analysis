@@ -76,6 +76,11 @@ Thompson, C.~L., Ng, L., Menon, V., Martinez, S., Lee, C.-K., Glattfelder, K.,
   Developing Mouse Brain}.
 \newblock {\em Neuron}, 83(2):309--323.
 
+\bibitem[\protect\astroncite{van~der Maaten}{2014}]{laurensvandermaaten2014}
+van~der Maaten, L. (2014).
+\newblock Accelerating t-sne using tree-based algorithms.
+\newblock {\em Journal of Machine Learning Research}, (15):1--21.
+
 \bibitem[\protect\astroncite{Wang et~al.}{2009}]{Wang_2009}
 Wang, Z., Gerstein, M., and Snyder, M. (2009).
 \newblock {{RNA}-Seq: a revolutionary tool for transcriptomics}.

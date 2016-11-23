@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: full_article.aux
 The style file: apa.bst
 Database file #1: bibliography/biblio.bib.bib
-You've used 11 entries,
+Warning--there's a number but no volume in laurensvandermaaten2014
+You've used 12 entries,
             1940 wiz_defined-function locations,
-            552 strings with 7985 characters,
-and the built_in function-call counts, 8398 in all, are:
-= -- 679
-> -- 837
-< -- 2
-+ -- 322
-- -- 322
-* -- 922
-:= -- 1548
-add.period$ -- 33
-call.type$ -- 11
-change.case$ -- 214
-chr.to.int$ -- 11
-cite$ -- 11
-duplicate$ -- 157
-empty$ -- 305
-format.name$ -- 335
-if$ -- 1481
+            557 strings with 8116 characters,
+and the built_in function-call counts, 8729 in all, are:
+= -- 711
+> -- 844
+< -- 3
++ -- 324
+- -- 324
+* -- 952
+:= -- 1606
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 220
+chr.to.int$ -- 12
+cite$ -- 13
+duplicate$ -- 171
+empty$ -- 332
+format.name$ -- 338
+if$ -- 1546
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 58
-num.names$ -- 33
-pop$ -- 211
+missing$ -- 14
+newline$ -- 63
+num.names$ -- 36
+pop$ -- 215
 preamble$ -- 1
-purify$ -- 216
+purify$ -- 222
 quote$ -- 0
-skip$ -- 109
+skip$ -- 118
 stack$ -- 0
-substring$ -- 306
-swap$ -- 22
+substring$ -- 330
+swap$ -- 24
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
-warning$ -- 0
-while$ -- 35
+type$ -- 68
+warning$ -- 1
+while$ -- 38
 width$ -- 0
-write$ -- 141
+write$ -- 154
+(There was 1 warning)
