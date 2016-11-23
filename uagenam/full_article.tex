@@ -3,16 +3,16 @@
 \usepackage{indentfirst}
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tikz}
-
+\usepackage{pgfplots}
 \usepackage[english]{babel}
 \usepackage{natbib}
 \setlength{\bibhang}{2em}
-
 \usepackage[affil-it]{authblk} 
 \usepackage{etoolbox}
 \usepackage{lmodern}
 \usepackage{caption,setspace}
 \usepackage{svg}
+\usepackage{float}
 \captionsetup{font={small,it,stretch=1.25},labelfont=bf}
 
 \renewcommand\Authfont{\fontsize{14}{14}\selectfont}
@@ -20,7 +20,7 @@
 
 \renewcommand{\baselinestretch}{2.0}
 \setlength{\parindent}{3em}
-\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,datavisualization,datavisualization.formats.functions}
 \DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG}
 \usepackage[a4paper,top=1in,bottom=1in,left=1in,right=1in,marginparwidth=0cm]{geometry}
 
@@ -43,6 +43,12 @@
 \break
 
 \section{Introduction}
+
+The use of animal models is an essential component of the drug development process. Animal models, in particular mouse models, allow diseases to be studied and the effects of candidate drugs to be observed in real time. This is crucial in neurological research, where mice serve as filters to clinical trials. 
+
+However, genetic differences between humans and animal models confound drug tests. Drug-gene interactions result when the results of a gene interfere with the action of the drug, such as in blockages of drug metabolism, mutated receptor proteins, and general physiological differences. Furthermore, different patterns of spatial and temporal expression between humans and the model organism are also factors in development.
+
+Clustering, or the unsupervised categorization of data points into discrete sets, is widely used in gene expression analysis. However. existing clustering algorithms rely heavily on measures of correlation that are prone to outlier leverage and high sample variance, both of which are common in biological samples. Recently, neural network algorithms have shown promise in image clustering, such as that of the popular MNIST and USPS digit databases. The goal of this project was to engineer a reccurent convolutional neural network for the clustering of region-time expression matrices between human and mouse genes present in cerebral development. 
 
 \section{Literature review}
 
@@ -120,26 +126,52 @@ Similar to the Developing Mouse Brain Atlas, the Developing Human Brain Atlas al
 \end{figure}
 
 \subsection{Neural networks}
-The field of machine learning is often citepd as the ``field of study that gives computers the ability to learn without being
-explicitly programmed," said by Arthur Samuel in 1959. Today neural networks are one of the most flexible and powerful machine learning algorithms, especially in areas such as pattern recognition and image analysis. The basic neural network node, or \textit{neuron}, is similar to the biological neural network
+In 1959, Arthur Samuel described machine learning as the ``field of study that gives computers the ability to learn without being
+explicitly programmed," a definition that continues to hold true. Today neural networks are one of the most flexible and powerful machine learning algorithms. In several areas of research, neural networks offer state-of-the-art performance over traditional, hand-coded methods, such as in image pattern recognition, genomic analysis, and protein folding. The basic neural network node, or \textit{neuron}, is similar to the biological neural network in that it receives a number of inputs and 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{figures/activations}
+\caption{Graphs of common neuron activation functions.\label{fig:activations}}
+\end{center}
+\end{figure}
 
-\begin{figure}[h!]
+\begin{table}[H]
+\begin{center}
+\caption{Equations of the activation functions shown in Figure~\ref{fig:activations}.}
+\begin{tabular}{ l | l | l | l }
+ Linear & Sigmoid & Tanh & ReLU\\ 
+ $a(x) = x$ & $a(x) = \frac{1}{1+e^{-x}}$ & $a(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$ & $a(x) = 0\ \textrm{if}\ x \leq 0, x\ \textrm{if}\ x > 0$\\   
+\end{tabular}
+\label{table:1}
+\end{center}
+\end{table}
+Neurons output a numerical value based on an activation function.
+
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/doodle}
-\caption{An example of a multi-layer CNN for classifying handwritten digits from the MNIST dataset. The feature extraction section repeatedly convolves the input image to higher level features, which are fed as inputs to the classification stage. In this case, the classification stage is composed of two fully connected layers, with the final layer outputting the predicted digit classification. \citep{peemen_mesman_corporaal_2011}%
+\caption{An example neural network that learns to generate an image given x and y pixel position inputs. The inputs are the x and y coordinates of the pixel, and the outputs are the three red-green-blue (RGB) values that define the color of a pixel. A few results of this example network are shown in Figure~\ref{fig:doodle_results}.
+\label{fig:doodle}
 }
 \end{center}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/doodle_images}
-\caption{An example of a multi-layer CNN for classifying handwritten digits from the MNIST dataset. The feature extraction section repeatedly convolves the input image to higher level features, which are fed as inputs to the classification stage. In this case, the classification stage is composed of two fully connected layers, with the final layer outputting the predicted digit classification. \citep{peemen_mesman_corporaal_2011}%
+\caption{The results of an neural network outlined in Figure~\ref{fig:doodle} trained to reproduce images by outputting an RGB triple based on x-y coordinates.
+\label{fig:doodle_results}
 }
 \end{center}
 \end{figure}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{figures/convnet}
+\caption{An example of a simple convolutional network designed for digit classification of the MNIST dataset. }%
+\end{center}
+\end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/CNN/CNN}
 \caption{An example of a multi-layer CNN for classifying handwritten digits from the MNIST dataset. The feature extraction section repeatedly convolves the input image to higher level features, which are fed as inputs to the classification stage. In this case, the classification stage is composed of two fully connected layers, with the final layer outputting the predicted digit classification. \citep{peemen_mesman_corporaal_2011}%
@@ -147,11 +179,18 @@ explicitly programmed," said by Arthur Samuel in 1959. Today neural networks are
 \end{center}
 \end{figure}
 
-Hello my name is Kevin.
 \subsection{Unsupervised learning}
 
 
 \subsection{Clustering}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{figures/CNN/CNN}
+\caption{An example of a multi-layer CNN for classifying handwritten digits from the MNIST dataset. The feature extraction section repeatedly convolves the input image to higher level features, which are fed as inputs to the classification stage. In this case, the classification stage is composed of two fully connected layers, with the final layer outputting the predicted digit classification. \citep{peemen_mesman_corporaal_2011}%
+}
+\end{center}
+
 \citep{yangCVPR2016joint}
 
 \section{Research plan}
@@ -169,6 +208,20 @@ This project will be entirely performed on a computer. Gene expression profiles 
 
 
 For each dataset, a convolutional neural network algorithm will be applied in order to automatically classify genes into discrete clusters based on patterns of expression. The relative positions of genes in the human and mouse clusterings will then be examined. A different clustering would suggest that the respective transcriptomic landscape is different. The gene expression clusterings may be applied to highlight discrete drug-gene interactions in human versus mouse brains. Potential differing expressions may account for anatomical differences in mouse and human brains. Time permitting, the similarity of expression patterns in cerebral organoids will also be considered. The insights from this project may also be applied to single-cell cancer sequencing, where clusterings may be used to cluster and identify stages of cancer cell development.
+
+\section{Methodology}
+
+\section{Results}
+
+\section{Discussion}
+
+\section{Conclusions}
+
+\section{Limitations}
+
+\section{Extensions}
+
+\section{Acknowledgements}
 
 \bibliographystyle{apa}
 \bibliography{bibliography/biblio.bib%

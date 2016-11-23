@@ -1,16 +1,23 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {section}{\numberline {2}Literature review}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Neurological disease modeling}{3}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}The developing brain}{3}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Gene expression regulation}{3}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Gene expression measurement}{6}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Gene expression analysis}{7}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}The Allen Brain Atlas}{7}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Neural networks}{9}{subsection.2.7}
-\contentsline {subsection}{\numberline {2.8}Unsupervised learning}{10}{subsection.2.8}
-\contentsline {subsection}{\numberline {2.9}Clustering}{10}{subsection.2.9}
-\contentsline {section}{\numberline {3}Research plan}{11}{section.3}
-\contentsline {subsection}{\numberline {3.1}Researchable question}{11}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Hypothesis}{11}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Procedure}{11}{subsection.3.3}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
+\contentsline {section}{\numberline {2}Literature review}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Neurological disease modeling}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}The developing brain}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Gene expression regulation}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Gene expression measurement}{7}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Gene expression analysis}{8}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}The Allen Brain Atlas}{8}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Neural networks}{10}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Unsupervised learning}{13}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Clustering}{13}{subsection.2.9}
+\contentsline {section}{\numberline {3}Research plan}{14}{section.3}
+\contentsline {subsection}{\numberline {3.1}Researchable question}{14}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Hypothesis}{14}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Procedure}{14}{subsection.3.3}
+\contentsline {section}{\numberline {4}Methodology}{15}{section.4}
+\contentsline {section}{\numberline {5}Results}{15}{section.5}
+\contentsline {section}{\numberline {6}Discussion}{15}{section.6}
+\contentsline {section}{\numberline {7}Conclusions}{15}{section.7}
+\contentsline {section}{\numberline {8}Limitations}{15}{section.8}
+\contentsline {section}{\numberline {9}Extensions}{15}{section.9}
+\contentsline {section}{\numberline {10}Acknowledgements}{15}{section.10}

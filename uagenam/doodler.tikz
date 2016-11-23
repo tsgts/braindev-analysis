@@ -238,3 +238,36 @@
   \draw [thick,decorate,decoration={brace,amplitude=6pt,mirror},xshift=0pt,yshift=-0pt](9,-5) -- (11,-5) node[draw=none,yshift=-0.6cm,xshift=-1cm] {\footnotesize output layer};
 
 \end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[
+      legend pos=north west,
+        axis x line=middle,
+        axis y line=middle,
+        x tick label style={/pgf/number format/fixed,
+                            /pgf/number format/fixed zerofill,
+                            /pgf/number format/precision=1},
+        y tick label style={/pgf/number format/fixed,
+                            /pgf/number format/fixed zerofill,
+                            /pgf/number format/precision=1},
+        grid = major,
+        width=16cm,
+        height=8cm,
+        xmin=-8,     % start the diagram at this x-coordinate
+        xmax= 8,    % end   the diagram at this x-coordinate
+        ymin= -1,     % start the diagram at this y-coordinate
+        ymax= 1,   % end   the diagram at this y-coordinate
+        %axis background/.style={fill=white},
+        xlabel=x,
+        ylabel=y,
+        tick align=outside,
+        enlargelimits=false]
+      % plot the stirling-formulae
+      \addplot[domain=-8:8, red, ultra thick,samples=500] {1/(1+exp(-1*x))};
+      \addplot[domain=-8:8, blue, ultra thick,samples=500] {(exp(x)-exp(-1*x))/(exp(x)+exp(-1*x))};
+      \addplot[mark=none,green,domain=-8:0, ultra thick,samples=500] {0};
+      \addplot[mark=none,green,domain=0:8, ultra thick,samples=500] {x/8};
+      \addlegendentry{Sigmoid}
+      \addlegendentry{Tanh}
+      \addlegendentry{ReLU}
+    \end{axis}
+\end{tikzpicture}

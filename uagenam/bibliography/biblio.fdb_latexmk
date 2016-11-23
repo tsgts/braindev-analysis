@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1479867486 "biblio.bib" "biblio.pdf" "biblio" 1479867486
+  "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
+  "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1469386243 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
+  "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1463979169 3873397 413fbfbbedb8e719ddc392043a7add02 ""
+  "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
+  "biblio.aux" 1479867486 8 a94a2480d3289e625eea47cd1b285758 ""
+  "biblio.bib" 1479867424 12976 cf5b21c9066af22db17947f09250ae5e ""
+  (generated)
+  "biblio.log"
+  "biblio.pdf"
