@@ -5,6 +5,7 @@ from keras.layers.core import Activation, Dense
 from keras.optimizers import SGD
 from keras.callbacks import Callback
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 with tf.device('/cpu:0'):
 	target = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
@@ -21,9 +22,7 @@ with tf.device('/cpu:0'):
 	print(np.amin(target))
 
 	model = Sequential([
-	        Dense(64, input_dim=77, init="normal"),
-	        Activation('relu'),
-	        Dense(64, init="normal"),
+	        Dense(32, input_dim=77, init="normal"),
 	        Activation('relu'),
 	        Dense(77, init="normal"),
 	        Activation('sigmoid'),
@@ -33,8 +32,24 @@ with tf.device('/cpu:0'):
 	              optimizer="adam",
 	              metrics=['accuracy'])
 
-	model.fit(target, target, shuffle=True, nb_epoch=10, verbose=1)
+	model.fit(target, target, shuffle=True, nb_epoch=1000, verbose=1)
 
-	random_indices = np.random.randint(2011, size=16)
-	encode_test = target[random_indices,:]
-	print(encode_test.shape)
+	prediction = model.predict(target)
+
+	plt.figure(figsize=(20, 4))
+	n = 16
+	for i in range(n):
+		#original
+	    ax = plt.subplot(2, n, i + 1)
+	    plt.imshow(target[i].reshape(7, 11), interpolation='none')
+	    plt.gray()
+	    ax.get_xaxis().set_visible(False)
+	    ax.get_yaxis().set_visible(False)
+
+	    #predicted
+	    ax = plt.subplot(2, n, i + 1 + n)
+	    plt.imshow(prediction[i].reshape(7, 11), interpolation='none')
+	    plt.gray()
+	    ax.get_xaxis().set_visible(False)
+	    ax.get_yaxis().set_visible(False)
+	plt.show()
