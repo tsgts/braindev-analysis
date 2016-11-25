@@ -27,11 +27,9 @@ for gene in list(genes):
 	#sort from youngest to oldest, with the adjusted ages
 	sorted_rows = matching_rows.sort_values("days",axis=0)
 	#select only the regions for the pre-pivot
-	heatmap_raw = sorted_rows.loc[:,["RSP","Tel","PHy","p3","p2","p1","M","PPH","PH","PMH","MH"]]
+	heatmap_raw = sorted_rows.loc[:,["days","RSP","Tel","PHy","p3","p2","p1","M","PPH","PH","PMH","MH"]]
 	heatmap_raw = list(heatmap_raw.values.tolist())
 	matrix[gene] = heatmap_raw
 
 
-json.dump(matrix, open("allen_data/dev_mouse/raw_dictionary_no_days.txt",'w'), indent=4)
-# matrix_array = np.array(matrix.values())
-# print(matrix_array)
+json.dump(matrix, open("allen_data/dev_mouse/raw_dictionary.txt",'w'), indent=4)
