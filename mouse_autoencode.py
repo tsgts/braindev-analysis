@@ -4,6 +4,7 @@ from keras.models import Sequential
 from keras.layers.core import Activation, Dense
 from keras.optimizers import SGD
 from keras.callbacks import Callback
+from keras.callbacks import TensorBoard
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
@@ -32,7 +33,7 @@ with tf.device('/cpu:0'):
 	              optimizer="adam",
 	              metrics=['accuracy'])
 
-	model.fit(target, target, shuffle=True, nb_epoch=1000, verbose=1)
+	model.fit(target, target, shuffle=True, nb_epoch=512, verbose=1,callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')])
 
 	prediction = model.predict(target)
 
