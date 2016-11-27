@@ -1,14 +1,14 @@
 import numpy as np
 import keras
 from keras.models import Model
-from keras.layers import Input, Dense
+from keras.layers import Input, Dense, Dropout
 from keras.optimizers import SGD
 from keras.callbacks import Callback
 from keras.callbacks import TensorBoard
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import json
-
+tf.python.control_flow_ops = tf
 with tf.device('/cpu:0'):
 	target = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
 
@@ -24,13 +24,18 @@ with tf.device('/cpu:0'):
 	print(np.amin(target))
 
 	input_img = Input(shape=(77,))
-	encoded = Dense(16, activation='relu')(input_img)
-	#encoded = Dense(32, activation='relu')(encoded)
-	#encoded = Dense(16, activation='relu')(encoded)
+	encoded = Dense(128, activation='relu')(input_img)
+	encoded = Dropout(0.25)(encoded)
+	encoded = Dense(64, activation='relu')(encoded)
+	encoded = Dropout(0.25)(encoded)
+	encoded = Dense(32, activation='relu')(encoded)
+	encoded = Dropout(0.25)(encoded)
 
-	#decoded = Dense(32, activation='relu')(encoded)
-	#decoded = Dense(64, activation='relu')(decoded)
-	decoded = Dense(77, activation='sigmoid')(encoded)
+	decoded = Dense(64, activation='relu')(encoded)
+	decoded = Dropout(0.25)(decoded)
+	decoded = Dense(128, activation='relu')(decoded)
+	decoded = Dropout(0.25)(decoded)
+	decoded = Dense(77, activation='sigmoid')(decoded)
 
 	model = Model(input_img, decoded)
 
@@ -38,7 +43,12 @@ with tf.device('/cpu:0'):
 	              optimizer="adam",
 	              metrics=['accuracy'])
 
-	model.fit(target, target, shuffle=True, nb_epoch=1, verbose=1,callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')])
+	model.fit(target, target, 
+			  shuffle=True, 
+			  nb_epoch=512, 
+			  verbose=1,
+			  callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')]
+			  )
 
 	model.save("mouse_no_conv.h5")
 
