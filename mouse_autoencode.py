@@ -1,12 +1,13 @@
 import numpy as np
 import keras
-from keras.models import Sequential
-from keras.layers.core import Activation, Dense
+from keras.models import Model
+from keras.layers import Input, Dense
 from keras.optimizers import SGD
 from keras.callbacks import Callback
 from keras.callbacks import TensorBoard
 import tensorflow as tf
 import matplotlib.pyplot as plt
+import json
 
 with tf.device('/cpu:0'):
 	target = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
@@ -22,20 +23,42 @@ with tf.device('/cpu:0'):
 	print(np.amax(target))
 	print(np.amin(target))
 
-	model = Sequential([
-	        Dense(32, input_dim=77, init="normal"),
-	        Activation('relu'),
-	        Dense(77, init="normal"),
-	        Activation('sigmoid'),
-	    ])
+	input_img = Input(shape=(77,))
+	encoded = Dense(16, activation='relu')(input_img)
+	#encoded = Dense(32, activation='relu')(encoded)
+	#encoded = Dense(16, activation='relu')(encoded)
 
-	model.compile(loss='mean_squared_error',
+	#decoded = Dense(32, activation='relu')(encoded)
+	#decoded = Dense(64, activation='relu')(decoded)
+	decoded = Dense(77, activation='sigmoid')(encoded)
+
+	model = Model(input_img, decoded)
+
+	model.compile(loss='poisson',
 	              optimizer="adam",
 	              metrics=['accuracy'])
 
-	model.fit(target, target, shuffle=True, nb_epoch=512, verbose=1,callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')])
+	model.fit(target, target, shuffle=True, nb_epoch=1, verbose=1,callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')])
+
+	model.save("mouse_no_conv.h5")
+
+	weights = []
+	for layer in model.layers:
+		g=layer.get_config()
+		h=layer.get_weights()
+		print (g)
+		#print (h)
+		weights.append(np.asarray(h).tolist())
+
+	print(weights)
+	#json.dump(weights.tolist(), open("allen_data/dev_mouse/weights.txt",'w'), indent=4)
 
 	prediction = model.predict(target)
+
+	encoder = Model(input=input_img, output=encoded)
+	encoded_imgs = encoder.predict(target)
+	print(encoded_imgs.shape)
+	np.savetxt('allen_data/dev_mouse/encode.txt', encoded_imgs)
 
 	plt.figure(figsize=(20, 4))
 	n = 16
