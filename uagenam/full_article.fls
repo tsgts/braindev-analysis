@@ -334,6 +334,12 @@ INPUT ./figures/convnet.png
 INPUT figures/CNN/CNN.png
 INPUT ./figures/CNN/CNN.png
 INPUT ./figures/CNN/CNN.png
+INPUT figures/learningtypes.png
+INPUT ./figures/learningtypes.png
+INPUT ./figures/learningtypes.png
+INPUT figures/tsne.png
+INPUT ./figures/tsne.png
+INPUT ./figures/tsne.png
 INPUT full_article.bbl
 INPUT full_article.bbl
 INPUT full_article.aux

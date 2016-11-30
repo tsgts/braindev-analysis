@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 NOV 2016 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 NOV 2016 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**full_article
+**full_article.tex
 (./full_article.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
@@ -920,130 +920,126 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 4.
- [2])
+)
 \tf@toc=\write5
 \openout5 = `full_article.toc'.
 
- [3]
-<figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png, id=141,
+ [2] [3]
+<figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png, id=145,
  301.125pt x 218.8175pt>
 File: figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png Gra
 phic file (type png)
 
 <use figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png>
 Package pdftex.def Info: figures/cerebral_organoid/cerebral-organoid-for-Broad-
-web-300x218.png used on input line 60.
+web-300x218.png used on input line 65.
 (pdftex.def)             Requested size: 362.37569pt x 263.35095pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<figures/160913_thompson_atlas/160913_thompson_atlas.png, id=148, 419.8887pt x 
+<figures/160913_thompson_atlas/160913_thompson_atlas.png, id=152, 419.8887pt x 
 315.579pt>
 File: figures/160913_thompson_atlas/160913_thompson_atlas.png Graphic file (typ
 e png)
  <use figures/160913_thompson_atlas/160913_thompson_atlas.png>
 Package pdftex.def Info: figures/160913_thompson_atlas/160913_thompson_atlas.pn
-g used on input line 71.
+g used on input line 76.
 (pdftex.def)             Requested size: 362.37569pt x 272.36052pt.
 
-[4]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <./figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png>]
-[6 <./figures/160913_thompson_atlas/160913_thompson_atlas.png>]
-<figures/Untitled/Untitled.png, id=179, 158.48186pt x 70.46799pt>
+[4 <./figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png>]
+[5 <./figures/160913_thompson_atlas/160913_thompson_atlas.png>]
+<figures/Untitled/Untitled.png, id=178, 158.48186pt x 70.46799pt>
 File: figures/Untitled/Untitled.png Graphic file (type png)
 
 <use figures/Untitled/Untitled.png>
-Package pdftex.def Info: figures/Untitled/Untitled.png used on input line 87.
+Package pdftex.def Info: figures/Untitled/Untitled.png used on input line 92.
 (pdftex.def)             Requested size: 362.37569pt x 161.14069pt.
- [7 <./figures/Untitled/Untitled.png>]
-<figures/ISH/ISH.png, id=196, 1433.355pt x 473.77pt>
+ [6 <./figures/Untitled/Untitled.png>]
+<figures/ISH/ISH.png, id=194, 1433.355pt x 473.77pt>
 File: figures/ISH/ISH.png Graphic file (type png)
  <use figures/ISH/ISH.png>
-Package pdftex.def Info: figures/ISH/ISH.png used on input line 102.
+Package pdftex.def Info: figures/ISH/ISH.png used on input line 107.
 (pdftex.def)             Requested size: 362.37569pt x 119.77237pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] <figures/Abl1/Abl1.png, id=210, 75.87401pt x 52.16339pt>
+[7] [8 <./figures/ISH/ISH.png>]
+<figures/Abl1/Abl1.png, id=215, 75.87401pt x 52.16339pt>
 File: figures/Abl1/Abl1.png Graphic file (type png)
 
 <use figures/Abl1/Abl1.png>
-Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 120.
+Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 125.
 (pdftex.def)             Requested size: 362.37569pt x 249.23196pt.
- [9 <./figures/ISH/ISH.png>]
-<figures/activations.png, id=217, 1013.7875pt x 496.85625pt>
+
+<figures/activations.png, id=216, 1013.7875pt x 496.85625pt>
 File: figures/activations.png Graphic file (type png)
 
 <use figures/activations.png>
-Package pdftex.def Info: figures/activations.png used on input line 131.
+Package pdftex.def Info: figures/activations.png used on input line 136.
 (pdftex.def)             Requested size: 362.37569pt x 177.59442pt.
- [10 <./figures/Abl1/Abl1.png>]
-<figures/doodle.png, id=227, 1142.2675pt x 878.28125pt>
+ [9 <./figures/Abl1/Abl1.png>]
+<figures/doodle.png, id=226, 1142.2675pt x 878.28125pt>
 File: figures/doodle.png Graphic file (type png)
 
 <use figures/doodle.png>
-Package pdftex.def Info: figures/doodle.png used on input line 150.
+Package pdftex.def Info: figures/doodle.png used on input line 155.
 (pdftex.def)             Requested size: 362.37569pt x 278.63008pt.
- [11 <./figures/activations.png>]
-<figures/doodle_images.png, id=244, 1772.0604pt x 760.2804pt>
+ [10 <./figures/activations.png>]
+<figures/doodle_images.png, id=243, 1772.0604pt x 760.2804pt>
 File: figures/doodle_images.png Graphic file (type png)
 
 <use figures/doodle_images.png>
-Package pdftex.def Info: figures/doodle_images.png used on input line 159.
+Package pdftex.def Info: figures/doodle_images.png used on input line 164.
 (pdftex.def)             Requested size: 362.37569pt x 155.46405pt.
 
-<figures/convnet.png, id=247, 1730.8665pt x 1005.2757pt>
+<figures/convnet.png, id=246, 1730.8665pt x 1005.2757pt>
 File: figures/convnet.png Graphic file (type png)
 
 <use figures/convnet.png>
-Package pdftex.def Info: figures/convnet.png used on input line 167.
+Package pdftex.def Info: figures/convnet.png used on input line 172.
 (pdftex.def)             Requested size: 362.37569pt x 210.45453pt.
- [12 <./figures/doodle.png> <./figures/doodle_images.png>] <figures/CNN/CNN.png
-, id=256, 767.86874pt x 343.2825pt>
+ [11 <./figures/doodle.png> <./figures/doodle_images.png>] <figures/CNN/CNN.png
+, id=255, 767.86874pt x 343.2825pt>
 File: figures/CNN/CNN.png Graphic file (type png)
 
 <use figures/CNN/CNN.png>
-Package pdftex.def Info: figures/CNN/CNN.png used on input line 174.
+Package pdftex.def Info: figures/CNN/CNN.png used on input line 179.
 (pdftex.def)             Requested size: 362.37569pt x 162.00803pt.
-
-<figures/learningtypes.png, id=261, 986.4855pt x 458.9145pt>
+ [12 <./figures/convnet.png> <./figures/CNN/CNN.png>]
+<figures/learningtypes.png, id=270, 986.4855pt x 458.9145pt>
 File: figures/learningtypes.png Graphic file (type png)
 
 <use figures/learningtypes.png>
-Package pdftex.def Info: figures/learningtypes.png used on input line 184.
+Package pdftex.def Info: figures/learningtypes.png used on input line 192.
 (pdftex.def)             Requested size: 362.37569pt x 168.57727pt.
- [13 <./figures/convnet.png> <./figures/CNN/CNN.png>] <figures/tsne.png, id=272
-, 1038.5199pt x 438.6789pt>
-File: figures/tsne.png Graphic file (type png)
 
-<use figures/tsne.png>
-Package pdftex.def Info: figures/tsne.png used on input line 194.
+<figures/tsne.png, id=271, 1038.5199pt x 438.6789pt>
+File: figures/tsne.png Graphic file (type png)
+ <use figures/tsne.png>
+Package pdftex.def Info: figures/tsne.png used on input line 202.
 (pdftex.def)             Requested size: 362.37569pt x 153.07135pt.
- [14 <./figures/learningtypes.png> <./figures/tsne.png>]
-[15] (./full_article.bbl [16] [17]) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
+
+[13 <./figures/learningtypes.png>] [14 <./figures/tsne.png>]
+(./full_article.bbl [15] [16] [17]) [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
  (./full_article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
 Package rerunfilecheck Info: File `full_article.out' has not changed.
 (rerunfilecheck)             Checksum: 8D59249CC81649D13D4558F4DA6BC73B;1303.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
  ) 
 Here is how much of TeX's memory you used:
- 29864 strings out of 493014
- 736878 string characters out of 6133351
- 902720 words of memory out of 5000000
- 32830 multiletter control sequences out of 15000+600000
+ 29869 strings out of 493014
+ 737006 string characters out of 6133351
+ 902895 words of memory out of 5000000
+ 32834 multiletter control sequences out of 15000+600000
  54174 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,77p,1710b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,77p,1714b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
 e/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2016/texmf-d
@@ -1060,10 +1056,10 @@ mri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on full_article.pdf (18 pages, 8684275 bytes).
+Output written on full_article.pdf (18 pages, 8686695 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 68 named destinations out of 1000 (max. 500000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 69 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

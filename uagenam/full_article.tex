@@ -18,7 +18,7 @@
 \renewcommand\Authfont{\fontsize{14}{14}\selectfont}
 \renewcommand\Affilfont{\fontsize{12}{12}\itshape}
 
-\renewcommand{\baselinestretch}{2.0}
+\renewcommand{\baselinestretch}{1.75}
 \setlength{\parindent}{3em}
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,datavisualization,datavisualization.formats.functions}
 \DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG}
@@ -54,7 +54,12 @@ Clustering, or the unsupervised categorization of data points into discrete sets
 
 \subsection{Neurological disease modeling}\citep{Burns_2015}\citep{Lin_2014}
 
+Mice are extensively used in neurological disease modeling due to their relatively low time of growth and the fragility and lack of available human brain tissue. 
 
+However, researchers have recently begun to switch to stem cells as a possible solution to the inaccuracy found in mouse models. Induced pluripotent stem cells
+(iPS cells) may be derived from nearly any sample of patient cells, allowing them to be generated from safe skin grafts. These iPS cells mimic embryonic stem cells (ES cells) and are able to differentiate into any adult cells. iPS cells may then be exposed to a variety of molecular and physical factors that guide them towards differentiation into neurons. These neurons, which are genetically identical to the donor, may then be used in drug discovery, disease modeling, and cell-based therapy techniques. In addition, these cells offer insights into the genetic backgrounds and effects of disease-associated genes by allowing precise \textit{in vitro} examination of their underlying mechanisms. \citep{Imaizumi2014ModelingHN} 
+
+In addition to cultering neurons, researchers have also managed to guide development of entire clusters of neurons that may mimic the patterns and timings of human brain development. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218}
@@ -179,10 +184,13 @@ Neurons output a numerical value based on an activation function.
 
 \subsection{Unsupervised learning}
 
+Machine learning can be divided into the two subfields of unsupervised and supervised learning. The primary difference between the two is in the training of the model: whereas supervised learning trains the model using a predefined set of classifications, or \textit{labels}, unsupervised learning trains the model without such guidance. Figure~\ref{fig:super} gives a basic illustration of the difference between the two:
+in the left diagram, the datapoints are labeled as being red hexagons or blue triangles. With these labels, one could train supervised programs such as classifiers that predict the label of a data point given its x-y position. On the figure on the right, however, none of the datapoints are labeled (all of them are red hexagons). For these data, one could apply an unsupervised method such as a clustering analysis program to group datapoints by how similar they are to each other. This allows researchers to make inferences regarding patterns and structures in the data.
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/learningtypes}
-\caption{An illustration of the primary difference between supervised (\textbf{A}) and unsupervised (\textbf{B}) learning.
+\caption{An illustration of the primary difference between supervised (\textbf{A}) and unsupervised (\textbf{B}) learning.\label{fig:super}
 }
 \end{center}
 \end{figure}
