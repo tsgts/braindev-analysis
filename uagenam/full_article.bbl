@@ -25,6 +25,11 @@ Burns, T.~C., Li, M.~D., Mehta, S., Awad, A.~J., and Morgan, A.~A. (2015).
   preclinical models}.
 \newblock {\em European Journal of Pharmacology}, 759:101--117.
 
+\bibitem[\protect\astroncite{D'haeseleer}{2005}]{how_expression_works}
+D'haeseleer, P. (2005).
+\newblock How does gene expression clustering work?
+\newblock {\em Nat Biotech}, 23(12):1499--1501.
+
 \bibitem[\protect\astroncite{Imaizumi and Okano}{2014}]{Imaizumi2014ModelingHN}
 Imaizumi, Y. and Okano, H. (2014).
 \newblock Modeling human neurological disorders with induced pluripotent stem
@@ -57,6 +62,14 @@ Miller, J., Ding, S., Sunkin, S., Smith, K., Ng, L., Szafer, A., Ebbert, A.,
 \newblock {Transcriptional landscape of the prenatal human brain.}
 \newblock {\em Nature}, 508:199--206.
 
+\bibitem[\protect\astroncite{Muller-Tidow et~al.}{2004}]{leukemia_clustering}
+Muller-Tidow, C., Metzelder, S.~K., Buerger, H., Packeisen, J., Ganser, A.,
+  Heil, G., Kugler, K., Adiguzel, G., Schwable, J., Steffen, B., Ludwig, W.-D.,
+  Heinecke, A., Buchner, T., Berdel, W.~E., and Serve, H. (2004).
+\newblock Expression of the p14arf tumor suppressor predicts survival in acute
+  myeloid leukemia.
+\newblock {\em Leukemia}, 18(4):720--726.
+
 \bibitem[\protect\astroncite{Nguyen
   et~al.}{2015}]{nguyen_wang_nikolakopoulou_2015}
 Nguyen, L., Wang, Y., and Nikolakopoulou, A. (2015).
@@ -69,6 +82,12 @@ Peemen, M., Mesman, B., and Corporaal, H. (2011).
 \newblock {Speed Sign Detection and Recognition by Convolutional Neural
   Networks}.
 \newblock {\em International Automotive Congress}.
+
+\bibitem[\protect\astroncite{Sim{\~o}es-Costa and
+  Bronner}{2015}]{neural_development}
+Sim{\~o}es-Costa, M. and Bronner, M.~E. (2015).
+\newblock Establishing neural crest identity: a gene regulatory recipe.
+\newblock {\em Development}, 142(2):242--257.
 
 \bibitem[\protect\astroncite{Thompson et~al.}{2014}]{Thompson_2014}
 Thompson, C.~L., Ng, L., Menon, V., Martinez, S., Lee, C.-K., Glattfelder, K.,

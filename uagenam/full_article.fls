@@ -307,6 +307,9 @@ INPUT ./figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png
 INPUT ./figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/rm-lmri10.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/rm-lmbxi10.tfm
+INPUT figures/brain_development.jpg
+INPUT ./figures/brain_development.jpg
+INPUT ./figures/brain_development.jpg
 INPUT figures/160913_thompson_atlas/160913_thompson_atlas.png
 INPUT ./figures/160913_thompson_atlas/160913_thompson_atlas.png
 INPUT ./figures/160913_thompson_atlas/160913_thompson_atlas.png
@@ -316,6 +319,9 @@ INPUT ./figures/Untitled/Untitled.png
 INPUT figures/ISH/ISH.png
 INPUT ./figures/ISH/ISH.png
 INPUT ./figures/ISH/ISH.png
+INPUT figures/leukemia_clustering.jpg
+INPUT ./figures/leukemia_clustering.jpg
+INPUT ./figures/leukemia_clustering.jpg
 INPUT figures/Abl1/Abl1.png
 INPUT ./figures/Abl1/Abl1.png
 INPUT ./figures/Abl1/Abl1.png
@@ -325,9 +331,6 @@ INPUT ./figures/activations.png
 INPUT figures/doodle.png
 INPUT ./figures/doodle.png
 INPUT ./figures/doodle.png
-INPUT figures/doodle_images.png
-INPUT ./figures/doodle_images.png
-INPUT ./figures/doodle_images.png
 INPUT figures/convnet.png
 INPUT ./figures/convnet.png
 INPUT ./figures/convnet.png

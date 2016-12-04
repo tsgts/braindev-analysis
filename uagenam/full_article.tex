@@ -48,7 +48,7 @@ The use of animal models is an essential component of the drug development proce
 
 However, genetic differences between humans and animal models confound drug tests. Drug-gene interactions result when the results of a gene interfere with the action of the drug, such as in blockages of drug metabolism, mutated receptor proteins, and general physiological differences. Furthermore, different patterns of spatial and temporal expression between humans and the model organism are also factors in development.
 
-Clustering, or the unsupervised categorization of data points into discrete sets, is widely used in gene expression analysis. However. existing clustering algorithms rely heavily on measures of correlation that are prone to outlier leverage and high sample variance, both of which are common in biological samples. Recently, neural network algorithms have shown promise in image clustering, such as that of the popular MNIST and USPS digit databases. The goal of this project was to engineer a reccurent convolutional neural network for the clustering of region-time expression matrices between human and mouse genes present in cerebral development. 
+Clustering, or the unsupervised categorization of data points into discrete sets, is widely used in gene expression analysis. However. existing clustering algorithms rely heavily on measures of correlation that are prone to outlier leverage and high sample variance, both of which are common in biological samples. Recently, neural network algorithms have shown promise in image clustering, such as that of the popular MNIST and USPS digit databases. The goal of this project was to engineer a recurrent convolutional neural network for the clustering of region-time expression matrices between human and mouse genes present in cerebral development. 
 
 \section{Literature review}
 
@@ -59,17 +59,28 @@ Mice are extensively used in neurological disease modeling due to their relative
 However, researchers have recently begun to switch to stem cells as a possible solution to the inaccuracy found in mouse models. Induced pluripotent stem cells
 (iPS cells) may be derived from nearly any sample of patient cells, allowing them to be generated from safe skin grafts. These iPS cells mimic embryonic stem cells (ES cells) and are able to differentiate into any adult cells. iPS cells may then be exposed to a variety of molecular and physical factors that guide them towards differentiation into neurons. These neurons, which are genetically identical to the donor, may then be used in drug discovery, disease modeling, and cell-based therapy techniques. In addition, these cells offer insights into the genetic backgrounds and effects of disease-associated genes by allowing precise \textit{in vitro} examination of their underlying mechanisms. \citep{Imaizumi2014ModelingHN} 
 
-In addition to cultering neurons, researchers have also managed to guide development of entire clusters of neurons that may mimic the patterns and timings of human brain development. 
+In addition to culturing neurons, researchers have also managed to guide development of entire clusters of neurons that may mimic the patterns and timings of human brain development. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218}
-\caption{A cerebral organoid.\citep{nguyen_wang_nikolakopoulou_2015}%
+\caption{A cerebral organoid viewed under fluorescence microscopy.\citep{nguyen_wang_nikolakopoulou_2015}%
 }
 \end{center}
 \end{figure}
 
-\subsection{The developing brain}\citep{Bakken_2015}
+\subsection{Brain development}\citep{Bakken_2015}
 
+The mammalian brain is among the most complex organized structures in biology. The development of the animal nervous system, termed neural induction, is initiated by the formation of several primitive cell clusters early in development. This begins with the formation of the neural plate on the ectoderm (outer layer) of the embryo, which folds inward as the neural fold/groove to create the neural tube and crest (Figure~\ref{fig:development}). 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{figures/brain_development}
+\caption{Development of the neural tube.\citep{neural_development} \label{fig:development}%
+}
+\end{center}
+\end{figure}
+
+The neural tube is characterized by four regions which develop into distinct adult structures. The first of these, the prosencephalon, develops into the telencephalon and diencephalon, which further develop into the forebrain, hypothalamus, and eyes. The second, the mesencephalon, develops into the midbrain. The third, the rhombencephalon (named for a rhombus-like shape), is responsible for the lower regions of the brain such as the cerebellum, pons, and medulla oblongata, which originate from the metencephalon and myelencephalon. The last of these regions is the spinal chord.
 
 \begin{figure}[h!]
 \begin{center}
@@ -79,7 +90,7 @@ In addition to cultering neurons, researchers have also managed to guide develop
 \end{center}
 \end{figure}
 
-\subsection{Gene expression regulation}
+\subsection{Gene expression regulation}\label{regulation}
 Gene expression at the cellular level is regulated by a plethora of molecular means and is the foundation of an organism's development, growth, and survival. Although the vast majority of cells (except germ and immune cells) in an animal have identical DNA, their own structure and function is determined by these methods of regulation. This cellular regulation further determines the structure and function of the upper-level tissues, organs, and ultimately the organism itself. 
 
 Gene expression is accomplished through the processes of DNA transcription to RNA and RNA translation to the amino acid chain that becomes the protein. Transcription is influenced by transcription factors, which affect how well an RNA polymerase (the enzyme primarily responsible for transcription) is able to bind to and form a transcription complex on a gene. Specific examples of molecules affecting gene expression include the addition of acetyl or methyl groups to the DNA and proteins that by binding to the DNA, can either attract or block the binding of RNA polymerase. In eukaryotic cells such as those of mice and humans, the RNA transcript must be further processed prior to transcription. This post-transcriptional processing involves the addition of cap and tail sequences that protect the sequence from digestive enzymes and allow for translation to occur. The RNA transcript also contains exon and intron regions, with only the exon regions being incorporated into the final sequence to be translated. Once the RNA transcript has left the nucleus of the cell (through a nuclear pore), a ribosome (a large cellular machine that facilitates translation of RNA to protein) binds to the RNA and initiates construction of the amino acid chain. Once the amino acid chain is complete, the ribosome splits in two, and the protein may be further modified. For instance, the chain may be folded within a chaperonin, which provides an optimal environment for some proteins, or it may be tagged with small molecules that identify its destination. These methods, and many others, allow for extremely precise regulation of complex genetic pathways that are the drivers of embryonic development.
@@ -98,39 +109,50 @@ The embryonic phase of development is known for highly dynamic expression of gen
 \subsection{Gene expression measurement}
 Numerous methods exist for the quantification and visualization of gene expression data. In this study, the gene expression levels are computed from either \textit{in situ} hybridization (ISH) or RNA sequencing (RNA-Seq). 
 
-ISH is a technique that allows specific sequences of nucleic acids to be located in a section of cells or tissue. This localization is accomplished through the principle that complementary nucleic acid sequences form hydrogen bonds (hybridize) with each other. The complementary sequence that detects the target sequence, or the \textit{probe}, may be identified through fluorescent (fluorescent DNA components), radioactive (radioactive isotopes), or immunohistochemical (labeled with an antibody) means. After the probe is allowed to hybridize to the target strand, RNases (RNA-digesting enzymes) hydrolyze any excess probes and the rest are washed off, leaving only bound probes. Following ISH, fluorescent microscopy may then be used to highlight regions of gene expression, which may then be scanned and analyzed using image analysis algorithms. \citep{Angerer_1991}
+ISH is a technique that allows specific sequences of nucleic acids to be located in a section of cells or tissue. This localization is accomplished through the principle that complementary nucleic acid sequences form hydrogen bonds (hybridize) with each other. The complementary sequence that detects the target sequence, or the \textit{probe}, may be identified through fluorescent (fluorescent DNA components), radioactive (radioactive isotopes), or immunohistochemical (labeled with an antibody) means. After the probe is allowed to hybridize to the target strand, RNases (RNA-digesting enzymes) hydrolyze any excess probes and the rest are washed off, leaving only bound probes. Following ISH, fluorescent microscopy may then be used to highlight regions of gene expression, which may then be scanned and analyzed using image analysis algorithms \citep{Angerer_1991}. Regions of high expression of the sequence of interest are shown as darker areas in an image (Figure~\ref{fig:ish}). 
 
-In addition to ISH, RNA-Seq is also used in order to accurately measure gene expression. Because the primary function of RNA in the cell is as an intermediate in the transfer of information from DNA to protein, RNA expression levels can give an approximate indication of overall gene expression levels. In RNA-Seq, as the name suggests, next-generation nucleic acid sequencing is applied to a collection of RNA sampled from a tissue region. The RNA sample is first isolated from the source tissue through digestion using detergents and enzymes. Once the RNAs are isolated, a next-generation sequencing machine reads all the RNA to a digital storage device. These raw sequence data are then formatted to identify exons and introns, which may be later used to identify gene expression levels. 
-\citep{Wang_2009}
+In addition to ISH, RNA-Seq is also used in order to accurately measure gene expression. Because the primary function of RNA in the cell is as an intermediate in the transfer of information from DNA to protein, RNA expression levels can give an approximate indication of overall gene expression levels. In RNA-Seq, as the name suggests, next-generation nucleic acid sequencing is applied to a collection of RNA sampled from a tissue region. The RNA sample is first isolated from the source tissue through digestion using detergents and enzymes. Once the RNAs are isolated, a next-generation sequencing machine reads all the RNA to a digital storage device. These raw sequence data are then formatted to identify exons and introns, which may be later used to identify gene expression levels. These gene expression values provide a value of a the degree of a gene's expression in within a cell \citep{Wang_2009}.
+
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/ISH/ISH}
-\caption{An ISH stain for glial fibrillary acidic protein (GFAP) RNA in the P14 mouse brain.%
+\caption{An ISH stain for glial fibrillary acidic protein (GFAP) RNA in the P14 mouse brain. At left is a diagram of the regions shown in the staining for reference. (Allen Brain Atlas)\label{fig:ish}
 }
 \end{center}
 \end{figure}
 
 \subsection{Gene expression analysis}
 
+Gene expression values offer valuable insights into the dynamics of regulatory networks and cellular processes. Analyses may be performed at any level of regulation described in Section~\ref{regulation}. Among one of the most widely used expression analysis techniques are those which cluster genes by similarity of expression. These can be used to generate dendrograms (Figure~\ref{fig:leukemia}) that provide a hierarchical ordering of the genes. Genes within a cluster are assumed to share a common underlying biological mechanism of action that is responsible for similar expression patterns.
+
+The accuracy of a clustering depends heavily on the hyperparameter $K$, which denotes the number of clusters. In hierarchical clustering, this is equivalent to cutting the produced dendrogram at a certain level. An excessively low $K$ may lead to large clusters which provide an overly general fit to the genes and fails to provide any meaningful insight. An excessively high $K$, on the other hand, may create more clusters than is necessary and creates categories where there are none. The validity of the clustering may be assessed by removing one of the predictor variables (for instance, a specific timepoint or region of expression), and examining whether or not the resultant clustering is significantly altered \citep{how_expression_works}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.25]{figures/leukemia_clustering}
+\caption{An ISH stain for glial fibrillary acidic protein (GFAP) RNA in the P14 mouse brain. At left is a diagram of the regions shown in the staining for reference \citep{leukemia_clustering}{(Allen Brain Atlas)}\label{fig:leukemia}
+}
+\end{center}
+\end{figure}
 
 \subsection{The Allen Brain Atlas}
 Founded in 2003 by Microsoft co-founder Paul Allen, the Allen Institute for Brain Science is a nonprofit research organization dedicated to the public pursuit of brain research. Among the many free datasets provided by the Institute are the Allen Developing Mouse Brain Atlas (located at \href{http://www.developingmouse.brain-map.org/}{www.developingmouse.brain-map.org/}) and the Allen Atlas of the Developing Human Brain (located at \href{http://www.brainspan.org/}{www.brainspan.org/}).
 
-The Developing Mouse Brain Atlas features in situ hybridization (ISH) data for over 2,100 genes across multiple stages of embryonic and postnatal mouse brain development. The raw images of the ISH scans total 434,946 images. These images were assembled into 3-dimensional grids of expression values.  In addition, an application programming interface (API) in the form of a bioinformatics pipeline allows researchers to access all data produced by the Developing Mouse Brain studies. The Developing Mouse API further allows researchers to obtain quantized expression values per region, which are calculated based off of analysis of the ISH scan images. These expression values may be found for several different developmental timepoints, at several discrete brain regions, for each of the 2,100+ genes. \citep{Thompson_2014}
+The Developing Mouse Brain Atlas features in situ hybridization (ISH) data for over 2,100 genes across multiple stages of embryonic and postnatal mouse brain development. The raw images of the ISH scans total 434,946 images. These images were assembled into 3-dimensional grids of expression values.  In addition, an application programming interface (API) in the form of a bioinformatics pipeline allows researchers to access all data produced by the Developing Mouse Brain studies. The Developing Mouse API further allows researchers to obtain quantized expression values per region, which are calculated based off of analysis of the ISH scan images. These expression values may be found for several different developmental time points, at several discrete brain regions, for each of the 2,100+ genes \citep{Thompson_2014}.
 
-Similar to the Developing Mouse Brain Atlas, the Developing Human Brain Atlas also features a diverse array of ISH expression values for several thousand genes. These expression values are available for download as raw comma-separated-values (CSV) files from the Developing Human Brain Atlas Website, although an API is still available. In addition to ISH images, extremely detailed, cellular-level, magnetic resonance imaging (MRI) and microarray data are also included. \citep{24695229}
+Similar to the Developing Mouse Brain Atlas, the Developing Human Brain Atlas also features a diverse array of ISH expression values for several thousand genes. These expression values are available for download as raw comma-separated-values (CSV) files from the Developing Human Brain Atlas Website, although an API is still available. In addition to ISH images, extremely detailed, cellular-level, magnetic resonance imaging (MRI) and microarray data are also included \citep{24695229}. The expression levels for these images may be summarized using provided image analysis techniques which yield region-time expression matrices (Figure~\ref{fig:matrix}).
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/Abl1/Abl1}
-\caption{A heatmap of expression values for the Abelson murine leukemia viral oncogene homolog 1 (ABL1) gene in the developing mouse brain. Expression values were obtained from ISH stains and computed for each region using specialized 3-D voxel counts provided by the Allen Brain Atlas API. The y-axis is the development stage and the x-axis is the brain region (abbreviated). The expression values were transformed to a logarithmic scale to account for skew.%
+\caption{A heatmap of expression values for the Abelson murine leukemia viral oncogene homolog 1 (ABL1) gene in the developing mouse brain. Expression values were obtained from ISH stains and computed for each region using specialized 3-D voxel counts provided by the Allen Brain Atlas API. The y-axis is the development stage and the x-axis is the brain region (abbreviated). The expression values were transformed to a logarithmic scale to account for skew. \label{fig:matrix}%
 }
 \end{center}
 \end{figure}
 
 \subsection{Neural networks}
-In 1959, Arthur Samuel described machine learning as the ``field of study that gives computers the ability to learn without being
-explicitly programmed," a definition that continues to hold true. Today neural networks are one of the most flexible and powerful machine learning algorithms. In several areas of research, neural networks offer state-of-the-art performance over traditional, hand-coded methods, such as in image pattern recognition, genomic analysis, and protein folding. The basic neural network node, or \textit{neuron}, is similar to the biological neural network in that it receives a number of inputs and 
+Neural networks are an area of intense research of machine learning, which is often cited as the ``field of study that gives computers the ability to learn without being
+explicitly programmed," a definition given by Arthur Samuel in 1959. Today, neural networks are one of the most flexible and powerful machine learning algorithms. In several areas of research, neural networks offer state-of-the-art performance over traditional, hand-coded methods, such as in image pattern recognition, genomic analysis, and protein folding. The basic neural network node, or \textit{neuron}, is similar to its biological counterpart in that it receives a number of inputs and outputs an output.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/activations}
@@ -153,20 +175,13 @@ Neurons output a numerical value based on an activation function.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/doodle}
-\caption{An example neural network that learns to generate an image given x and y pixel position inputs. The inputs are the x and y coordinates of the pixel, and the outputs are the three red-green-blue (RGB) values that define the color of a pixel. A few results of this example network are shown in Figure~\ref{fig:doodle_results}.
+\caption{An example neural network that learns to generate an image given x and y pixel position inputs. The inputs are the x and y coordinates of the pixel, and the outputs are the three red-green-blue (RGB) values that define the color of a pixel.
 \label{fig:doodle}
 }
 \end{center}
 \end{figure}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.8\columnwidth]{figures/doodle_images}
-\caption{The results of an neural network outlined in Figure~\ref{fig:doodle} trained to reproduce images by outputting an RGB triple based on x-y coordinates.
-\label{fig:doodle_results}
-}
-\end{center}
-\end{figure}
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/convnet}
@@ -234,7 +249,7 @@ For each dataset, a convolutional neural network algorithm will be applied in or
 
 \section{Extensions}
 
-\section{Acknowledgements}
+\section{Acknowledgments}
 
 \bibliographystyle{apa}
 \bibliography{bibliography/biblio.bib%
