@@ -325,6 +325,11 @@ INPUT ./figures/leukemia_clustering.jpg
 INPUT figures/Abl1/Abl1.png
 INPUT ./figures/Abl1/Abl1.png
 INPUT ./figures/Abl1/Abl1.png
+INPUT figures/neuron.png
+INPUT ./figures/neuron.png
+INPUT ./figures/neuron.png
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
 INPUT figures/activations.png
 INPUT ./figures/activations.png
 INPUT ./figures/activations.png
@@ -354,6 +359,7 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb

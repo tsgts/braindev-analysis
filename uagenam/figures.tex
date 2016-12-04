@@ -277,9 +277,9 @@ start chain=2,node distance=13mm
   {$w_2$};
 \node[on chain=2,init] (sigma) 
   {$\displaystyle\Sigma$};
-\node[on chain=2,squa,label=above:{\parbox{2cm}{\centering Activate \\ function}}]   
+\node[on chain=2,squa]   
   {$f$};
-\node[on chain=2,label=above:Output,join=by -latex] 
+\node[on chain=2,join=by -latex] 
   {$y$};
 \begin{scope}[start chain=1]
 \node[on chain=1] at (0,1.5cm) 
@@ -290,15 +290,15 @@ start chain=2,node distance=13mm
 \begin{scope}[start chain=3]
 \node[on chain=3] at (0,-1.5cm) 
   (x3) {$x_3$};
-\node[on chain=3,label=below:Weights,join=by o-latex] 
+\node[on chain=3,join=by o-latex] 
   (w3) {$w_3$};
 \end{scope}
-\node[label=above:\parbox{2cm}{\centering Bias \\ $b$}] at (sigma|-w1) (b) {};
+\node[label=above:\parbox{2cm}{\centering$b$}] at (sigma|-w1) (b) {};
 
 \draw[-latex] (w1) -- (sigma);
 \draw[-latex] (w3) -- (sigma);
 \draw[o-latex] (b) -- (sigma);
 
-\draw[decorate,decoration={brace,mirror}] (x1.north west) -- node[left=10pt] {Inputs} (x3.south west);
+\draw[decorate,decoration={brace,mirror}] (x1.north west) -- node[left=10pt] {} (x3.south west);
 \end{tikzpicture}
 \end{document}

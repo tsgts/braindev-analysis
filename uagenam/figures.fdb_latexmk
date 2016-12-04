@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1479780200 "figures.tex" "figures.pdf" "figures" 1479780202
+["pdflatex"] 1480888748 "figures.tex" "figures.pdf" "figures" 1480888750
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -126,11 +126,11 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1469386243 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1463979169 3873397 413fbfbbedb8e719ddc392043a7add02 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "figures.aux" 1479780202 820 216720548cc94a3cd20e55599f446dbd ""
-  "figures.out" 1479780201 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "figures.tex" 1479780200 8630 92fe838dff15ae8d9b9b7f4442508740 ""
+  "figures.aux" 1480888749 820 216720548cc94a3cd20e55599f446dbd ""
+  "figures.out" 1480888749 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "figures.tex" 1480888748 8516 debc8f4ba4c90976ac51daa5dbd62b9e ""
   (generated)
   "figures.log"
   "figures.aux"
-  "figures.out"
   "figures.pdf"
+  "figures.out"

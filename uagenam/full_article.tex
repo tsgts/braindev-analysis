@@ -121,7 +121,7 @@ In addition to ISH, RNA-Seq is also used in order to accurately measure gene exp
 \end{center}
 \end{figure}
 
-\subsection{Gene expression analysis}
+\subsection{Gene expression analysis}\label{gene_analysis}
 
 Gene expression values offer valuable insights into the dynamics of regulatory networks and cellular processes. Analyses may be performed at any level of regulation described in Section~\ref{regulation}. Among one of the most widely used expression analysis techniques are those which cluster genes by similarity of expression. These can be used to generate dendrograms (Figure~\ref{fig:leukemia}) that provide a hierarchical ordering of the genes. Genes within a cluster are assumed to share a common underlying biological mechanism of action that is responsible for similar expression patterns.
 
@@ -151,8 +151,18 @@ Similar to the Developing Mouse Brain Atlas, the Developing Human Brain Atlas al
 \end{figure}
 
 \subsection{Neural networks}
-Neural networks are an area of intense research of machine learning, which is often cited as the ``field of study that gives computers the ability to learn without being
-explicitly programmed," a definition given by Arthur Samuel in 1959. Today, neural networks are one of the most flexible and powerful machine learning algorithms. In several areas of research, neural networks offer state-of-the-art performance over traditional, hand-coded methods, such as in image pattern recognition, genomic analysis, and protein folding. The basic neural network node, or \textit{neuron}, is similar to its biological counterpart in that it receives a number of inputs and outputs an output.
+Neural networks are a subfield of machine learning, which is often cited as the ``field of study that gives computers the ability to learn without being
+explicitly programmed," a definition given by Arthur Samuel in 1959. Although invented around the mid 19-th century, neural networks today are one of the most flexible and powerful machine learning algorithms. In several areas of research, neural networks offer state-of-the-art performance over traditional, hand-coded methods, such as in image pattern recognition, genomic analysis, and protein folding. The basic neural network node, or \textit{neuron}, is similar to its biological counterpart in that it receives a number of inputs and outputs an output (Figure~\ref{fig:neuron}). However, the two differ in both structure and function. For instance, the biological neuron asynchronously receives a combination of excitatory and inhibitory impulses and sends a constant output signal. An artificial neuron instead is a mathematical construct that receives inputs synchronously and usually has a variable output value. In addition, whereas biological neural networks tend to be complicated in their topologies (many are not yet understood), artificial neural networks almost always have a tree-based structure of connectivity. The two further differ in their application: whereas brains are capable of extrapolation and learning of novel tasks, artificial neural networks are specialized and cannot readily adapt to new tasks given learned information.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{figures/neuron}
+\caption{A diagram of a basic neuron with input values $x_{1},x_{2}, and x_{3}$ with respective weights $w_{1},w_{2}, and w_{3}$ and a bias $b$. The neuron computes the sum of these inputs and outputs a value $y$ determined by activation function $f$. \label{fig:neuron}}
+\end{center}
+\end{figure}
+
+There exist a multitude of activation functions which determine the output of an artificial neuron. Many of these functions are
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{figures/activations}
@@ -170,7 +180,8 @@ explicitly programmed," a definition given by Arthur Samuel in 1959. Today, neur
 \label{table:1}
 \end{center}
 \end{table}
-Neurons output a numerical value based on an activation function.
+
+
 
 \begin{figure}[H]
 \begin{center}
@@ -211,6 +222,8 @@ in the left diagram, the datapoints are labeled as being red hexagons or blue tr
 \end{figure}
 
 \subsection{Clustering}
+
+Clustering in machine learning uses many of the same algorithms in biological gene expression analysis (Figure~\ref{gene_analysis}. Cluster analysis is essential to machine learning in that it groups datapoints by intrinsically determined similarities. 
 
 \begin{figure}[H]
 \begin{center}

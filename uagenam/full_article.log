@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 DEC 2016 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 DEC 2016 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -991,65 +991,73 @@ File: figures/Abl1/Abl1.png Graphic file (type png)
 <use figures/Abl1/Abl1.png>
 Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 147.
 (pdftex.def)             Requested size: 362.37569pt x 249.23196pt.
+ [11 <./figures/Abl1/Abl1.png>]
+<figures/neuron.png, id=256, 700.6175pt x 357.335pt>
+File: figures/neuron.png Graphic file (type png)
+ <use figures/neuron.png>
+Package pdftex.def Info: figures/neuron.png used on input line 159.
+(pdftex.def)             Requested size: 362.37569pt x 184.8229pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 160.
 
-<figures/activations.png, id=248, 1013.7875pt x 496.85625pt>
+[12] <figures/activations.png, id=262, 1013.7875pt x 496.85625pt>
 File: figures/activations.png Graphic file (type png)
 
 <use figures/activations.png>
-Package pdftex.def Info: figures/activations.png used on input line 158.
+Package pdftex.def Info: figures/activations.png used on input line 168.
 (pdftex.def)             Requested size: 362.37569pt x 177.59442pt.
- [11 <./figures/Abl1/Abl1.png>]
-<figures/doodle.png, id=258, 1142.2675pt x 878.28125pt>
+
+<figures/doodle.png, id=265, 1142.2675pt x 878.28125pt>
 File: figures/doodle.png Graphic file (type png)
 
 <use figures/doodle.png>
-Package pdftex.def Info: figures/doodle.png used on input line 177.
+Package pdftex.def Info: figures/doodle.png used on input line 187.
 (pdftex.def)             Requested size: 362.37569pt x 278.63008pt.
- [12 <./figures/activations.png>]
-<figures/convnet.png, id=272, 1730.8665pt x 1005.2757pt>
+ [13 <./figures/neuron.png> <./figures/activations.png>] <figures/convnet.png, 
+id=282, 1730.8665pt x 1005.2757pt>
 File: figures/convnet.png Graphic file (type png)
 
 <use figures/convnet.png>
-Package pdftex.def Info: figures/convnet.png used on input line 187.
+Package pdftex.def Info: figures/convnet.png used on input line 197.
 (pdftex.def)             Requested size: 362.37569pt x 210.45453pt.
 
-<figures/CNN/CNN.png, id=273, 767.86874pt x 343.2825pt>
+<figures/CNN/CNN.png, id=283, 767.86874pt x 343.2825pt>
 File: figures/CNN/CNN.png Graphic file (type png)
 
 <use figures/CNN/CNN.png>
-Package pdftex.def Info: figures/CNN/CNN.png used on input line 194.
+Package pdftex.def Info: figures/CNN/CNN.png used on input line 204.
 (pdftex.def)             Requested size: 362.37569pt x 162.00803pt.
- [13 <./figures/doodle.png> <./figures/convnet.png>]
-<figures/learningtypes.png, id=288, 986.4855pt x 458.9145pt>
+ [14 <./figures/doodle.png> <./figures/convnet.png>]
+<figures/learningtypes.png, id=297, 986.4855pt x 458.9145pt>
 File: figures/learningtypes.png Graphic file (type png)
 
 <use figures/learningtypes.png>
-Package pdftex.def Info: figures/learningtypes.png used on input line 207.
+Package pdftex.def Info: figures/learningtypes.png used on input line 217.
 (pdftex.def)             Requested size: 362.37569pt x 168.57727pt.
- [14 <./figures/CNN/CNN.png>]
-<figures/tsne.png, id=297, 1038.5199pt x 438.6789pt>
+ [15 <./figures/CNN/CNN.png>]
+<figures/tsne.png, id=306, 1038.5199pt x 438.6789pt>
 File: figures/tsne.png Graphic file (type png)
  <use figures/tsne.png>
-Package pdftex.def Info: figures/tsne.png used on input line 217.
+Package pdftex.def Info: figures/tsne.png used on input line 227.
 (pdftex.def)             Requested size: 362.37569pt x 153.07135pt.
 
-[15 <./figures/learningtypes.png> <./figures/tsne.png>] (./full_article.bbl
-[16] [17] [18]) [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
+[16 <./figures/learningtypes.png> <./figures/tsne.png>] (./full_article.bbl
+[17] [18] [19]) [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 268.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 268.
  (./full_article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 258.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 258.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 268.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 268.
 Package rerunfilecheck Info: File `full_article.out' has not changed.
 (rerunfilecheck)             Checksum: 9E1CC7F54EF026359F59ADAB4AFDD505;1299.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 258.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 268.
  ) 
 Here is how much of TeX's memory you used:
- 29894 strings out of 493014
- 737583 string characters out of 6133351
- 903815 words of memory out of 5000000
- 32851 multiletter control sequences out of 15000+600000
- 54174 words of font info for 37 fonts, out of 8000000 for 9000
+ 29906 strings out of 493014
+ 737780 string characters out of 6133351
+ 904092 words of memory out of 5000000
+ 32859 multiletter control sequences out of 15000+600000
+ 54836 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,77p,1714b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
@@ -1058,20 +1066,21 @@ e/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/
 type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/lm/lmbxi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmm
-i12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/lm/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/l
-mri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on full_article.pdf (19 pages, 7601146 bytes).
+i10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm
+/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on full_article.pdf (20 pages, 7650266 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 325 compressed objects within 4 object streams
- 74 named destinations out of 1000 (max. 500000)
- 254 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 415 PDF objects out of 1000 (max. 8388607)
+ 333 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 
