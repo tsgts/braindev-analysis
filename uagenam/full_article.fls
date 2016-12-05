@@ -310,9 +310,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/rm-lmbxi10.tfm
 INPUT figures/brain_development.jpg
 INPUT ./figures/brain_development.jpg
 INPUT ./figures/brain_development.jpg
-INPUT figures/160913_thompson_atlas/160913_thompson_atlas.png
-INPUT ./figures/160913_thompson_atlas/160913_thompson_atlas.png
-INPUT ./figures/160913_thompson_atlas/160913_thompson_atlas.png
 INPUT figures/Untitled/Untitled.png
 INPUT ./figures/Untitled/Untitled.png
 INPUT ./figures/Untitled/Untitled.png
