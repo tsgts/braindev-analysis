@@ -38,6 +38,7 @@ with tf.device('/cpu:0'):
 	decoded = Dense(77, activation='sigmoid')(decoded)
 
 	model = Model(input_img, decoded)
+	model.summary()
 
 	model.compile(loss='poisson',
 	              optimizer="adam",
