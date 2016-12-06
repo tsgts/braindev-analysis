@@ -1,4 +1,4 @@
-from sklearn.metrics import r2_score
+from scipy.stats import spearmanr
 import json
 import pandas as pd
 
@@ -16,7 +16,7 @@ for i in genes:
 	print(i)
 	correlations = []
 	for j in genes:
-		correlations.append(r2_score(data[i], data[j])  ) 
+		correlations.append(spearmanr(data[i], data[j])[1]) 
 	matrix.append(correlations)
 
 print(len(matrix))
