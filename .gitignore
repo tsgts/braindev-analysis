@@ -2,5 +2,5 @@
 allen_data/dev_human/normalized_genes/expression_matrix.csv
 allen_data/dev_mouse/corr_matrix_array.txt
 allen_data/dev_mouse/corr_matrix_array_block_sort.txt
-allen_data/dev_mouse/mouse_corr_r2_matrix.csv
 allen_data/dev_mouse/mouse_corr_spearman_matrix.csv
+allen_data/dev_mouse/mouse_corr_r2_matrix.csv

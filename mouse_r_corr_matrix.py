@@ -17,7 +17,6 @@ for i in genes:
 	correlations = []
 	for j in genes:
 		correlations.append(spearmanr(data[i], data[j])[0]) 
-	matrix.append(correlations)
 
 print(len(matrix))
 
@@ -25,3 +24,4 @@ df=pd.DataFrame(matrix,columns=genes)
 print(df.shape)
 
 df.to_csv("allen_data/dev_mouse/mouse_corr_spearman_matrix.csv",sep=',', encoding='utf-8')
+
