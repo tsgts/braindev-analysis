@@ -1,7 +1,8 @@
 import json
-import seaborn as sns
-import numpy as np
-import matplotlib.pyplot as plt
+from collections import OrderedDict
+#import seaborn as sns
+#import numpy as np
+#import matplotlib.pyplot as plt
 
 output_json = {
   "nodes": [],
@@ -19,11 +20,15 @@ with open('allen_data/dev_mouse/corr_matrix_array.txt') as data_file:
 
 output_json["nodes"] = [{"id":i} for i in genes]
 
+print(genes[0:10])
+
 for i in range(0,len(genes)):
 	for j in range(0,i):
 		expression_val = data[i][j]
-		if expression_val < -0.7:
-			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val})
+		if expression_val < -0.8:
+			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#c0392b"})
+		elif expression_val > 0.9:
+			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#2ecc71"})
 		else:
 			pass
 
