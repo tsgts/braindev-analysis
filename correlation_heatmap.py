@@ -29,4 +29,4 @@ data = [
         colorscale='Jet',
     )
 ]
-py.iplot(data, filename='correlations-heatmap-spearman')
+py.iplot(data, filename='correlations-heatmap-pearson')
