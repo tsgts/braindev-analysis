@@ -37,3 +37,4 @@ for gene in sorted(list(genes)):
 	matrix[gene] = heatmap_raw
 
 json.dump(matrix, open("allen_data/dev_mouse/raw_dictionary_no_days.txt",'w'), indent=4)
+#json.dump(matrix, open("allen_data/dev_mouse/raw_dictionary.txt",'w'), indent=4)

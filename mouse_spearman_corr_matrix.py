@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+import collections
 
 def ranks(input):
 	seq = sorted(input)
