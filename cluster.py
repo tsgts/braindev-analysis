@@ -4,13 +4,11 @@ import scipy.cluster.hierarchy as sch
 import json
 import numpy as np
 
-with open('allen_data/dev_mouse/corr_matrix_array.txt') as data_file:    
+with open('allen_data/dev_mouse/mouse_corr_pearson_matrix.txt') as data_file:    
     data = json.load(data_file)
 
-with open('allen_data/dev_mouse/raw_dictionary_no_days.txt') as data_file:    
+with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:    
     genes = json.load(data_file)
-
-genes = list(genes.keys())
 
 D = data
 
