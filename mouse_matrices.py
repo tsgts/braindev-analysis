@@ -1,13 +1,13 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import math
 import pandas as pd
 import json
+import collections
 
 expression_data = pd.read_csv("allen_data/dev_mouse/filtered_expression_values.csv")
 genes = set(expression_data["gene_acronym"])
 
-matrix = {}
+matrix = collections.OrderedDict()
 
 json.dump(sorted(list(genes)), open("allen_data/dev_mouse/list_of_genes.txt",'w'), indent=4)
 
