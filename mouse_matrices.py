@@ -9,7 +9,9 @@ genes = set(expression_data["gene_acronym"])
 
 matrix = {}
 
-for gene in list(genes):
+json.dump(sorted(list(genes)), open("allen_data/dev_mouse/list_of_genes.txt",'w'), indent=4)
+
+for gene in sorted(list(genes)):
 	print(gene)
 	#get all rows with the gene symbol
 	matching_rows = expression_data[expression_data["gene_acronym"]==gene]
@@ -27,9 +29,11 @@ for gene in list(genes):
 	#sort from youngest to oldest, with the adjusted ages
 	sorted_rows = matching_rows.sort_values("days",axis=0)
 	#select only the regions for the pre-pivot
-	heatmap_raw = sorted_rows.loc[:,["days","RSP","Tel","PHy","p3","p2","p1","M","PPH","PH","PMH","MH"]]
+	#with days
+	#heatmap_raw = sorted_rows.loc[:,["days","RSP","Tel","PHy","p3","p2","p1","M","PPH","PH","PMH","MH"]]
+	#without days
+	heatmap_raw = sorted_rows.loc[:,["RSP","Tel","PHy","p3","p2","p1","M","PPH","PH","PMH","MH"]]
 	heatmap_raw = list(heatmap_raw.values.tolist())
 	matrix[gene] = heatmap_raw
 
-
-json.dump(matrix, open("allen_data/dev_mouse/raw_dictionary.txt",'w'), indent=4)
+json.dump(matrix, open("allen_data/dev_mouse/raw_dictionary_no_days.txt",'w'), indent=4)
