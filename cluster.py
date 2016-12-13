@@ -4,7 +4,7 @@ import scipy.cluster.hierarchy as sch
 import json
 import numpy as np
 
-with open('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt') as data_file:    
+with open('allen_data/dev_mouse/mouse_corr_pearson_matrix.txt') as data_file:    
     data = json.load(data_file)
 
 with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:    
@@ -15,20 +15,20 @@ D = data
 # Compute and plot dendrogram.
 fig = pylab.figure()
 axdendro = fig.add_axes([0.09,0.1,0.2,0.8])
-Y = sch.linkage(D, method='ward')
-Z = sch.dendrogram(Y,no_labels=True,color_threshold=75,orientation="left")
+Y = sch.linkage(D, method='centroid')
+Z = sch.dendrogram(Y,no_labels=True,color_threshold=0.5*max(Y[:,2]),orientation="left")
 print(Z["leaves"])
 axdendro.set_xticks([])
 axdendro.set_yticks([])
 
 #Plot distance matrix.
 axmatrix = fig.add_axes([0.3,0.1,0.6,0.8])
-index = Z['leaves']
+index = Z['leaves'][::-1]
 D = np.array(D)[index,:]
 D = np.array(D)[:,index]
 json.dump(D.tolist(), open("allen_data/dev_mouse/corr_matrix_array_block_sort.txt",'w'), indent=4)
 json.dump(index, open("allen_data/dev_mouse/corr_matrix_array_block_sort_indices.txt",'w'), indent=4)
-im = axmatrix.matshow(D, aspect='auto', origin='left')
+im = axmatrix.matshow(D, aspect='auto', origin='upper')
 axmatrix.set_xticks([])
 axmatrix.set_yticks([])
 

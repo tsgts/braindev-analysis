@@ -25,7 +25,7 @@ for i in range(0,len(genes)):
 		expression_val = data[i][j]
 		if expression_val < -0.75:
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#c0392b"})
-		elif expression_val > 0.85:
+		elif expression_val > 1.9:
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#2ecc71"})
 		else:
 			pass
