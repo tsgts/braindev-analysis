@@ -16,7 +16,10 @@ with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:
 with open('allen_data/dev_mouse/corr_matrix_array.txt') as data_file:    
 	data = json.load(data_file)
 
-output_json["nodes"] = [{"id":i} for i in genes]
+with open('allen_data/dev_mouse/dendrogram_colors.txt') as data_file:    
+	gene_colors = json.load(data_file)
+
+output_json["nodes"] = [{"id":i,"color":gene_colors[str(genes.index(i))]} for i in genes]
 
 print(genes[0:10])
 

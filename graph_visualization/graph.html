@@ -85,7 +85,7 @@ d3.json("graph.json", function(error, graph) {
   var node = gnodes.append("circle")
     .attr("class", "node")
     .attr("r", 10)
-    .style("fill", function(d) { return color(d.group); })
+    .attr("fill", function(d) { return color(d.color); })
 
   var labels = gnodes.append("text")
     .text(function(d) { return d.id; })
