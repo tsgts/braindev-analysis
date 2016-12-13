@@ -11,7 +11,8 @@ with open('allen_data/dev_mouse/raw_dictionary_no_days.txt') as data_file:
 with open('allen_data/dev_mouse/corr_matrix_array_block_sort_indices.txt') as data_file:    
 	index = json.load(data_file)
 
-genes = list(data.keys())
+with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:    
+    genes = json.load(data_file)
 
 genes = [genes[i] for i in index]
 

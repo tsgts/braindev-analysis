@@ -10,10 +10,8 @@ output_json = {
 }
 
 
-with open('allen_data/dev_mouse/raw_dictionary_no_days.txt') as data_file:    
+with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:    
     genes = json.load(data_file)
-
-genes = list(genes.keys())
 
 with open('allen_data/dev_mouse/corr_matrix_array.txt') as data_file:    
 	data = json.load(data_file)
@@ -25,9 +23,9 @@ print(genes[0:10])
 for i in range(0,len(genes)):
 	for j in range(0,i):
 		expression_val = data[i][j]
-		if expression_val < -0.8:
+		if expression_val < -0.75:
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#c0392b"})
-		elif expression_val > 0.9:
+		elif expression_val > 0.85:
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#2ecc71"})
 		else:
 			pass
