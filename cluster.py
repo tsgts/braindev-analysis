@@ -18,14 +18,14 @@ D = data
 fig = pylab.figure()
 axdendro = fig.add_axes([0.09,0.1,0.2,0.8])
 Y = sch.linkage(D, method='ward')
-Z = sch.dendrogram(Y,no_labels=True,color_threshold=75,orientation="left")
+Z = sch.dendrogram(Y,no_labels=True,color_threshold=125,orientation="left")
 
-assignments = sch.fcluster(Y, 75, criterion='distance')
+assignments = sch.fcluster(Y, 125, criterion='distance')
 
 unique_clusters = list(set(assignments))
 print(len(unique_clusters))
 
-hex_colors = {str(i):'#' + str(format(int(int(i) / (len(unique_clusters)-1) * 16777215),'02x')).upper() for i in range(0,len(unique_clusters)+1)}
+hex_colors = {str(i):'#' + str(format(int(int(i) / (len(unique_clusters)+1) * 16777215),'02x')).upper() for i in range(0,len(unique_clusters)+1)}
 
 assignments = [hex_colors[str(x)] for x in assignments]
 

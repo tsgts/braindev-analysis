@@ -19,16 +19,16 @@ with open('allen_data/dev_mouse/corr_matrix_array.txt') as data_file:
 with open('allen_data/dev_mouse/dendrogram_colors.txt') as data_file:    
 	gene_colors = json.load(data_file)
 
-output_json["nodes"] = [{"id":i,"color":gene_colors[str(genes.index(i))]} for i in genes]
+output_json["nodes"] = [{"id":i,"color":gene_colors[i]} for i in genes]
 
 print(genes[0:10])
 
 for i in range(0,len(genes)):
 	for j in range(0,i):
 		expression_val = data[i][j]
-		if expression_val < -0.75:
+		if expression_val < -0.85:
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#c0392b"})
-		elif expression_val > 1.9:
+		elif expression_val > 1.5:
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#2ecc71"})
 		else:
 			pass
