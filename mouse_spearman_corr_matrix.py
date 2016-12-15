@@ -29,12 +29,13 @@ for i in genes:
 	print(i)
 	correlations = []
 	for j in genes:
-		correlations.append(spearman_rho(data[i], data[j])) 
+		correlations.append(spearman_rho(data[i], data[j]))
 	matrix.append(correlations)
 
 print(len(matrix))
 
 df=pd.DataFrame(matrix,columns=genes)
+df.index = genes
 print(df.shape)
 
 df.to_csv("allen_data/dev_mouse/mouse_corr_spearman_matrix.csv",sep=',', encoding='utf-8')

@@ -18,9 +18,9 @@ D = data
 fig = pylab.figure()
 axdendro = fig.add_axes([0.09,0.1,0.2,0.8])
 Y = sch.linkage(D, method='ward')
-Z = sch.dendrogram(Y,no_labels=True,color_threshold=125,orientation="left")
+Z = sch.dendrogram(Y,no_labels=True,color_threshold=0.2*max(Y[:,2]),orientation="left")
 
-assignments = sch.fcluster(Y, 125, criterion='distance')
+assignments = sch.fcluster(Y, 50, criterion='distance')
 
 unique_clusters = list(set(assignments))
 print(len(unique_clusters))
