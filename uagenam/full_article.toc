@@ -9,14 +9,14 @@
 \contentsline {subsection}{\numberline {2.6}The Allen Brain Atlas}{10}{subsection.2.6}
 \contentsline {subsection}{\numberline {2.7}Neural networks}{11}{subsection.2.7}
 \contentsline {subsection}{\numberline {2.8}Unsupervised learning}{17}{subsection.2.8}
-\contentsline {section}{\numberline {3}Research plan}{18}{section.3}
-\contentsline {subsection}{\numberline {3.1}Researchable question}{18}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Hypothesis}{18}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Procedure}{18}{subsection.3.3}
-\contentsline {section}{\numberline {4}Methodology}{20}{section.4}
-\contentsline {section}{\numberline {5}Results}{20}{section.5}
-\contentsline {section}{\numberline {6}Discussion}{20}{section.6}
-\contentsline {section}{\numberline {7}Conclusions}{20}{section.7}
-\contentsline {section}{\numberline {8}Limitations}{20}{section.8}
-\contentsline {section}{\numberline {9}Extensions}{20}{section.9}
-\contentsline {section}{\numberline {10}Acknowledgments}{20}{section.10}
+\contentsline {section}{\numberline {3}Research plan}{19}{section.3}
+\contentsline {subsection}{\numberline {3.1}Researchable question}{19}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Hypothesis}{19}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Procedure}{19}{subsection.3.3}
+\contentsline {section}{\numberline {4}Methodology}{21}{section.4}
+\contentsline {section}{\numberline {5}Results}{21}{section.5}
+\contentsline {section}{\numberline {6}Discussion}{21}{section.6}
+\contentsline {section}{\numberline {7}Conclusions}{21}{section.7}
+\contentsline {section}{\numberline {8}Limitations}{21}{section.8}
+\contentsline {section}{\numberline {9}Extensions}{21}{section.9}
+\contentsline {section}{\numberline {10}Acknowledgments}{21}{section.10}

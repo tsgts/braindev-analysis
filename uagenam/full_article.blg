@@ -4,45 +4,46 @@ The top-level auxiliary file: full_article.aux
 The style file: apa.bst
 Database file #1: bibliography/biblio.bib.bib
 Warning--there's a number but no volume in laurensvandermaaten2014
-You've used 17 entries,
+Warning--empty booktitle in Zilouchian2001FundamentalsON
+You've used 20 entries,
             1940 wiz_defined-function locations,
-            594 strings with 9129 characters,
-and the built_in function-call counts, 11132 in all, are:
-= -- 942
-> -- 968
-< -- 7
-+ -- 368
-- -- 368
-* -- 1192
-:= -- 2020
-add.period$ -- 51
-call.type$ -- 17
-change.case$ -- 267
-chr.to.int$ -- 17
-cite$ -- 18
-duplicate$ -- 241
-empty$ -- 484
-format.name$ -- 393
-if$ -- 2001
+            611 strings with 9538 characters,
+and the built_in function-call counts, 12070 in all, are:
+= -- 1027
+> -- 1000
+< -- 9
++ -- 378
+- -- 378
+* -- 1262
+:= -- 2188
+add.period$ -- 59
+call.type$ -- 20
+change.case$ -- 287
+chr.to.int$ -- 20
+cite$ -- 22
+duplicate$ -- 289
+empty$ -- 560
+format.name$ -- 406
+if$ -- 2183
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 19
-newline$ -- 88
-num.names$ -- 51
-pop$ -- 248
+missing$ -- 22
+newline$ -- 102
+num.names$ -- 60
+pop$ -- 275
 preamble$ -- 1
-purify$ -- 269
+purify$ -- 289
 quote$ -- 0
-skip$ -- 172
+skip$ -- 202
 stack$ -- 0
-substring$ -- 520
-swap$ -- 34
+substring$ -- 556
+swap$ -- 39
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
-warning$ -- 1
-while$ -- 57
+type$ -- 116
+warning$ -- 2
+while$ -- 63
 width$ -- 0
-write$ -- 219
-(There was 1 warning)
+write$ -- 254
+(There were 2 warnings)

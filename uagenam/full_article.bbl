@@ -36,6 +36,17 @@ Imaizumi, Y. and Okano, H. (2014).
   cells.
 \newblock {\em Journal of neurochemistry}, 129 3:388--99.
 
+\bibitem[\protect\astroncite{Koushik}{2016}]{Koushik2016UnderstandingCN}
+Koushik, J. (2016).
+\newblock Understanding convolutional neural networks.
+\newblock {\em CoRR}, abs/1605.09081.
+
+\bibitem[\protect\astroncite{Krizhevsky
+  et~al.}{2012}]{Krizhevsky2012ImageNetCW}
+Krizhevsky, A., Sutskever, I., and Hinton, G.~E. (2012).
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em NIPS}.
+
 \bibitem[\protect\astroncite{Lancaster and Knoblich}{2014}]{Lancaster_2014}
 Lancaster, M.~A. and Knoblich, J.~A. (2014).
 \newblock {Generation of cerebral organoids from human pluripotent stem cells}.
@@ -122,5 +133,9 @@ Yang, J., Parikh, D., and Batra, D. (2016).
   Clusters}.
 \newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}.
+
+\bibitem[\protect\astroncite{Zilouchian}{2001}]{Zilouchian2001FundamentalsON}
+Zilouchian, A. (2001).
+\newblock Fundamentals of neural networks.
 
 \end{thebibliography}

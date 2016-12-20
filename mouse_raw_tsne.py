@@ -1,22 +1,27 @@
 import numpy as np
 from sklearn.manifold import TSNE
 import pandas as pd
-import pyqtgraph as pg
-from pyqtgraph.Qt import QtGui, QtCore
+import json
+from matplotlib import pyplot as plt
+# import pyqtgraph as pg
+# from pyqtgraph.Qt import QtGui, QtCore
 
-data = np.loadtxt("allen_data/dev_mouse/encode.txt")
-
-rand_indices = np.random.randint(2012*16, size=10000)
+with open('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt') as data_file:    
+    data = json.load(data_file)
 
 model = TSNE(n_components=2)
-transformed = model.fit_transform(data[rand_indices,:]) 
+transformed = model.fit_transform(data) 
 print(transformed.shape)
 transformed = np.transpose(transformed)
 
 np.savetxt('allen_data/dev_mouse/tsne.txt', transformed)
 
-app = QtGui.QApplication([])
-pg.setConfigOption('background', 'w')
-pg.plot(transformed[0], transformed[1], pen=None, symbol="o")
+fig = plt.figure()
+plt.scatter(transformed[0], transformed[1], c='r', marker='o')
+plt.show()
 
-app.exec_()
+# app = QtGui.QApplication([])
+# pg.setConfigOption('background', 'w')
+# pg.plot(transformed[0], transformed[1], pen=None, symbol="o")
+
+# app.exec_()
