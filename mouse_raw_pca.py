@@ -3,11 +3,14 @@ from sklearn.decomposition import PCA
 import pandas as pd
 import json
 from matplotlib import pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 # import pyqtgraph as pg
 # from pyqtgraph.Qt import QtGui, QtCore
 
-with open('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt') as data_file:    
-    data = json.load(data_file)
+# with open('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt') as data_file:    
+#     data = json.load(data_file)
+
+data = np.loadtxt('allen_data/dev_mouse/encode.txt')
 
 pca = PCA(n_components=2)
 transformed = pca.fit_transform(data) 

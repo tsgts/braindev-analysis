@@ -5,9 +5,12 @@ from keras.layers import Input, Dense, Dropout
 from keras.optimizers import SGD
 from keras.callbacks import Callback
 from keras.callbacks import TensorBoard
+from keras.regularizers import l2, activity_l2
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import json
+from mpl_toolkits.mplot3d import Axes3D
+
 tf.python.control_flow_ops = tf
 with tf.device('/cpu:0'):
 	target = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
@@ -24,17 +27,15 @@ with tf.device('/cpu:0'):
 	print(np.amin(target))
 
 	input_img = Input(shape=(77,))
-	encoded = Dense(128, activation='relu')(input_img)
-	encoded = Dropout(0.25)(encoded)
-	encoded = Dense(64, activation='relu')(encoded)
-	encoded = Dropout(0.25)(encoded)
-	encoded = Dense(32, activation='relu')(encoded)
-	encoded = Dropout(0.25)(encoded)
+	encoded = Dense(64, activation='tanh')(input_img)
+	encoded = Dense(32, activation='tanh')(encoded)
+	encoded = Dense(16, activation='tanh')(encoded)
 
-	decoded = Dense(64, activation='relu')(encoded)
-	decoded = Dropout(0.25)(decoded)
-	decoded = Dense(128, activation='relu')(decoded)
-	decoded = Dropout(0.25)(decoded)
+	encoded = Dense(4, activation='tanh')(encoded)
+
+	decoded = Dense(16, activation='tanh')(encoded)
+	decoded = Dense(32, activation='tanh')(decoded)
+	decoded = Dense(64, activation='tanh')(decoded)
 	decoded = Dense(77, activation='sigmoid')(decoded)
 
 	model = Model(input_img, decoded)
@@ -46,29 +47,17 @@ with tf.device('/cpu:0'):
 
 	model.fit(target, target, 
 			  shuffle=True, 
-			  nb_epoch=512, 
-			  verbose=1,
+			  nb_epoch=1000, 
+			  verbose=2,
 			  callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')]
 			  )
-
-	model.save("mouse_no_conv.h5")
-
-	weights = []
-	for layer in model.layers:
-		g=layer.get_config()
-		h=layer.get_weights()
-		print (g)
-		#print (h)
-		weights.append(np.asarray(h).tolist())
-
-	print(weights)
-	#json.dump(weights.tolist(), open("allen_data/dev_mouse/weights.txt",'w'), indent=4)
 
 	prediction = model.predict(target)
 
 	encoder = Model(input=input_img, output=encoded)
 	encoded_imgs = encoder.predict(target)
 	print(encoded_imgs.shape)
+
 	np.savetxt('allen_data/dev_mouse/encode.txt', encoded_imgs)
 
 	plt.figure(figsize=(20, 4))
@@ -77,14 +66,12 @@ with tf.device('/cpu:0'):
 		#original
 	    ax = plt.subplot(2, n, i + 1)
 	    plt.imshow(target[i].reshape(7, 11), interpolation='none')
-	    plt.gray()
 	    ax.get_xaxis().set_visible(False)
 	    ax.get_yaxis().set_visible(False)
 
 	    #predicted
 	    ax = plt.subplot(2, n, i + 1 + n)
 	    plt.imshow(prediction[i].reshape(7, 11), interpolation='none')
-	    plt.gray()
 	    ax.get_xaxis().set_visible(False)
 	    ax.get_yaxis().set_visible(False)
 	plt.show()
