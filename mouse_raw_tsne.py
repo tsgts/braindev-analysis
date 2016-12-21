@@ -6,8 +6,23 @@ from matplotlib import pyplot as plt
 # import pyqtgraph as pg
 # from pyqtgraph.Qt import QtGui, QtCore
 
+#===========CORRELATIONS===============
+
 # with open('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt') as data_file:    
 #     data = json.load(data_file)
+
+#===========RAW DATA=================
+
+# with open('allen_data/dev_mouse/raw_dictionary_no_days.txt') as data_file:    
+#     data = json.load(data_file)
+
+# for key, value in data.items():
+# 	data[key] = [item for sublist in value for item in sublist]
+
+# data = list(data.values())
+# data = np.array(data)
+
+#AUTOENCODER
 
 data = np.loadtxt('allen_data/dev_mouse/encode.txt')
 

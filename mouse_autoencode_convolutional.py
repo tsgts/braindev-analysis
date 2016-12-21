@@ -19,14 +19,15 @@ with tf.device('/cpu:0'):
     target_range = target_max - target_min
     target = np.add(target,-1*target_min)
     target = np.multiply(target,1/target_range)
-    target = target.reshape(2012,1,7,11)
     print(np.amax(target))
     print(np.amin(target))
 
-    input_img = Input(shape=(1,7,11))
-    encoded = Convolution2D(32, 3, 3, activation='relu', border_mode='same')(input_img)
+    input_img = Input(shape=(77,))
+    encoded = Dense(64, activation='relu')(input_img)
+    encoded = Reshape((1, 8, 8))(encoded)
+    encoded = Convolution2D(8, 3, 3, activation='relu', border_mode='same')(encoded)
     encoded = MaxPooling2D((2, 2), border_mode='same')(encoded)
-    encoded = Convolution2D(16, 3, 3, activation='relu', border_mode='same')(encoded)
+    encoded = Convolution2D(4, 3, 3, activation='relu', border_mode='same')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
     encoded = Convolution2D(1, 2, 2, activation='sigmoid', border_mode='same')(encoded)
     # decoded = Convolution2D(16, 3, 3, activation='relu', border_mode='same')(encoded)
@@ -39,7 +40,6 @@ with tf.device('/cpu:0'):
     encoded = Flatten()(encoded)
 
     decoded = Dense(77)(encoded)
-    decoded = Reshape((1, 7, 11))(decoded)
 
     model = Model(input_img, decoded)
     model.summary()
@@ -48,7 +48,7 @@ with tf.device('/cpu:0'):
 
     model.fit(target, target, 
     				shuffle=True, 
-    				nb_epoch=100, 
+    				nb_epoch=4000, 
     				verbose=2,
                 	callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')])
 
@@ -65,14 +65,12 @@ with tf.device('/cpu:0'):
     	#original
         ax = plt.subplot(2, n, i + 1)
         plt.imshow(target[i].reshape(7, 11), interpolation='none')
-        plt.gray()
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
 
         #predicted
         ax = plt.subplot(2, n, i + 1 + n)
         plt.imshow(prediction[i].reshape(7, 11), interpolation='none')
-        plt.gray()
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
     plt.show()
