@@ -27,16 +27,18 @@ with tf.device('/cpu:0'):
 	print(np.amin(target))
 
 	input_img = Input(shape=(77,))
-	encoded = Dense(64, activation='tanh')(input_img)
-	encoded = Dense(32, activation='tanh')(encoded)
-	encoded = Dense(16, activation='tanh')(encoded)
+	encoded = Dense(3, activation='sigmoid')(input_img)
+	# encoded = Dense(32, activation='sigmoid')(encoded)
+	# encoded = Dense(16, activation='sigmoid')(encoded)
+	# encoded = Dense(8, activation='sigmoid')(encoded)
 
-	encoded = Dense(4, activation='tanh')(encoded)
+	# encoded = Dense(8, activation='sigmoid')(encoded)
 
-	decoded = Dense(16, activation='tanh')(encoded)
-	decoded = Dense(32, activation='tanh')(decoded)
-	decoded = Dense(64, activation='tanh')(decoded)
-	decoded = Dense(77, activation='sigmoid')(decoded)
+	# decoded = Dense(8, activation='sigmoid')(encoded)
+	# decoded = Dense(16, activation='sigmoid')(decoded)
+	# decoded = Dense(32, activation='sigmoid')(decoded)
+	# decoded = Dense(64, activation='sigmoid')(decoded)
+	decoded = Dense(77, activation='sigmoid')(encoded)
 
 	model = Model(input_img, decoded)
 	model.summary()
@@ -45,11 +47,22 @@ with tf.device('/cpu:0'):
 	              optimizer="adam",
 	              metrics=['accuracy'])
 
+	class current_prediction(keras.callbacks.Callback):
+		def on_epoch_end(self, epoch, logs={}):
+			if epoch % 50 == 0:
+				encoder = Model(input=input_img, output=encoded)
+				encoded_imgs = encoder.predict(target)
+				np.savetxt('allen_data/dev_mouse/autoencoder/encode_' + str(epoch) + '.txt', encoded_imgs)
+			else:
+				pass
+
+	prediction = current_prediction()
+
 	model.fit(target, target, 
 			  shuffle=True, 
 			  nb_epoch=1000, 
 			  verbose=2,
-			  callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder')]
+			  callbacks=[prediction]
 			  )
 
 	prediction = model.predict(target)
@@ -58,7 +71,7 @@ with tf.device('/cpu:0'):
 	encoded_imgs = encoder.predict(target)
 	print(encoded_imgs.shape)
 
-	np.savetxt('allen_data/dev_mouse/encode.txt', encoded_imgs)
+	np.savetxt('allen_data/dev_mouse/encode_final.txt', encoded_imgs)
 
 	plt.figure(figsize=(20, 4))
 	n = 16

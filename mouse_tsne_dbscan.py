@@ -14,7 +14,7 @@ print(X.shape)
 
 X = StandardScaler().fit_transform(X)
 
-db = DBSCAN(eps=0.125, min_samples=10).fit(X)
+db = DBSCAN(eps=0.13, min_samples=10).fit(X)
 core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 core_samples_mask[db.core_sample_indices_] = True
 labels = db.labels_

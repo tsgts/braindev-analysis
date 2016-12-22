@@ -24,9 +24,9 @@ from matplotlib import pyplot as plt
 
 #AUTOENCODER
 
-data = np.loadtxt('allen_data/dev_mouse/encode.txt')
+data = np.loadtxt('allen_data/dev_mouse/autoencoder/encode_50.txt')
 
-model = TSNE(n_components=2)
+model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
 transformed = model.fit_transform(data) 
 print(transformed.shape)
 transformed = np.transpose(transformed)
