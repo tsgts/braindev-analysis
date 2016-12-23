@@ -27,7 +27,7 @@ with tf.device('/cpu:0'):
 	print(np.amin(target))
 
 	input_img = Input(shape=(77,))
-	encoded = Dense(3, activation='sigmoid')(input_img)
+	encoded = Dense(4, activation='tanh')(input_img)
 	# encoded = Dense(32, activation='sigmoid')(encoded)
 	# encoded = Dense(16, activation='sigmoid')(encoded)
 	# encoded = Dense(8, activation='sigmoid')(encoded)
@@ -43,7 +43,7 @@ with tf.device('/cpu:0'):
 	model = Model(input_img, decoded)
 	model.summary()
 
-	model.compile(loss='poisson',
+	model.compile(loss='mean_squared_error',
 	              optimizer="adam",
 	              metrics=['accuracy'])
 

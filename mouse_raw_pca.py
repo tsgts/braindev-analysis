@@ -10,12 +10,28 @@ from mpl_toolkits.mplot3d import Axes3D
 # with open('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt') as data_file:    
 #     data = json.load(data_file)
 
-data = np.loadtxt('allen_data/dev_mouse/encode.txt')
+#===========RAW DATA=================
 
-pca = PCA(n_components=2)
+with open('allen_data/dev_mouse/raw_dictionary_no_days.txt') as data_file:    
+    data = json.load(data_file)
+
+for key, value in data.items():
+	data[key] = [item for sublist in value for item in sublist]
+
+data = list(data.values())
+data = np.array(data)
+
+#==============AUTOENCODER============
+
+#data = np.loadtxt('allen_data/dev_mouse/encode.txt')
+
+pca = PCA(n_components=4)
 transformed = pca.fit_transform(data) 
 print(transformed.shape)
 print(pca.explained_variance_ratio_) 
+
+np.savetxt('allen_data/dev_mouse/pca.txt', transformed)
+
 transformed = np.transpose(transformed)
 
 fig = plt.figure()

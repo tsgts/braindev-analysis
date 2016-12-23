@@ -5,6 +5,7 @@ from keras.models import Model
 from keras.callbacks import TensorBoard
 import tensorflow as tf
 import matplotlib.pyplot as plt
+from keras.optimizers import RMSprop
 
 config = tf.ConfigProto()
 config.gpu_options.allow_growth=True
@@ -18,37 +19,39 @@ with tf.device('/cpu:0'):
     print(np.amin(target))
     target_range = target_max - target_min
     target = np.add(target,-1*target_min)
-    target = np.multiply(target,1/target_range)
+    target = np.add(np.multiply(target,1/target_range)*2,-1)
     print(np.amax(target))
     print(np.amin(target))
 
     input_img = Input(shape=(77,))
-    encoded = Dense(64, activation='tanh')(input_img)
+    encoded = Dense(64, activation='linear',init='glorot_normal')(input_img)
     encoded = Reshape((1, 8, 8))(encoded)
-    encoded = Convolution2D(16, 3, 3, activation='tanh', border_mode='same')(encoded)
+    encoded = Convolution2D(16, 3, 3, activation='linear', border_mode='same',init='glorot_normal')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
-    encoded = Convolution2D(8, 3, 3, activation='tanh', border_mode='same')(encoded)
+    encoded = Convolution2D(8, 3, 3, activation='linear', border_mode='same',init='glorot_normal')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
-    encoded = Convolution2D(4, 3, 3, activation='tanh', border_mode='same')(encoded)
+    encoded = Convolution2D(4, 3, 3, activation='linear', border_mode='same',init='glorot_normal')(encoded)
 
     encoded = Flatten()(encoded)
-    encoded = Dense(4, activation='tanh')(encoded)
+    encoded = Dense(4, activation='linear',init='glorot_normal')(encoded)
 
-    decoded = Dense(16, activation='tanh')(encoded)
+    decoded = Dense(16, activation='linear',init='glorot_normal')(encoded)
     decoded = Reshape((4, 2, 2))(decoded)
 
-    decoded = Convolution2D(4, 3, 3, activation='tanh', border_mode='same')(decoded)
+    decoded = Convolution2D(4, 3, 3, activation='linear', border_mode='same',init='glorot_normal')(decoded)
     decoded = UpSampling2D((2, 2))(decoded)
-    decoded = Convolution2D(8, 3, 3, activation='tanh', border_mode='same')(decoded)
+    decoded = Convolution2D(8, 3, 3, activation='linear', border_mode='same',init='glorot_normal')(decoded)
     decoded = UpSampling2D((2, 2))(decoded)
-    decoded = Convolution2D(16, 3, 3, activation='tanh', border_mode='same')(decoded)
+    decoded = Convolution2D(16, 3, 3, activation='linear', border_mode='same',init='glorot_normal')(decoded)
     decoded = Flatten()(decoded)
-    decoded = Dense(77, activation='sigmoid')(decoded)
+    decoded = Dense(77, activation='tanh',init='glorot_normal')(decoded)
 
     model = Model(input_img, decoded)
     model.summary()
 
-    model.compile(optimizer='RMSprop', loss='mean_squared_error',metrics=['accuracy'])
+    RMSprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.0)
+
+    model.compile(optimizer=RMSprop, loss='mean_squared_error',metrics=['accuracy'])
 
     class current_prediction(keras.callbacks.Callback):
         def on_epoch_end(self, epoch, logs={}):
@@ -63,9 +66,9 @@ with tf.device('/cpu:0'):
 
     model.fit(target, target, 
     				shuffle=True, 
-    				nb_epoch=1000, 
+    				nb_epoch=25000, 
     				verbose=2,
-                	callbacks=[TensorBoard(log_dir='tensorboard/mouse/autoencoder'),prediction])
+                	callbacks=[prediction])
 
     prediction = model.predict(target)
 

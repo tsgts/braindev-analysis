@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 DEC 2016 14:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 DEC 2016 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,7 +925,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout5 = `full_article.toc'.
 
  [2] [3]
-<figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png, id=154,
+<figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png, id=155,
  301.125pt x 218.8175pt>
 File: figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png Gra
 phic file (type png)
@@ -938,7 +938,7 @@ web-300x218.png used on input line 66.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4] <figures/brain_development.jpg, id=167, 308.352pt x 277.2759pt>
+[4] <figures/brain_development.jpg, id=168, 308.352pt x 277.2759pt>
 File: figures/brain_development.jpg Graphic file (type jpg)
 
 <use figures/brain_development.jpg>
@@ -950,7 +950,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5 <./figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png>]
 [6 <./figures/brain_development.jpg>]
-<figures/Untitled/Untitled.png, id=191, 158.48186pt x 70.46799pt>
+<figures/Untitled/Untitled.png, id=192, 158.48186pt x 70.46799pt>
 File: figures/Untitled/Untitled.png Graphic file (type png)
 
 <use figures/Untitled/Untitled.png>
@@ -961,14 +961,14 @@ Package pdftex.def Info: figures/Untitled/Untitled.png used on input line 96.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7] [8 <./figures/Untitled/Untitled.png>]
-<figures/ISH/ISH.png, id=216, 1433.355pt x 473.77pt>
+<figures/ISH/ISH.png, id=217, 1433.355pt x 473.77pt>
 File: figures/ISH/ISH.png Graphic file (type png)
  <use figures/ISH/ISH.png>
 Package pdftex.def Info: figures/ISH/ISH.png used on input line 111.
 (pdftex.def)             Requested size: 362.37569pt x 119.77237pt.
 
 [9 <./figures/ISH/ISH.png>]
-<figures/leukemia_clustering.jpg, id=229, 702.625pt x 1041.8925pt>
+<figures/leukemia_clustering.jpg, id=230, 702.625pt x 1041.8925pt>
 File: figures/leukemia_clustering.jpg Graphic file (type jpg)
 
 <use figures/leukemia_clustering.jpg>
@@ -976,7 +976,7 @@ Package pdftex.def Info: figures/leukemia_clustering.jpg used on input line 125
 .
 (pdftex.def)             Requested size: 175.6558pt x 260.47249pt.
  [10 <./figures/leukemia_clustering.jpg>]
-<figures/Abl1/Abl1.png, id=247, 75.87401pt x 52.16339pt>
+<figures/Abl1/Abl1.png, id=248, 75.87401pt x 52.16339pt>
 File: figures/Abl1/Abl1.png Graphic file (type png)
 
 <use figures/Abl1/Abl1.png>
@@ -986,7 +986,7 @@ Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 140.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11] <figures/neuron.png, id=260, 700.6175pt x 357.335pt>
+[11] <figures/neuron.png, id=261, 700.6175pt x 357.335pt>
 File: figures/neuron.png Graphic file (type png)
 
 <use figures/neuron.png>
@@ -994,43 +994,43 @@ Package pdftex.def Info: figures/neuron.png used on input line 152.
 (pdftex.def)             Requested size: 362.37569pt x 184.8229pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 153.
- [12 <./figures/Abl1/Abl1.png>]
-<figures/activations.png, id=269, 1013.7875pt x 496.85625pt>
+ [12 <./figures/Abl1/Abl1.png>] [13 <./figures/neuron.png>] <figures/activation
+s.png, id=279, 1013.7875pt x 496.85625pt>
 File: figures/activations.png Graphic file (type png)
 
 <use figures/activations.png>
 Package pdftex.def Info: figures/activations.png used on input line 163.
 (pdftex.def)             Requested size: 362.37569pt x 177.59442pt.
- [13 <./figures/neuron.png>]
-<figures/doodle.png, id=283, 1142.2675pt x 878.28125pt>
+
+<figures/doodle.png, id=284, 1142.2675pt x 878.28125pt>
 File: figures/doodle.png Graphic file (type png)
 
 <use figures/doodle.png>
 Package pdftex.def Info: figures/doodle.png used on input line 183.
 (pdftex.def)             Requested size: 362.37569pt x 278.63008pt.
  [14 <./figures/activations.png>] [15 <./figures/doodle.png>] <figures/convnet.
-png, id=305, 1730.8665pt x 1005.2757pt>
+png, id=306, 1730.8665pt x 1005.2757pt>
 File: figures/convnet.png Graphic file (type png)
 
 <use figures/convnet.png>
 Package pdftex.def Info: figures/convnet.png used on input line 194.
 (pdftex.def)             Requested size: 362.37569pt x 210.45453pt.
 
-<figures/CNN/CNN.png, id=309, 767.86874pt x 343.2825pt>
+<figures/CNN/CNN.png, id=310, 767.86874pt x 343.2825pt>
 File: figures/CNN/CNN.png Graphic file (type png)
 
 <use figures/CNN/CNN.png>
 Package pdftex.def Info: figures/CNN/CNN.png used on input line 203.
 (pdftex.def)             Requested size: 362.37569pt x 162.00803pt.
  [16 <./figures/convnet.png>]
-<figures/learningtypes.png, id=322, 986.4855pt x 458.9145pt>
+<figures/learningtypes.png, id=323, 986.4855pt x 458.9145pt>
 File: figures/learningtypes.png Graphic file (type png)
 
 <use figures/learningtypes.png>
 Package pdftex.def Info: figures/learningtypes.png used on input line 216.
 (pdftex.def)             Requested size: 362.37569pt x 168.57727pt.
  [17 <./figures/CNN/CNN.png>]
-<figures/tsne.png, id=334, 1038.5199pt x 438.6789pt>
+<figures/tsne.png, id=335, 1038.5199pt x 438.6789pt>
 File: figures/tsne.png Graphic file (type png)
  <use figures/tsne.png>
 Package pdftex.def Info: figures/tsne.png used on input line 226.
@@ -1078,10 +1078,10 @@ exlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2016
 l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2016/texmf-
 dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on full_article.pdf (24 pages, 5855445 bytes).
+Output written on full_article.pdf (24 pages, 5855606 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
- 367 compressed objects within 4 object streams
+ 450 PDF objects out of 1000 (max. 8388607)
+ 368 compressed objects within 4 object streams
  82 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

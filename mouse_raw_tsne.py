@@ -22,9 +22,13 @@ from matplotlib import pyplot as plt
 # data = list(data.values())
 # data = np.array(data)
 
-#AUTOENCODER
+#===========AUTOENCODER============
 
-data = np.loadtxt('allen_data/dev_mouse/autoencoder/encode_50.txt')
+data = np.loadtxt('allen_data/dev_mouse/autoencoder/encode_24950.txt')
+
+#===========PCA===================
+
+# data = np.loadtxt('allen_data/dev_mouse/pca.txt')
 
 model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
 transformed = model.fit_transform(data) 
@@ -35,7 +39,7 @@ np.savetxt('allen_data/dev_mouse/tsne.txt', transformed)
 
 fig = plt.figure()
 plt.scatter(transformed[0], transformed[1], c='r', marker='o')
-plt.show()
+fig.savefig('figures/dev_mouse/tsne.png')
 
 # app = QtGui.QApplication([])
 # pg.setConfigOption('background', 'w')
