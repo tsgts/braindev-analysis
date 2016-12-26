@@ -14,7 +14,7 @@ print(X.shape)
 
 X = StandardScaler().fit_transform(X)
 
-db = DBSCAN(eps=0.12, min_samples=10).fit(X)
+db = DBSCAN(eps=0.125, min_samples=10).fit(X)
 core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 core_samples_mask[db.core_sample_indices_] = True
 labels = db.labels_
@@ -55,4 +55,4 @@ for k, col in zip(unique_labels, colors):
              markeredgecolor='k', markersize=4)
 
 plt.title('Estimated number of clusters: %d' % n_clusters_)
-plt.savefig('figures/dev_mouse/tsne_cluster.png')
+plt.savefig('figures/dev_mouse/tsne/tsne_cluster.png',dpi=256)
