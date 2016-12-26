@@ -9,7 +9,7 @@ from keras.optimizers import RMSprop, Adam, Adamax
 
 config = tf.ConfigProto()
 config.gpu_options.allow_growth=True
-with tf.device('/cpu:0'):
+with tf.device('/gpu:0'):
     target = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
 
     #fit target expression values to range (0,1)
@@ -49,7 +49,9 @@ with tf.device('/cpu:0'):
     model = Model(input_img, decoded)
     model.summary()
 
-    model.compile(optimizer="RMSprop", loss='mean_squared_error',metrics=['accuracy'])
+    RMSprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.0)
+
+    model.compile(optimizer=RMSprop, loss='mean_squared_error',metrics=['accuracy'])
 
     class current_prediction(keras.callbacks.Callback):
         def on_epoch_end(self, epoch, logs={}):
@@ -81,7 +83,7 @@ with tf.device('/cpu:0'):
 
     model.fit(target, target, 
     				shuffle=True, 
-    				nb_epoch=1000, 
+    				nb_epoch=25000, 
     				verbose=2,
                 	callbacks=[prediction])
 
