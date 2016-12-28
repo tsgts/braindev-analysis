@@ -9,7 +9,7 @@ from keras.optimizers import RMSprop, Adam, Adamax
 
 config = tf.ConfigProto()
 config.gpu_options.allow_growth=True
-with tf.device('/gpu:0'):
+with tf.device('/cpu:0'):
     target = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
 
     #fit target expression values to range (0,1)
@@ -85,7 +85,7 @@ with tf.device('/gpu:0'):
     				shuffle=True, 
     				nb_epoch=25000, 
     				verbose=2,
-                	callbacks=[prediction])
+                	callbacks=[prediction,TensorBoard(log_dir='tensorboard/mouse/autoencoder')])
 
     prediction = model.predict(target)
 

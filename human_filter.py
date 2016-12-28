@@ -9,6 +9,8 @@ columns = [str(i) for i in range(0,525)]
 
 expression_matrix = pd.read_csv("allen_data/dev_human/normalized_genes/expression_matrix.csv",names=columns)
 
+print(expression_matrix)
+
 rows_metadata = pd.read_csv("allen_data/dev_human/normalized_genes/rows_metadata.csv")
 filtered_genes = rows_metadata[rows_metadata["gene_symbol"].isin(good_genes)==True]
 

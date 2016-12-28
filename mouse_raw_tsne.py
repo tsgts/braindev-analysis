@@ -31,16 +31,16 @@ data = np.loadtxt('allen_data/dev_mouse/autoencoder/encode_24950.txt')
 
 # data = np.loadtxt('allen_data/dev_mouse/pca.txt')
 
-model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
+model = TSNE(n_components=3, random_state=0, n_iter=10000,metric='correlation',verbose=2)
 transformed = model.fit_transform(data) 
 print(transformed.shape)
 transformed = np.transpose(transformed)
 
 np.savetxt('allen_data/dev_mouse/tsne.txt', transformed)
 
-fig = plt.figure()
-plt.scatter(transformed[0], transformed[1], c='r', marker='o')
-fig.savefig('figures/dev_mouse/tsne/tsne.png')
+# fig = plt.figure()
+# plt.scatter(transformed[0], transformed[1], c='r', marker='o')
+# fig.savefig('figures/dev_mouse/tsne/tsne.png')
 
 # app = QtGui.QApplication([])
 # pg.setConfigOption('background', 'w')
@@ -48,7 +48,7 @@ fig.savefig('figures/dev_mouse/tsne/tsne.png')
 
 # app.exec_()
 
-# fig = plt.figure()
-# ax = fig.add_subplot(111, projection='3d')
-# ax.scatter(transformed[0], transformed[1], transformed[2], c='r', marker='o')
-# plt.show()
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(transformed[0], transformed[1], transformed[2], c='r', marker='o')
+plt.show()

@@ -62,7 +62,7 @@ with tf.device('/cpu:0'):
 			  shuffle=True, 
 			  nb_epoch=1000, 
 			  verbose=2,
-			  callbacks=[prediction]
+			  callbacks=[prediction,TensorBoard(log_dir='tensorboard/mouse/autoencoder')]
 			  )
 
 	prediction = model.predict(target)

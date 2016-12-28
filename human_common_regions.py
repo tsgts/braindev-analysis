@@ -26,6 +26,7 @@ for i in list(set(flat_matrix)):
 
 	print(len(set(filtered_matrix[0]).intersection(*filtered_matrix)))
 	print(len(filtered_matrix))
+	print(len(set(filtered_matrix[0]).intersection(*filtered_matrix))*len(filtered_matrix))
 
-matrix = [j for j in matrix if "cerebellum" in j]
+matrix = [j for j in matrix if "CBC" in j]
 print(set(matrix[0]).intersection(*matrix))

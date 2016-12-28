@@ -12,7 +12,7 @@ sns.jointplot(x=data[0],y=data[1],kind="hex", gridsize=30, color="#c0392b",stat_
 plt.savefig("figures/dev_mouse/tsne/hexplot.png", dpi = 256)
 plt.close()
 
-sns.jointplot(x=data[0],y=data[1],kind="kde", color="g", n_levels=25,stat_func=None)
+sns.jointplot(x=data[0],y=data[1],kind="kde", color="g", n_levels=10,stat_func=None)
 plt.savefig("figures/dev_mouse/tsne/contour.png", dpi = 256)
 plt.close()
 
