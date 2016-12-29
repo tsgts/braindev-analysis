@@ -26,4 +26,4 @@ print(expression_matrix)
 
 expression_matrix.reset_index(inplace=True,drop=True)
 
-expression_matrix.to_csv("allen_data/dev_human/filtered_expression_values.csv",sep=',', encoding='utf-8')
+expression_matrix.to_csv("allen_data/dev_human/gene_filtered_expression_values.csv",sep=',', encoding='utf-8')
