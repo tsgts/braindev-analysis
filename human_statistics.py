@@ -140,4 +140,4 @@ def time_swarm():
 		plt.savefig("figures/dev_human/time_swarm/"+region+".png",dpi=256)
 		fig.clear()
 
-ages_contours()
+all_histograms()
