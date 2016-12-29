@@ -4,6 +4,8 @@ import pandas as pd
 
 expression_data = pd.read_csv("allen_data/dev_mouse/devmouse_histogram_values.csv")
 
+regions = ["RSP","Tel","PHy","p3","p2","p1","M","PPH","PH","PMH","MH"]
+
 def safe_log(x):
 	if math.isnan(x):
 		return -8
@@ -11,7 +13,7 @@ def safe_log(x):
 	if x<=0:
 		return -8
 	else:
-   		return math.log10(x)
+   		return math.log2(x)
 
 #single log
 for region in regions:
