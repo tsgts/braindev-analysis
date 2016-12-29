@@ -13,4 +13,4 @@ columns_metadata = columns_metadata[columns_metadata["structure_acronym"].isin(g
 
 print(columns_metadata)
 
-columns_metadata.to_csv("allen_data/dev_human/filtered_rows.csv",sep=',', encoding='utf-8')
+columns_metadata.to_csv("allen_data/dev_human/filtered_columns.csv",sep=',', encoding='utf-8')
