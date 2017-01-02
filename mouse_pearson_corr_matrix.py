@@ -6,7 +6,7 @@ from scipy.stats.stats import pearsonr
 with open('allen_data/dev_mouse/raw_dictionary_no_days.txt') as data_file:    
     data = json.load(data_file)
 
-with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:    
+with open('allen_data/dev_human/list_of_genes.txt') as data_file:    
     genes = json.load(data_file)
 
 for key, value in data.items():
@@ -15,10 +15,12 @@ for key, value in data.items():
 matrix = []
 
 for i in genes:
+	i = i.capitalize()
 	print(i)
 	correlations = []
 	for j in genes:
-		correlations.append(pearsonr(data[i], data[j])[0]) 
+		j = j.capitalize()
+		correlations.append(pearsonr(data[i], data[j])[0]**2) 
 	matrix.append(correlations)
 
 print(len(matrix))
