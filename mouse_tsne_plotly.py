@@ -4,7 +4,7 @@ import json
 import numpy as np
 import random
 
-data = np.loadtxt('allen_data/dev_human/tsne.txt')
+data = np.loadtxt('allen_data/dev_mouse/tsne/tsne_15000.txt')
 with open('allen_data/dev_human/list_of_genes.txt') as data_file:    
     genes = json.load(data_file)
 
@@ -16,11 +16,11 @@ with open('allen_data/dev_mouse/tsne_colors.txt') as data_file:
 
 # Create a trace
 
-for index, val in enumerate(labels):
-    if val != 1:
-        labels[index] = 0
-    else:
-        labels[index] = 1
+# for index, val in enumerate(labels):
+#     if val != 1:
+#         labels[index] = 0
+#     else:
+#         labels[index] = 1
 
 trace = go.Scattergl(
     x = data[0],
@@ -30,7 +30,7 @@ trace = go.Scattergl(
     marker=dict(
         size=16,
         color=labels,                # set color to an array/list of desired values
-        colorscale='Spectral',   # choose a colorscale
+        colorscale='Jet',   # choose a colorscale
         line = dict(
             width = 2,
             color = 'rgb(0, 0, 0)'

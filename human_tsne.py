@@ -20,6 +20,8 @@ from matplotlib import pyplot as plt
 
 #===========AUTOENCODER============
 
+#9000
+#9900
 data = np.loadtxt('allen_data/dev_human/autoencoder/encode.txt')
 
 #===========PCA===================
@@ -50,22 +52,22 @@ fig.savefig('figures/dev_human/tsne/tsne.png')
 
 #===============loop===================
 
-for i in range(0,200):
+for i in range(182,200):
 	i *= 50
 	data = np.loadtxt('allen_data/dev_human/autoencoder/encode_' + str(i) + '.txt')
-
-	#===========PCA===================
-
-	# data = np.loadtxt('allen_data/dev_mouse/pca.txt')
 
 	model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
 	transformed = model.fit_transform(data) 
 	print(transformed.shape)
 	transformed = np.transpose(transformed)
 
-	#np.savetxt('allen_data/dev_mouse/tsne' + str(i) + '.txt', transformed)
+	np.savetxt('allen_data/dev_human/tsne/tsne_' + str(i) + '.txt', transformed)
 
 	fig = plt.figure()
 	plt.scatter(transformed[0], transformed[1], c='r', marker='o')
-	fig.savefig('figures/dev_human/tsne/tsne_' + str(i) + '.png')
-	plt.close()
+	fig.savefig('figures/dev_human/tsne/tsne''.png')
+
+	# 	fig = plt.figure()
+	# 	plt.scatter(transformed[0], transformed[1], c='r', marker='o')
+	# 	fig.savefig('figures/dev_human/tsne/tsne_' + str(i) + '.png')
+	# 	plt.close()

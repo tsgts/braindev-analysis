@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 with open('allen_data/dev_mouse/mouse_raw_corr_pearson_matrix.txt') as data_file:    
     data = json.load(data_file)
 
-with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:    
+with open('allen_data/dev_human/list_of_genes.txt') as data_file:    
     genes = json.load(data_file)
 
 D = data
