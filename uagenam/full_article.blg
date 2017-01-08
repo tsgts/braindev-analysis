@@ -3,47 +3,56 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: full_article.aux
 The style file: apa.bst
 Database file #1: bibliography/biblio.bib.bib
+I was expecting a `,' or a `}'---line 21 of file bibliography/biblio.bib.bib
+ : 
+ : @article{Koushik2016UnderstandingCN,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty year in Ester1996ADA
+Warning--empty booktitle in Ester1996ADA
+Warning--empty booktitle in Maaten2008VisualizingDU
 Warning--there's a number but no volume in laurensvandermaaten2014
+Warning--empty booktitle in Yeung2001DetailsOT
 Warning--empty booktitle in Zilouchian2001FundamentalsON
-You've used 20 entries,
+You've used 26 entries,
             1940 wiz_defined-function locations,
-            611 strings with 9538 characters,
-and the built_in function-call counts, 12070 in all, are:
-= -- 1027
-> -- 1000
-< -- 9
-+ -- 378
-- -- 378
-* -- 1262
-:= -- 2188
-add.period$ -- 59
-call.type$ -- 20
-change.case$ -- 287
-chr.to.int$ -- 20
-cite$ -- 22
-duplicate$ -- 289
-empty$ -- 560
-format.name$ -- 406
-if$ -- 2183
+            640 strings with 11309 characters,
+and the built_in function-call counts, 15179 in all, are:
+= -- 1278
+> -- 1267
+< -- 13
++ -- 480
+- -- 478
+* -- 1563
+:= -- 2755
+add.period$ -- 74
+call.type$ -- 26
+change.case$ -- 366
+chr.to.int$ -- 26
+cite$ -- 32
+duplicate$ -- 382
+empty$ -- 708
+format.name$ -- 518
+if$ -- 2747
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 22
-newline$ -- 102
-num.names$ -- 60
-pop$ -- 275
+missing$ -- 28
+newline$ -- 129
+num.names$ -- 78
+pop$ -- 376
 preamble$ -- 1
-purify$ -- 289
+purify$ -- 369
 quote$ -- 0
-skip$ -- 202
+skip$ -- 256
 stack$ -- 0
-substring$ -- 556
-swap$ -- 39
+substring$ -- 630
+swap$ -- 47
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
-warning$ -- 2
-while$ -- 63
+type$ -- 150
+warning$ -- 6
+while$ -- 75
 width$ -- 0
-write$ -- 254
-(There were 2 warnings)
+write$ -- 320
+(There was 1 error message)

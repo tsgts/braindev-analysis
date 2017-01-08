@@ -4,7 +4,11 @@ import matplotlib.pyplot as plt
 import math
 import pandas as pd
 
+#log2
 expression_data = pd.read_csv("allen_data/dev_human/log_expression_values.csv")
+
+#raw
+#expression_data = pd.read_csv("allen_data/dev_human/pivot_matrix.csv")
 
 regions = ["A1C","AMY","CBC","HIP","IPC","MD","OFC","STC","STR","VFC"]
 
@@ -20,9 +24,10 @@ def histograms():
 #all on one figure		
 def all_histograms():
 	sns.set(color_codes=True)
+	sns.set_style("white")
 	for region in regions:
 		print(region)
-		sns.distplot(expression_data[region], rug=False)
+		sns.distplot(expression_data[region], kde=False, bins= np.linspace(-15,10,40), rug=False)
 	plt.savefig("figures/dev_human/histograms/all.png",dpi=256)
 
 #correlations between the regions

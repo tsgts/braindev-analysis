@@ -8,7 +8,7 @@ import json
 
 centers = [[1, 1], [-1, -1], [1, -1]]
 
-X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
+X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_24950.txt'))
 print(X.shape)
 # X, labels_true = make_blobs(n_samples=750, centers=centers, cluster_std=0.4,
 #                             random_state=0)
@@ -59,4 +59,4 @@ plt.ylim([-2.5,2.5])
 plt.xlim([-2.5,2.5])
 plt.title('Estimated number of clusters: %d' % n_clusters_)
 plt.savefig('figures/dev_mouse/tsne/tsne_cluster.png',dpi=256)
-json.dump(labels.tolist(), open("allen_data/dev_mouse/tsne_colors.txt",'w'), indent=4)
+json.dump(labels.tolist(), open("allen_data/dev_mouse/tsne_colors1.txt",'w'), indent=4)

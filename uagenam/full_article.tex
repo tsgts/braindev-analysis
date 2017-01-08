@@ -7,6 +7,7 @@
 \usepackage[english]{babel}
 \usepackage{natbib}
 \setlength{\bibhang}{2em}
+
 \usepackage[affil-it]{authblk} 
 \usepackage{etoolbox}
 \usepackage{lmodern}
@@ -14,6 +15,12 @@
 \usepackage{svg}
 \usepackage{float}
 \captionsetup{font={small,it,stretch=1.25},labelfont=bf}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
 
 \renewcommand\Authfont{\fontsize{14}{14}\selectfont}
 \renewcommand\Affilfont{\fontsize{12}{12}\itshape}
@@ -24,23 +31,36 @@
 \DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG}
 \usepackage[a4paper,top=1in,bottom=1in,left=1in,right=1in,marginparwidth=0cm]{geometry}
 
-\title{Unsupervised Analysis of Gene Expression in Neurological Animal Models\vspace{-0.4cm}}
-\author{Kevin Hu\vspace{-0.4cm}}
-\affil{Massachusetts Academy of Math and Science\vspace{-0.4cm}}
-\date{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,RO]{Hu \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\title{\vspace{6cm}Unsupervised Analysis of Gene Expression in Neurological Animal Models}
+\author{Kevin Hu}
+\affil{Massachusetts Academy of Math and Science at WPI\vspace{-0.4cm}}
+\date{\today}
 
 \begin{document}
 
-
 \maketitle
+\thispagestyle{empty}
 
-\begin{abstract}
-   Coming soon to a STEM fair near you.
-\end{abstract}
+\clearpage
+%\setcounter{page}{1}
 
 \break
 \tableofcontents
 \break
+
+\section*{Acknowledgments}
+
+The author would like to thank several individuals for their guidance and support during the process of this study. These include his advisor and STEM teacher, Ms. Siobhan Curran, who provided valuable guidance in the research process, and Mr. Jianwei Yang of Virginia Tech for his advice in the construction of the neural network. The author would also like to acknowledge the encouragement and care provided by his parents, who provided the food, shelter, and electricity that made this research possible.
+
+\break
+
+\section{Abstract}
 
 \section{Introduction}
 
@@ -196,7 +216,7 @@ In image analysis, a specific type of neural network termed the convolutional ne
 \end{center}
 \end{figure}
 
-Following convolution and pooling layers, a traditional dense layer of neurons is implemented to classify the features obtained (Figure~\ref{fig:mnist_full}). Variations of these networks are currently considered state-of-the-art in nearly all image classification tasks \citep{Koushik2016UnderstandingCN}.
+Following convolution and pooling layers, a dense layer of neurons is implemented to classify the features obtained (Figure~\ref{fig:mnist_full}). Variations of these networks are currently considered state-of-the-art in nearly all image classification tasks \citep{Koushik2016UnderstandingCN}.
 
 \begin{figure}[H]
 \begin{center}
@@ -237,14 +257,135 @@ Are there significant differences between patterns of gene expression in develop
 
 \subsection{Hypothesis}
 
-It is hypothesized that there exist significant differences between the gene expression profiles of developing mouse and human central nervous systems.
+It was hypothesized that significant differences exist between the gene expression profiles of developing mouse and human central nervous systems.
 
 \subsection{Procedure}
-This project will be entirely performed on a computer. Gene expression profiles for developing mouse and human brains will be first downloaded from the Allen Brain Atlas. Next, the data will be formatted and transformed into matrices of region versus time expression matrices. At this point, there will be two datasets, a developing human dataset and a developing mouse dataset. 
+This project was entirely performed on a computer. Gene expression profiles for developing mouse and human brains were first downloaded from the Allen Brain Atlas. Next, the data were formatted and transformed into sets of region versus time expression matrices into two datasets, a developing human dataset and a developing mouse dataset. 
 
-For each dataset, a convolutional neural network algorithm will be applied in order to automatically classify genes into discrete clusters based on patterns of expression. The relative positions of genes in the human and mouse clusterings will then be examined. Different clusterings would suggest that the transcriptomic landscapes is different. The gene expression clusterings may be applied to highlight discrete drug-gene interactions in human versus mouse brains. Potential differing expressions may account for anatomical differences in mouse and human brains. As a possible extension, the similarity of expression patterns in cerebral organoids will also be considered. The insights from this project may also be applied to single-cell cancer sequencing, where clustering analysis may be used to for the characterization and identification stages of cancer cell development.
+For each dataset, a convolutional neural network algorithm was applied in order to automatically classify genes into discrete clusters based on patterns of expression. The relative positions of genes in the human and mouse clusterings were examined. Different clusterings would suggest that the transcriptomic landscapes are different. The gene expression clusterings may be applied to highlight discrete drug-gene interactions in human versus mouse brains. Potential differing expressions may account for anatomical differences in mouse and human brains. As an extension, the similarity of expression patterns in cerebral organoids will also be considered. The insights from this project may also be applied to single-cell cancer sequencing, where clustering analysis may be used for the characterization and identification of stages of cancer cell development.
 
 \section{Methodology}
+
+\subsection{Overall workflow}
+
+The overall process consisted of the retrieval, formatting, dimensionality reduction, and comparison of neural gene expression data. Gene expression profiles for both mouse and human donor brains were obtained from the Allen Brain Atlas website through either direct download (human) or a script (mouse). Expression values were log2-transformed and normalized to a (-1,1) range. A convolutional autoencoder (CAE) was constructed and embedded each 77 (mouse) or 150 (human) -dimensional expression matrix onto a four-dimensional manifold. t-distributed stochastic neighbor embedding (t-SNE) was then applied to further reduce the dimension count to two. This dimensionality reduction method was compared to traditional methods using only principal component analysis (PCA) and t-SNE in published literature. Density-based spatial clustering of applications with noise (DBSCAN) was then used to identify clusters in the two-dimensional space in each mouse and human dataset. These clusterings were compared using the adjusted rand index (ARI) and mutual information score. In addition, this study also compared the CAE-based method with the results obtained by existing correlation-based hierarchical clustering of the raw expression values.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/workflow}
+\caption{The overall process involved in this project. \label{fig:workflow}%
+}
+\end{center}
+\end{figure}
+
+\subsection{Software}
+
+A number of open-source software packages and modules were used in this project. A script written in Ruby 2.0.0 was used to extract the mouse expression matrices from the Allen Brain Atlas API. Python 3.5.1 was used to perform all further analysis. Raw expression values for both the mouse and human datasets were manipulated using the Pandas package. Numpy was used for manipulation of the unlabeled expression matrices. The convolutional autoencoder was constructed with the aid of the Keras and Tensorflow \citep{tensorflow2015-whitepaper} frameworks. The SciPy package was used for hierarchical clustering analysis, dendrogram construction, Pearson and Spearman correlation analyses, and distance matrix construction. The scikit-learn package was used for t-SNE, DBSCAN, PCA, and computation of the adjusted rand indices and mutual information scores. Graphs and other visualizations were constructed using the Matplotlib, Seaborn, and Plotly libraries. Gephi and D3.js were used for visualization of the correlation graphs.
+
+\subsection{Data retrieval}
+
+Mouse raw expression values were obtained using a Ruby script provided by the Allen Brain Institute under the Apache 2.0 License. This script utilized the RESTful Model Access (RMA) service to download approximately 2,100 expression profiles. Each expression profile was produced using image analysis algorithms to summarize ISH stains of tissue sections. A full expression profile of a gene in the mouse dataset contained 77 values describing expression over 11 regions and 7 timepoints. 
+
+Human expression values for approximately 52,000 genes were obtained from downloading the Developmental Transcriptome Dataset located on \url{http://www.brainspan.org/static/download.html}. These expression values were compiled using quantization of RNA-seq results. The raw human data contained over 500 region-timepoint combinations. Of these, 10 common regions and 15 common timepoints were identified using a search algorithm to maximize the number of shared regions and timepoints.
+
+\subsection{Data pre-processing}
+
+Mouse and human datasets were first compared and filtered to 1,912 orthologs (shared genes). Raw expression values were further transformed by taking the base 2 logarithm, resulting in a more symmetrical distribution. This transformation was performed because the raw distribution was found to have high right skew (Figure~\ref{fig:log2}). The data were also normalized to the interval [-1,1] using a proportional transformation. This was done due to the nature of the neural network architecture, which uses a hyperbolic tangent function on the output layer, resulting in a possible output interval of (-1,1).
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/log2}
+\caption{Comparison between (\textbf{A}) raw expression values and (\textbf{B}) log2-transformed expression values for each region between the human (top) and mouse (bottom) datasets. \label{fig:log2}%
+}
+\end{center}
+\end{figure}
+
+\subsection{Machine learning model}
+
+
+A machine learning model was then constructed to reduce the dimensionality of each dataset to two dimensions. This program consisted of two main methods, a convolutional autoencoder (CAE) and a t-distributed stochastic neighbor embedding (t-SNE) that functioned sequentially. 
+
+The CAE was composed mainly of convolutional encoding, dense hidden, and convolutional decoding layers (Figure~\ref{fig:CAE}). Because 2 by 2 max pooling layers require even dimensions to function correctly, the mouse expression profiles were first mapped using a dense network to a single 8 by 8 representation from the original 7 by 11 layer. Similarly, human expression profiles were mapped to a 16 by 8 representation from the original 15 by 10. The convolutional encoding layers then reduced each expression profile to four 2 by 2 (mouse) or 4 by 2 (human) filtered representations, which were transformed into a 16- or 32-dimensional representation as the input to the dense hidden network. This representation was then mapped to a four-dimensional representation in the center of the neural network. The convolutional decoding layers functioned in the opposite manner of the convolutional encoding layers. For example, max pooling layers in the encoder were replaced with upsampling (interpolation) layers in the decoder. 
+
+The CAE was then trained on each dataset individually with the cost function being the root mean squared error (RMSE) between the two groups given by
+
+$$\sqrt{\frac{\sum_{i}^n (\hat{y}_i-y_i)^2}{n}}$$
+
+\noindent 
+where $n$ is the number of individuals, $y_{i}$ is the dependent variable in a regression, and $\hat{y}_{i}$ is the prediction output of the model.
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{CAE architectures used for dimensionality reduction of the mouse (\textbf{A}) and human (\textbf{B}) datasets. Green sections indicate convolutional layers involved in the encoding process, and purple sections indicate the encoded dense (fully connected) network. Blue sections indicate layers involved in the decoding process. The layer indicated in orange is the four-dimensional layer that is extracted upon training. The dimensions of each layer are shown below the respective layer. \label{fig:CAE}%
+}
+\end{center}
+\end{figure}
+
+The four-dimensional encodings obtained from the CAE were then reduced to two dimensions using t-SNE, which attempts to retain high-dimensional features in a lower dimensions using probabilistic methods. According to  \cite{Maaten2008VisualizingDU}, t-SNE first computes the distance between points in a high-dimensional space by computing a conditional probability $p_{j|i}$ such that close points have a high probability whereas highly separated points have a near-zero probability. This probability is given by
+
+$$p_{j|i}=\frac{exp(-||x_i-x_j||^2/2\sigma_i^2)}{\sum_{k\neq i}exp(-||x_i-x_k||^2/2\sigma_i^2)}.$$
+
+\noindent
+with $\sigma_{i}$ equal to the variance of an $x_{i}$-centered normal distribution. $||x||$ represents the second norm of vector $x$, or the Euclidean distance from the origin. The similarity $q_{j|i}$ between lower-dimensional points $y_i$ and $y_j$ obtained from applying a transformation to the original $x_i$ and $x_{j}$ is given instead by a Student's t distribution with a single degree of freedom such that
+
+$$q_{j|i} = \frac{exp(1+||y_i-y_j||^2)^{-1}}{\sum_{k\neq i}exp(1+||y_k-y_i||^2)^{-1}}.$$
+
+Similar to the objective function of a neural network, t-SNE seeks to iteratively minimize a cost function given by the difference between the original $p_{j|i}$ and the computed $q_{j|i}$. This is computed using the Kullback-Leibler divergence, which gives the difference between two probability distributions $P_{i}$ and $Q_{i}$ by computing the integral
+
+$$\int_{-\infty}^{\infty}p_i(x) \log \frac{p_i(x)}{q_i(x)} dx$$
+
+\noindent
+for continuous probability distributions \citep{Bishoplearning}. In t-SNE, the objective function is computed by taking the sum of all Kullback-Leibler divergences over all points $i$ given by 
+
+$$C=\sum_{i}\sum_{j}p_{i|j}\log \frac{p_{i|j}}{q_{i|j}}.$$
+
+\noindent
+Minimization of this cost function is also performed similar to the minimization of that of a neural network, using gradient descent. This gradient is given by
+
+$$\frac{\partial C}{\partial y_i}=4\sum_{j}(p_{i|j}-q_{i|j})(y_i-y_j)(1+||y_i-y_j||^2)^{-1}$$
+
+\noindent
+and is updated with
+
+$$\gamma^{(t)}=\gamma^{(t-1)}+\eta\frac{\partial C}{\partial \gamma}+\alpha(t)\left(\gamma^{(t-1)}-\gamma^{(t-2)}\right)$$
+
+\noindent
+where $\gamma^{(t)}$ is the solution at time $t$, $\eta$ is the learning rate, and $\alpha(t)$ is the momentum at $t$. 
+\subsection{Cluster identification}
+
+Once each dataset was reduced to two dimensions, the density-based spatial clustering of applications with noise (DBSCAN) algorithm was applied to label clusters of similar gene expression. Unlike partitioning-based clustering, which attempts to find a function that best separates classes of points, or hierarchical clustering, which iteratively builds larger and larger clusters, DBSCAN is instead based on detecting dense collections of points. DBSCAN has many benefits, the most notable of which are high outlier robustness and noise detection ability. In addition, unlike many other algorithms, there is no need to manually input $k$, the hyperparameter that denotes the number of desired clusters \citep{Ester1996ADA}.
+
+\subsection{Clustering comparison}
+
+Clusters were compared by computing the adjusted rand index (ARI) which provides an indication of the similarity between two clusterings while taking into account results explained by random variance. The ARI returns a value between 0 and 1, with 0 indicating a clustering that may be the result of pure chance and 1 indicating that the two clusterings are completely identical. The ARI is a symmetric measure, meaning that the order of the two clusters does not matter in calculation. The ARI is computed by constructing a contingency matrix between two clusterings $k$ and $h$ with $C$ and $R$ elements,respectively, such that each entry $n_{ij}$ denotes the intersection between cluster $i$ of $k$ and cluster $j$ of $h$ (Table~\ref{table:2}). 
+
+\begin{table}[H]
+\begin{center}
+\caption{The contingency matrix used in computing the ARI between two clusterings $k$ and $h$. \citep{Zhang2010ARImpAG}}
+\begin{tabular}{ l | l l l l l | l } 
+Cluster	& $k_1$ & $k_2$ & $k_3$ & $\cdots$ & $k_C$ & $\sum$ \\ 
+\hline
+$h_1$ & $n_{11}$ & $n_{12}$ & $n_{13}$ & $\cdots$ & $k_{1C}$ & $N_{1.}$\\ 
+$h_{2}$ & $n_{21}$ & $n_{22}$ & $n_{23}$ & $\cdots$ & $k_{2C}$ & $N_{2.}$\\ 
+$h_{3}$ & $n_{31}$ & $n_{32}$ & $n_{33}$ & $\cdots$ & $k_{3C}$ & $N_{3.}$\\ 
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\vdots$\\ 
+$h_{R}$ & $n_{R1}$ & $n_{R2}$ & $n_{R3}$ & $\cdots$ & $k_{RC}$ & $N_{R.}$\\ 
+\hline
+$\sum$ & $N_{.1}$ & $N_{.2}$ & $N_{.3}$ & $\cdots$ & $N_{.C}$ & $N$\\ 
+\end{tabular}
+\label{table:2}
+\end{center}
+\end{table}
+
+\noindent
+The ARI may be computed \citep{Yeung2001DetailsOT} through the sums
+
+$$\frac{\sum_{i,j}{{n_{ij}}\choose{2}}-\frac{\left[\sum_{i}{{n_{i.}}\choose{2}}\sum_{j}{{n_{.j}}\choose{2}}\right]}{{n\choose{2}}}}{\frac{1}{2}\left[\sum_{i}{{n_{i.}}\choose{2}}+\sum_{j}{{n_{.j}}\choose{2}}\right]-\frac{\left[\sum_{i}{{n_{i.}}\choose{2}}\sum_{j}{{n_{.j}}\choose{2}}\right]}{{n\choose{2}}}}$$
+
+\noindent
+which are derived using the general hypergeometric distribution for significance.
 
 \section{Results}
 
@@ -255,8 +396,6 @@ For each dataset, a convolutional neural network algorithm will be applied in or
 \section{Limitations}
 
 \section{Extensions}
-
-\section{Acknowledgments}
 
 \bibliographystyle{apa}
 \bibliography{bibliography/biblio.bib%

@@ -1,5 +1,16 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Abadi et~al.}{2015}]{tensorflow2015-whitepaper}
+Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado,
+  G.~S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow, I., Harp,
+  A., Irving, G., Isard, M., Jia, Y., Jozefowicz, R., Kaiser, L., Kudlur, M.,
+  Levenberg, J., Man\'{e}, D., Monga, R., Moore, S., Murray, D., Olah, C.,
+  Schuster, M., Shlens, J., Steiner, B., Sutskever, I., Talwar, K., Tucker, P.,
+  Vanhoucke, V., Vasudevan, V., Vi\'{e}gas, F., Vinyals, O., Warden, P.,
+  Wattenberg, M., Wicke, M., Yu, Y., and Zheng, X. (2015).
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems.
+\newblock Software available from tensorflow.org.
+
 \bibitem[\protect\astroncite{Angerer and Angerer}{1991}]{Angerer_1991}
 Angerer, L.~M. and Angerer, R.~C. (1991).
 \newblock {In Situ Hybridization{\textemdash}A Guided Tour}.
@@ -18,6 +29,12 @@ Bisceglia, N. (2010).
 \newblock {\em {Regulation of gene expression}}.
 \newblock Nature Education.
 
+\bibitem[\protect\astroncite{Bishop}{2006}]{Bishoplearning}
+Bishop, C.~M. (2006).
+\newblock {\em Pattern Recognition and Machine Learning (Information Science
+  and Statistics)}.
+\newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA.
+
 \bibitem[\protect\astroncite{Burns et~al.}{2015}]{Burns_2015}
 Burns, T.~C., Li, M.~D., Mehta, S., Awad, A.~J., and Morgan, A.~A. (2015).
 \newblock {Mouse models rarely mimic the transcriptome of human
@@ -29,6 +46,12 @@ Burns, T.~C., Li, M.~D., Mehta, S., Awad, A.~J., and Morgan, A.~A. (2015).
 D'haeseleer, P. (2005).
 \newblock How does gene expression clustering work?
 \newblock {\em Nat Biotech}, 23(12):1499--1501.
+
+\bibitem[\protect\astroncite{Ester et~al.}{}]{Ester1996ADA}
+Ester, M., Kriegel, H.-P., and J{\"{o}rg Sander and Xiaowei Xu},
+  booktitle={KDD}, y.
+\newblock A density-based algorithm for discovering clusters in large spatial
+  databases with noise.
 
 \bibitem[\protect\astroncite{Imaizumi and Okano}{2014}]{Imaizumi2014ModelingHN}
 Imaizumi, Y. and Okano, H. (2014).
@@ -60,6 +83,10 @@ Lin, S., Lin, Y., Nery, J.~R., Urich, M.~A., Breschi, A., Davis, C.~A., Dobin,
   tissues}.
 \newblock {\em Proceedings of the National Academy of Sciences},
   111(48):17224--17229.
+
+\bibitem[\protect\astroncite{Maaten and Hinton}{2008}]{Maaten2008VisualizingDU}
+Maaten, L. V.~D. and Hinton, G.~E. (2008).
+\newblock Visualizing data using t-sne.
 
 \bibitem[\protect\astroncite{Miller et~al.}{2014}]{24695229}
 Miller, J., Ding, S., Sunkin, S., Smith, K., Ng, L., Szafer, A., Ebbert, A.,
@@ -133,6 +160,17 @@ Yang, J., Parikh, D., and Batra, D. (2016).
   Clusters}.
 \newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}.
+
+\bibitem[\protect\astroncite{Yeung and Ruzzo}{2001}]{Yeung2001DetailsOT}
+Yeung, K.~Y. and Ruzzo, W.~L. (2001).
+\newblock Details of the adjusted rand index and clustering algorithms
+  supplement to the paper " an empirical study on principal component analysis
+  for clustering gene expression data " (to appear in bioinformatics).
+
+\bibitem[\protect\astroncite{Zhang and Wong}{2010}]{Zhang2010ARImpAG}
+Zhang, S. and Wong, H.-S. (2010).
+\newblock Arimp: A generalized adjusted rand index for cluster ensembles.
+\newblock In {\em ICPR}.
 
 \bibitem[\protect\astroncite{Zilouchian}{2001}]{Zilouchian2001FundamentalsON}
 Zilouchian, A. (2001).

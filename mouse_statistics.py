@@ -4,7 +4,11 @@ import matplotlib.pyplot as plt
 import math
 import pandas as pd
 
+#log2
 expression_data = pd.read_csv("allen_data/dev_mouse/filtered_expression_values.csv")
+
+#raw
+#expression_data = pd.read_csv("allen_data/dev_mouse/devmouse_histogram_values.csv").fillna(value=0)
 
 regions = ["RSP","Tel","PHy","p3","p2","p1","M","PPH","PH","PMH","MH"]
 
@@ -19,11 +23,11 @@ def histograms():
 #all on one figure		
 def all_histograms():
 	sns.set(color_codes=True)
-	plt.figure(figsize=(60, 30))
+	sns.set_style("white")
 	for region in regions:
 		print(region)
-		sns.distplot(expression_data[region], rug=False)
-		plt.savefig("figures/dev_mouse/histograms/all.png")
+		sns.distplot(expression_data[region], kde=False, bins= np.linspace(-15,10,40), rug=False)
+	plt.savefig("figures/dev_mouse/histograms/all.png",dpi=256)
 
 #correlations between the regions
 def correlations():
@@ -108,4 +112,4 @@ def time_swarm():
 		sns.swarmplot(x="days", y=region, data=expression_data)
 		plt.savefig("figures/dev_mouse/time_swarm/"+region+".png")
 
-histograms()
+all_histograms()
