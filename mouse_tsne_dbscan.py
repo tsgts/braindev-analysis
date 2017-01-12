@@ -8,14 +8,14 @@ import json
 
 centers = [[1, 1], [-1, -1], [1, -1]]
 
-X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_24950.txt'))
+X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
 print(X.shape)
 # X, labels_true = make_blobs(n_samples=750, centers=centers, cluster_std=0.4,
 #                             random_state=0)
 
 X = StandardScaler().fit_transform(X)
 
-db = DBSCAN(eps=0.12, min_samples=5).fit(X)
+db = DBSCAN(eps=0.13, min_samples=10).fit(X)
 core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 core_samples_mask[db.core_sample_indices_] = True
 labels = db.labels_
@@ -54,7 +54,7 @@ for k, col in zip(unique_labels, colors):
     xy = X[class_member_mask & ~core_samples_mask]
     plt.plot(xy[:, 0], xy[:, 1], 'o', markerfacecolor=col,
              markeredgecolor='k', markersize=4)
-
+plt.axis('off')
 plt.ylim([-2.5,2.5])
 plt.xlim([-2.5,2.5])
 plt.title('Estimated number of clusters: %d' % n_clusters_)

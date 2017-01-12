@@ -22,7 +22,13 @@
 \BOOKMARK [2][-]{subsection.5.6}{Cluster identification}{section.5}% 22
 \BOOKMARK [2][-]{subsection.5.7}{Clustering comparison}{section.5}% 23
 \BOOKMARK [1][-]{section.6}{Results}{}% 24
-\BOOKMARK [1][-]{section.7}{Discussion}{}% 25
-\BOOKMARK [1][-]{section.8}{Conclusions}{}% 26
-\BOOKMARK [1][-]{section.9}{Limitations}{}% 27
-\BOOKMARK [1][-]{section.10}{Extensions}{}% 28
+\BOOKMARK [2][-]{subsection.6.1}{Correlation clustering}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.2}{CAE-based encoding}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.3}{t-SNE}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.4}{Clustering}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.5}{Comparison}{section.6}% 29
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 30
+\BOOKMARK [1][-]{section.8}{Conclusions}{}% 31
+\BOOKMARK [1][-]{section.9}{Limitations}{}% 32
+\BOOKMARK [1][-]{section.10}{Extensions}{}% 33
+\BOOKMARK [1][-]{appendix.A}{Limitations and Assumptions}{}% 34

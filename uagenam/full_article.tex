@@ -1,4 +1,5 @@
-\documentclass[12pt,oneside,onecolumn,a4paper]{article}
+% REMOVE DRAFT FROM CLASS TO SHOW FIGURES AND IMAGES
+\documentclass[12pt,oneside,onecolumn,a4paper,draft]{article}
 \setlength{\parindent}{1cm}
 \usepackage{indentfirst}
 \usepackage[breaklinks=true]{hyperref}
@@ -61,6 +62,9 @@ The author would like to thank several individuals for their guidance and suppor
 \break
 
 \section{Abstract}
+
+Mouse models are vital to the current understanding of neurodegenerative disorders and provide a readily available base of experimentation in drug development. However, a high majority of drugs that have shown success in mouse-based preclinical phases have failed to replicate the same success in human-based clinical trials. This project examined the developmental transcriptomes of mouse and human central nervous systems in order to identify the existence of significantly different gene expression patterns, which may explain differences in drug performance. Public \textit{in situ} hybridization and RNA-seq data were compiled into two datasets, one human and one mouse, each containing 1,912 orthologs. A machine learning model composed of a convolutional autoencoder and a t-distributed stochastic neighbor embedding algorithm then projected the expression profiles of each dataset onto a two-dimensional manifold, on which the DBSCAN algorithm was applied to characterize clusters of similar expression patterns. Statistical comparison of the clusters between the two datasets found a high degree of difference in expression that was also discovered among orthologs with disease-associated alleles. Immediate applications of this study include higher-accuracy transgenic mouse models as well as a robust method for visualization and comparison of disparate sets of high-dimensional transcriptomic data.
+
 
 \section{Introduction}
 
@@ -367,11 +371,11 @@ Clusters were compared by computing the adjusted rand index (ARI) which provides
 \begin{tabular}{ l | l l l l l | l } 
 Cluster	& $k_1$ & $k_2$ & $k_3$ & $\cdots$ & $k_C$ & $\sum$ \\ 
 \hline
-$h_1$ & $n_{11}$ & $n_{12}$ & $n_{13}$ & $\cdots$ & $k_{1C}$ & $N_{1.}$\\ 
-$h_{2}$ & $n_{21}$ & $n_{22}$ & $n_{23}$ & $\cdots$ & $k_{2C}$ & $N_{2.}$\\ 
-$h_{3}$ & $n_{31}$ & $n_{32}$ & $n_{33}$ & $\cdots$ & $k_{3C}$ & $N_{3.}$\\ 
+$h_1$ & $n_{11}$ & $n_{12}$ & $n_{13}$ & $\cdots$ & $n_{1C}$ & $N_{1.}$\\ 
+$h_{2}$ & $n_{21}$ & $n_{22}$ & $n_{23}$ & $\cdots$ & $n_{2C}$ & $N_{2.}$\\ 
+$h_{3}$ & $n_{31}$ & $n_{32}$ & $n_{33}$ & $\cdots$ & $n_{3C}$ & $N_{3.}$\\ 
 $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\vdots$\\ 
-$h_{R}$ & $n_{R1}$ & $n_{R2}$ & $n_{R3}$ & $\cdots$ & $k_{RC}$ & $N_{R.}$\\ 
+$h_{R}$ & $n_{R1}$ & $n_{R2}$ & $n_{R3}$ & $\cdots$ & $n_{RC}$ & $N_{R.}$\\ 
 \hline
 $\sum$ & $N_{.1}$ & $N_{.2}$ & $N_{.3}$ & $\cdots$ & $N_{.C}$ & $N$\\ 
 \end{tabular}
@@ -389,6 +393,114 @@ which are derived using the general hypergeometric distribution for significance
 
 \section{Results}
 
+\subsection{Correlation clustering}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{Correlation matrices produced using the Pearson's $r$ and Spearman $\rho$ measures. \label{fig:correlations}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{A force-based layout of the correlation relationships between genes computed using the ForceAtlas2 algorithm developed by \cite{Jacomy2014ForceAtlas2AC}. \label{fig:network}%
+}
+\end{center}
+\end{figure}
+
+\subsection{CAE-based encoding}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{The loss curve with respect to time. \label{fig:rmse}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{Comparison of CAE inputs and output expression profiles. \label{fig:input_output}%
+}
+\end{center}
+\end{figure}
+
+\subsection{t-SNE}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{The two-dimensional representation returned by t-SNE. \label{fig:tsne_scatter}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{Representation of each point in the t-SNE output as the original image. \label{fig:image_scatter}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{Comparison of raw correlation matrix and Euclidean distance matrix. \label{fig:new_matrix}%
+}
+\end{center}
+\end{figure}
+
+\subsection{Clustering}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{Coloring of clusters using DBSCAN. \label{fig:DBSCAN}%
+}
+\end{center}
+\end{figure}
+
+\subsection{Comparison}
+
+% SHOULD ACTUALLY BE A TABLE
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{A table of various ARI values. \label{fig:ARI_table}%
+}
+\end{center}
+\end{figure}
+
+% SHOULD ACTUALLY BE A TABLE
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{The homogeneity table between the two clusterings. \label{fig:homogeneity_table}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{Cross-colored scatterplots reveal significant differences. \label{fig:cross_scatter}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\caption{Cross- scatterplots can also be replaced with images. \label{fig:cross_image_scatter}%
+}
+\end{center}
+\end{figure}
+
 \section{Discussion}
 
 \section{Conclusions}
@@ -400,6 +512,12 @@ which are derived using the general hypergeometric distribution for significance
 \bibliographystyle{apa}
 \bibliography{bibliography/biblio.bib%
 }
+
+\appendix
+
+\section{Limitations and Assumptions}
+
+This project was limited by the number of genes that were analyzed as well as the amount of expression data per gene. A central assumption, therefore, was that there was a sufficient number of genes and expression data for the results of the clustering to be determined by intrinsic differences and not variability. This assumption is supported by the relatively large number of genes (1,912) and expression data per gene (77 dimensions for mouse data, 150 for human data). Furthermore, the mouse and human donors used in this project were assumed to be representative of their respective populations. The regions of expression matrices were also assumed to be constant throughout development, which is supported by the high-accuracy computational methods used by the Allen Brain Atlas to quantize expression values.
 
 \end{document}
 

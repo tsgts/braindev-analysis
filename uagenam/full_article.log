@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  7 JAN 2017 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 JAN 2017 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -98,6 +98,7 @@ File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `draft' set `true' on input line 4322.
 Package hyperref Info: Option `breaklinks' set `true' on input line 4322.
 Package hyperref Info: Hyper figures OFF on input line 4446.
 Package hyperref Info: Link nesting OFF on input line 4451.
@@ -798,32 +799,36 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 37.
+less on input line 38.
 
 (./full_article.aux)
 \openout1 = `full_article.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 46.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box42
-Package hyperref Info: Link coloring OFF on input line 45.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+
+
+Package hyperref Warning: Draft mode on.
+
+Package hyperref Info: Link coloring OFF on input line 46.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -831,14 +836,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count150
 )
-LaTeX Info: Redefining \ref on input line 45.
-LaTeX Info: Redefining \pageref on input line 45.
-LaTeX Info: Redefining \nameref on input line 45.
-
-(./full_article.out) (./full_article.out)
-\@outlinefile=\write4
-\openout4 = `full_article.out'.
-
+LaTeX Info: Redefining \ref on input line 46.
+LaTeX Info: Redefining \pageref on input line 46.
+LaTeX Info: Redefining \nameref on input line 46.
 
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -872,7 +872,7 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 45.
+ on input line 46.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -945,177 +945,76 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
 ])
-\tf@toc=\write5
-\openout5 = `full_article.toc'.
+\tf@toc=\write4
+\openout4 = `full_article.toc'.
 
- [3] [4] [5]
-<figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png, id=198,
- 301.125pt x 218.8175pt>
-File: figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png Gra
-phic file (type png)
+ [3] [4] [5] [6]
+<figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png, id=28, 
+301.125pt x 218.8175pt>
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 90.
 
-<use figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png>
-Package pdftex.def Info: figures/cerebral_organoid/cerebral-organoid-for-Broad-
-web-300x218.png used on input line 86.
-(pdftex.def)             Requested size: 362.37569pt x 263.35095pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6] <figures/brain_development.jpg, id=211, 308.352pt x 277.2759pt>
-File: figures/brain_development.jpg Graphic file (type jpg)
-
-<use figures/brain_development.jpg>
-Package pdftex.def Info: figures/brain_development.jpg used on input line 98.
-(pdftex.def)             Requested size: 362.37569pt x 325.86267pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7 <./figures/cerebral_organoid/cerebral-organoid-for-Broad-web-300x218.png>]
-[8 <./figures/brain_development.jpg>]
-<figures/Untitled/Untitled.png, id=235, 158.48186pt x 70.46799pt>
-File: figures/Untitled/Untitled.png Graphic file (type png)
-
-<use figures/Untitled/Untitled.png>
-Package pdftex.def Info: figures/Untitled/Untitled.png used on input line 116.
-(pdftex.def)             Requested size: 362.37569pt x 161.14069pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[9] [10 <./figures/Untitled/Untitled.png>]
-<figures/ISH/ISH.png, id=259, 1433.355pt x 473.77pt>
-File: figures/ISH/ISH.png Graphic file (type png)
- <use figures/ISH/ISH.png>
-Package pdftex.def Info: figures/ISH/ISH.png used on input line 131.
-(pdftex.def)             Requested size: 362.37569pt x 119.77237pt.
-
-[11 <./figures/ISH/ISH.png>]
-<figures/leukemia_clustering.jpg, id=272, 702.625pt x 1041.8925pt>
-File: figures/leukemia_clustering.jpg Graphic file (type jpg)
-
-<use figures/leukemia_clustering.jpg>
-Package pdftex.def Info: figures/leukemia_clustering.jpg used on input line 145
-.
-(pdftex.def)             Requested size: 175.6558pt x 260.47249pt.
- [12 <./figures/leukemia_clustering.jpg>]
-<figures/Abl1/Abl1.png, id=290, 75.87401pt x 52.16339pt>
-File: figures/Abl1/Abl1.png Graphic file (type png)
-
-<use figures/Abl1/Abl1.png>
-Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 160.
-(pdftex.def)             Requested size: 362.37569pt x 249.23196pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13] <figures/neuron.png, id=304, 700.6175pt x 357.335pt>
-File: figures/neuron.png Graphic file (type png)
-
-<use figures/neuron.png>
-Package pdftex.def Info: figures/neuron.png used on input line 172.
-(pdftex.def)             Requested size: 362.37569pt x 184.8229pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 173.
- [14 <./figures/Abl1/Abl1.png>] [15 <./figures/neuron.png>] <figures/activation
-s.png, id=322, 1013.7875pt x 496.85625pt>
-File: figures/activations.png Graphic file (type png)
-
-<use figures/activations.png>
-Package pdftex.def Info: figures/activations.png used on input line 183.
-(pdftex.def)             Requested size: 362.37569pt x 177.59442pt.
-
-<figures/doodle.png, id=327, 1142.2675pt x 878.28125pt>
-File: figures/doodle.png Graphic file (type png)
-
-<use figures/doodle.png>
-Package pdftex.def Info: figures/doodle.png used on input line 203.
-(pdftex.def)             Requested size: 362.37569pt x 278.63008pt.
- [16 <./figures/activations.png>] [17 <./figures/doodle.png>] <figures/convnet.
-png, id=349, 1730.8665pt x 1005.2757pt>
-File: figures/convnet.png Graphic file (type png)
-
-<use figures/convnet.png>
-Package pdftex.def Info: figures/convnet.png used on input line 214.
-(pdftex.def)             Requested size: 362.37569pt x 210.45453pt.
-
-<figures/CNN/CNN.png, id=353, 767.86874pt x 343.2825pt>
-File: figures/CNN/CNN.png Graphic file (type png)
-
-<use figures/CNN/CNN.png>
-Package pdftex.def Info: figures/CNN/CNN.png used on input line 223.
-(pdftex.def)             Requested size: 362.37569pt x 162.00803pt.
- [18 <./figures/convnet.png> <./figures/CNN/CNN.png>]
-<figures/learningtypes.png, id=368, 986.4855pt x 458.9145pt>
-File: figures/learningtypes.png Graphic file (type png)
-
-<use figures/learningtypes.png>
-Package pdftex.def Info: figures/learningtypes.png used on input line 236.
-(pdftex.def)             Requested size: 362.37569pt x 168.57727pt.
- [19 <./figures/learningtypes.png>]
-<figures/tsne.png, id=379, 1038.5199pt x 438.6789pt>
-File: figures/tsne.png Graphic file (type png)
- <use figures/tsne.png>
-Package pdftex.def Info: figures/tsne.png used on input line 246.
-(pdftex.def)             Requested size: 362.37569pt x 153.07135pt.
-
-[20 <./figures/tsne.png>] [21]
-<figures/workflow.png, id=396, 610.22981pt x 352.76794pt>
-File: figures/workflow.png Graphic file (type png)
-
-<use figures/workflow.png>
-Package pdftex.def Info: figures/workflow.png used on input line 275.
-(pdftex.def)             Requested size: 407.66833pt x 235.66968pt.
- [22 <./figures/workflow.png>]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 289
-.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figures/log2.png, id=408, 3011.4909pt x 1927.4409pt>
-File: figures/log2.png Graphic file (type png)
- <use figures/log2.png>
-Package pdftex.def Info: figures/log2.png used on input line 297.
-(pdftex.def)             Requested size: 407.66833pt x 260.89914pt.
 
-[23] [24 <./figures/log2.png>]
-<figures/CAE.png, id=423, 2427.3084pt x 2890.8pt>
-File: figures/CAE.png Graphic file (type png)
- <use figures/CAE.png>
-Package pdftex.def Info: figures/CAE.png used on input line 320.
-(pdftex.def)             Requested size: 407.66833pt x 485.47466pt.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25] [26 <./figures/CAE.png>] [27] [28] (./full_article.bbl [29] [30]
-Underfull \hbox (badness 3746) in paragraph at lines 63--66
+<figures/brain_development.jpg, id=29, 308.352pt x 277.2759pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7] [8] [9] <figures/Untitled/Untitled.png, id=43, 158.48186pt x 70.46799pt>
+[10] <figures/ISH/ISH.png, id=48, 1433.355pt x 473.77pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11] <figures/leukemia_clustering.jpg, id=52, 702.625pt x 1041.8925pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12] [13] <figures/Abl1/Abl1.png, id=61, 75.87401pt x 52.16339pt> [14]
+<figures/neuron.png, id=65, 700.6175pt x 357.335pt>
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 177.
+ [15] [16]
+<figures/activations.png, id=74, 1013.7875pt x 496.85625pt>
+<figures/doodle.png, id=75, 1142.2675pt x 878.28125pt> [17] [18]
+<figures/convnet.png, id=87, 1730.8665pt x 1005.2757pt>
+<figures/CNN/CNN.png, id=88, 767.86874pt x 343.2825pt> [19]
+<figures/learningtypes.png, id=93, 986.4855pt x 458.9145pt> [20]
+<figures/tsne.png, id=97, 1038.5199pt x 438.6789pt> [21] [22]
+<figures/workflow.png, id=104, 610.22981pt x 352.76794pt> [23]
+<figures/log2.png, id=108, 3011.4909pt x 1927.4409pt> [24] [25]
+<figures/CAE.png, id=116, 2427.3084pt x 2890.8pt> [26] [27] [28] [29] [30]
+[31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] (./full_article.bbl
+[42] [43]
+Underfull \hbox (badness 3746) in paragraph at lines 69--72
 []\OT1/lmr/m/n/12 Koushik, J. (2016).  Un-der-stand-ing con-vo-lu-tional neu-ra
 l net-works.  \OT1/lmr/m/it/12 CoRR\OT1/lmr/m/n/12 ,
  []
 
-[31] [32]) [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 404.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 404.
+[44] [45]) [46] [47]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 522.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 522.
  (./full_article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 404.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 404.
-Package rerunfilecheck Info: File `full_article.out' has not changed.
-(rerunfilecheck)             Checksum: 3DF3457C8C424BDAEE865068DEA8BA4B;1704.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 404.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 522.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 522.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 522.
  ) 
 Here is how much of TeX's memory you used:
- 30156 strings out of 493014
- 741298 string characters out of 6133351
- 913201 words of memory out of 5000000
- 33068 multiletter control sequences out of 15000+600000
+ 30016 strings out of 493014
+ 739244 string characters out of 6133351
+ 910728 words of memory out of 5000000
+ 33041 multiletter control sequences out of 15000+600000
  52200 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,77p,1732b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,77p,1752b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/20
-16/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2016/texmf-dis
-t/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/en
-c/dvips/lm/lm-mathit.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public
+16/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2016/texmf-dist/fonts/
+enc/dvips/lm/lm-rmtt.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public
 /lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbxi1
 0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmex10.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/te
@@ -1131,10 +1030,10 @@ st/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/public/lm/lmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
 /lm/lmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt12.
 pfb>
-Output written on full_article.pdf (33 pages, 7499361 bytes).
+Output written on full_article.pdf (47 pages, 313354 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
- 470 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 500000)
- 317 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

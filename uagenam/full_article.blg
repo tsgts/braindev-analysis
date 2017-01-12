@@ -5,7 +5,7 @@ The style file: apa.bst
 Database file #1: bibliography/biblio.bib.bib
 I was expecting a `,' or a `}'---line 21 of file bibliography/biblio.bib.bib
  : 
- : @article{Koushik2016UnderstandingCN,
+ : @inproceedings{Jacomy2014ForceAtlas2AC,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty year in Ester1996ADA
@@ -14,45 +14,45 @@ Warning--empty booktitle in Maaten2008VisualizingDU
 Warning--there's a number but no volume in laurensvandermaaten2014
 Warning--empty booktitle in Yeung2001DetailsOT
 Warning--empty booktitle in Zilouchian2001FundamentalsON
-You've used 26 entries,
+You've used 27 entries,
             1940 wiz_defined-function locations,
-            640 strings with 11309 characters,
-and the built_in function-call counts, 15179 in all, are:
-= -- 1278
-> -- 1267
+            645 strings with 11553 characters,
+and the built_in function-call counts, 15581 in all, are:
+= -- 1313
+> -- 1290
 < -- 13
-+ -- 480
-- -- 478
-* -- 1563
-:= -- 2755
-add.period$ -- 74
-call.type$ -- 26
-change.case$ -- 366
-chr.to.int$ -- 26
-cite$ -- 32
-duplicate$ -- 382
-empty$ -- 708
-format.name$ -- 518
-if$ -- 2747
++ -- 488
+- -- 486
+* -- 1597
+:= -- 2826
+add.period$ -- 77
+call.type$ -- 27
+change.case$ -- 375
+chr.to.int$ -- 27
+cite$ -- 33
+duplicate$ -- 400
+empty$ -- 737
+format.name$ -- 527
+if$ -- 2825
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 28
-newline$ -- 129
-num.names$ -- 78
-pop$ -- 376
+missing$ -- 29
+newline$ -- 134
+num.names$ -- 81
+pop$ -- 390
 preamble$ -- 1
-purify$ -- 369
+purify$ -- 378
 quote$ -- 0
-skip$ -- 256
+skip$ -- 264
 stack$ -- 0
-substring$ -- 630
-swap$ -- 47
+substring$ -- 642
+swap$ -- 49
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 150
+type$ -- 156
 warning$ -- 6
-while$ -- 75
+while$ -- 77
 width$ -- 0
-write$ -- 320
+write$ -- 332
 (There was 1 error message)
