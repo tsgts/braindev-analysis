@@ -8,14 +8,14 @@ import json
 
 centers = [[1, 1], [-1, -1], [1, -1]]
 
-X = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_8700.txt'))
+X = np.transpose(np.loadtxt('allen_data/dev_human/tsne.txt'))
 print(X.shape)
 # X, labels_true = make_blobs(n_samples=750, centers=centers, cluster_std=0.4,
 #                             random_state=0)
 
 X = StandardScaler().fit_transform(X)
 
-db = DBSCAN(eps=0.115, min_samples=5).fit(X)
+db = DBSCAN(eps=0.12, min_samples=8).fit(X)
 core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 core_samples_mask[db.core_sample_indices_] = True
 labels = db.labels_

@@ -2,10 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #with human coordinates
-#coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9000.txt'))
+coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne.txt'))
 
 #with mouse coordinates
-coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
+#coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
 
 min_1 = coords[:,0].min()
 max_1 = coords[:,0].max()
@@ -18,7 +18,7 @@ coords_n[:,1] = (coords[:,1] - min_2) / (max_2 - min_2)
 imgs = np.loadtxt('allen_data/dev_human/human_numpy_array.txt')
 imgs = imgs.reshape(1912, 15, 10)
 
-RES = 1000
+RES = 600
 can = np.zeros((RES+2,RES+2))
 can.fill(100)
 
@@ -42,7 +42,7 @@ cmap.set_under(color='black')
 plt.imshow(np.rot90(can), interpolation='none',cmap=cmap,vmin=-16)
 plt.axis('off')
 #with human coordinates
-#plt.savefig("figures/dev_human/raw_scatter/scatter_"+str(RES)+".png",dpi=RES)
+plt.savefig("figures/dev_human/raw_scatter/pca_scatter_minkowski_"+str(RES)+".png",dpi=RES)
 
 #with mouse coordinates
-plt.savefig("figures/comparison/raw_scatter/mouse_coords_"+str(RES)+".png",dpi=RES)
+# plt.savefig("figures/comparison/raw_scatter/mouse_coords_"+str(RES)+".png",dpi=RES)
