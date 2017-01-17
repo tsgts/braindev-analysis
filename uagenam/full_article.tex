@@ -1,5 +1,8 @@
 % REMOVE DRAFT FROM CLASS TO SHOW FIGURES AND IMAGES
-\documentclass[12pt,oneside,onecolumn,a4paper,draft]{article}
+%\documentclass[12pt,oneside,onecolumn,a4paper,draft]{article}
+
+\documentclass[12pt,oneside,onecolumn,a4paper]{article}
+
 \setlength{\parindent}{1cm}
 \usepackage{indentfirst}
 \usepackage[breaklinks=true]{hyperref}
@@ -276,7 +279,7 @@ The overall process consisted of the retrieval, formatting, dimensionality reduc
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/workflow}
+\includegraphics[width=\columnwidth]{figures/workflow}
 \caption{The overall process involved in this project. \label{fig:workflow}%
 }
 \end{center}
@@ -298,7 +301,7 @@ Mouse and human datasets were first compared and filtered to 1,912 orthologs (sh
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/log2}
+\includegraphics[width=\columnwidth]{figures/log2}
 \caption{Comparison between (\textbf{A}) raw expression values and (\textbf{B}) log2-transformed expression values for each region between the human (top) and mouse (bottom) datasets. \label{fig:log2}%
 }
 \end{center}
@@ -321,7 +324,7 @@ where $n$ is the number of individuals, $y_{i}$ is the dependent variable in a r
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/CAE}
 \caption{CAE architectures used for dimensionality reduction of the mouse (\textbf{A}) and human (\textbf{B}) datasets. Green sections indicate convolutional layers involved in the encoding process, and purple sections indicate the encoded dense (fully connected) network. Blue sections indicate layers involved in the decoding process. The layer indicated in orange is the four-dimensional layer that is extracted upon training. The dimensions of each layer are shown below the respective layer. \label{fig:CAE}%
 }
 \end{center}
@@ -397,7 +400,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/pearson_spearman}
 \caption{Correlation matrices produced using the Pearson's $r$ and Spearman $\rho$ measures. \label{fig:correlations}%
 }
 \end{center}
@@ -405,7 +408,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/graph}
 \caption{A force-based layout of the correlation relationships between genes computed using the ForceAtlas2 algorithm developed by \cite{Jacomy2014ForceAtlas2AC}. \label{fig:network}%
 }
 \end{center}
@@ -415,7 +418,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/CAE}
 \caption{The loss curve with respect to time. \label{fig:rmse}%
 }
 \end{center}
@@ -423,7 +426,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/input_output}
 \caption{Comparison of CAE inputs and output expression profiles. \label{fig:input_output}%
 }
 \end{center}
@@ -433,7 +436,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/raw_coords}
 \caption{The two-dimensional representation returned by t-SNE. \label{fig:tsne_scatter}%
 }
 \end{center}
@@ -441,15 +444,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
-\caption{Representation of each point in the t-SNE output as the original image. \label{fig:image_scatter}%
-}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/correlations}
 \caption{Comparison of raw correlation matrix and Euclidean distance matrix. \label{fig:new_matrix}%
 }
 \end{center}
@@ -459,8 +454,16 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/dbscan}
 \caption{Coloring of clusters using DBSCAN. \label{fig:DBSCAN}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/image_cluster}
+\caption{Representation of each point in the t-SNE output as the original image. \label{fig:image_scatter}%
 }
 \end{center}
 \end{figure}
@@ -470,7 +473,7 @@ which are derived using the general hypergeometric distribution for significance
 % SHOULD ACTUALLY BE A TABLE
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/CAE}
 \caption{A table of various ARI values. \label{fig:ARI_table}%
 }
 \end{center}
@@ -479,7 +482,7 @@ which are derived using the general hypergeometric distribution for significance
 % SHOULD ACTUALLY BE A TABLE
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/CAE}
 \caption{The homogeneity table between the two clusterings. \label{fig:homogeneity_table}%
 }
 \end{center}
@@ -487,7 +490,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/cross_comparison}
 \caption{Cross-colored scatterplots reveal significant differences. \label{fig:cross_scatter}%
 }
 \end{center}
@@ -495,13 +498,29 @@ which are derived using the general hypergeometric distribution for significance
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/CAE}
-\caption{Cross- scatterplots can also be replaced with images. \label{fig:cross_image_scatter}%
+\includegraphics[width=\columnwidth]{figures/CAE}
+\caption{Cross-scatterplots may also be replaced with images. \label{fig:cross_image_scatter}%
 }
 \end{center}
 \end{figure}
 
 \section{Discussion}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/trial_comparison}
+\caption{Clustering results are consistent across discrete trials. \label{fig:cross_image_scatter}%
+}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/dimreduce_comparisons}
+\caption{Comparison with existing methods. \label{fig:image_scatter}%
+}
+\end{center}
+\end{figure}
 
 \section{Conclusions}
 

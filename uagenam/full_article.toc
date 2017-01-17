@@ -26,9 +26,9 @@
 \contentsline {subsection}{\numberline {6.1}Correlation clustering}{31}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}CAE-based encoding}{33}{subsection.6.2}
 \contentsline {subsection}{\numberline {6.3}t-SNE}{35}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Clustering}{38}{subsection.6.4}
-\contentsline {subsection}{\numberline {6.5}Comparison}{39}{subsection.6.5}
-\contentsline {section}{\numberline {7}Discussion}{43}{section.7}
+\contentsline {subsection}{\numberline {6.4}Clustering}{37}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Comparison}{38}{subsection.6.5}
+\contentsline {section}{\numberline {7}Discussion}{42}{section.7}
 \contentsline {section}{\numberline {8}Conclusions}{43}{section.8}
 \contentsline {section}{\numberline {9}Limitations}{43}{section.9}
 \contentsline {section}{\numberline {10}Extensions}{43}{section.10}
