@@ -16,12 +16,12 @@ from matplotlib import pyplot as plt
 
 #9000
 #9900
-# data = np.loadtxt('allen_data/dev_human/autoencoder/encode.txt')
+data = np.loadtxt('allen_data/dev_human/autoencoder/encode_9050.txt')
 
 #===========PCA===================
 
-data = np.loadtxt('allen_data/dev_human/pca.txt')
-data = np.transpose(data)
+# data = np.loadtxt('allen_data/dev_human/pca.txt')
+# data = np.transpose(data)
 
 #==================================
 
@@ -30,11 +30,11 @@ transformed = model.fit_transform(data)
 print(transformed.shape)
 transformed = np.transpose(transformed)
 
-np.savetxt('allen_data/dev_human/tsne.txt', transformed)
+np.savetxt('allen_data/dev_human/tsne/tsne_9050.txt', transformed)
 
 fig = plt.figure()
 plt.scatter(transformed[0], transformed[1], c='r', marker='o')
-fig.savefig('figures/dev_human/tsne/tsne.png')
+fig.savefig('figures/dev_human/tsne/tsne_9050.png')
 
 # app = QtGui.QApplication([])
 # pg.setConfigOption('background', 'w')
