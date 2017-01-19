@@ -29,16 +29,31 @@ num = 100
 
 for i in range(0,num):
 
-	U = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_' + str(50*i+5000) + '.txt'))
+
+	#human
+	#U = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_' + str(50*i+5000) + '.txt'))
+
+	#mouse
+	U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_' + str(50*i+20000) + '.txt'))
+
 	U = StandardScaler().fit_transform(U)
-	db_U = DBSCAN(eps=0.12, min_samples=8).fit(U)
+	db_U = DBSCAN(eps=0.13, min_samples=10).fit(U)
 	labels_U = db_U.labels_
 
 	for j in range(0,num):
 
+		#cross_comparison
 		V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_' + str(50*j+20000) + '.txt'))
+
+		#human data
+		#V = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_' + str(50*j+5000) + '.txt'))
+
 		V = StandardScaler().fit_transform(V)
+		#mouse
 		db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
+
+		#human
+		#db_V = DBSCAN(eps=0.12, min_samples=8).fit(V)
 		labels_V = db_V.labels_
 
 		# print("ARI: ",adjusted_rand_score(labels_U,labels_V))
@@ -54,16 +69,16 @@ sns.set(color_codes=True)
 plt.figure()
 sns.set_style("white")
 sns.distplot(aris, kde=False, bins= num, rug=False)
-plt.savefig("figures/comparison/histograms/aris.png",dpi=256)
+plt.savefig("figures/dev_mouse/histograms/aris.png",dpi=256)
 
 sns.set(color_codes=True)
 plt.figure()
 sns.set_style("white")
 sns.distplot(amis, kde=False, bins= num, rug=False)
-plt.savefig("figures/comparison/histograms/amis.png",dpi=256)
+plt.savefig("figures/dev_mouse/histograms/amis.png",dpi=256)
 
 
-sns.set(color_codes=True)
-plt.figure()
-sns.jointplot(x="ARI", y="AMI", data=pd.DataFrame(data=np.transpose([aris,amis]),columns=["ARI","AMI"]),kind="reg")
-plt.savefig("figures/comparison/regression/ari_ami.png")
+# sns.set(color_codes=True)
+# plt.figure()
+# sns.jointplot(x="ARI", y="AMI", data=pd.DataFrame(data=np.transpose([aris,amis]),columns=["ARI","AMI"]),kind="reg")
+# plt.savefig("figures/comparison/regression/ari_ami.png")

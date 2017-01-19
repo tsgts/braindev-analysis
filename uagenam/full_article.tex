@@ -66,7 +66,7 @@ The author would like to thank several individuals for their guidance and suppor
 
 \section{Abstract}
 
-Mouse models are vital to the current understanding of neurodegenerative disorders and provide a readily available base of experimentation in drug development. However, a high majority of drugs that have shown success in mouse-based preclinical phases have failed to replicate the same success in human-based clinical trials. This project examined the developmental transcriptomes of mouse and human central nervous systems in order to identify the existence of significantly different gene expression patterns, which may explain differences in drug performance. Public \textit{in situ} hybridization and RNA-seq data were compiled into two datasets, one human and one mouse, each containing 1,912 orthologs. A machine learning model composed of a convolutional autoencoder and a t-distributed stochastic neighbor embedding algorithm then projected the expression profiles of each dataset onto a two-dimensional manifold, on which the DBSCAN algorithm was applied to characterize clusters of similar expression patterns. Statistical comparison of the clusters between the two datasets found a high degree of difference in expression that was also discovered among orthologs with disease-associated alleles. Immediate applications of this study include higher-accuracy transgenic mouse models as well as a robust method for visualization and comparison of disparate sets of high-dimensional transcriptomic data.
+Mouse models are fundamental to the current understanding of neurodegenerative disorders and provide a readily available base for experimentation in drug development. However, less than 10\% of drugs that have shown success in mouse-based preclinical trials show similar success in later clinical phases. This project examined the developmental transcriptomes of mouse and human central nervous systems in order to identify the existence of hypothesized significantly different gene expression patterns, which may explain differences in drug performance. Public \textit{in situ} hybridization and RNA-seq data were compiled two datasets of 1,912 orthologs each. A high-precision machine learning model composed of a convolutional autoencoder and a t-distributed stochastic neighbor embedding process then projected the expression profiles of each dataset onto a two-dimensional manifold, and DBSCAN was applied to characterize clusters. Adjusted rand index comparison of orthologs with disease-associated genes discovered a high degree of difference. Immediate applications of this study include validation of future transgenic mouse models as well as a robust method for visualization and comparison of disparate sets of sparse transcriptomic data.
 
 
 \section{Introduction}
@@ -416,13 +416,6 @@ which are derived using the general hypergeometric distribution for significance
 
 \subsection{CAE-based encoding}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/CAE}
-\caption{The loss curve with respect to time. \label{fig:rmse}%
-}
-\end{center}
-\end{figure}
 
 \begin{figure}[H]
 \begin{center}
@@ -473,7 +466,7 @@ which are derived using the general hypergeometric distribution for significance
 % SHOULD ACTUALLY BE A TABLE
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/ari_dist}
 \caption{A table of various ARI values. \label{fig:ARI_table}%
 }
 \end{center}
@@ -482,7 +475,7 @@ which are derived using the general hypergeometric distribution for significance
 % SHOULD ACTUALLY BE A TABLE
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=\columnwidth]{figures/CAE}
+\includegraphics[width=\columnwidth]{figures/homogeneity_min}
 \caption{The homogeneity table between the two clusterings. \label{fig:homogeneity_table}%
 }
 \end{center}
@@ -492,14 +485,6 @@ which are derived using the general hypergeometric distribution for significance
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/cross_comparison}
 \caption{Cross-colored scatterplots reveal significant differences. \label{fig:cross_scatter}%
-}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/CAE}
-\caption{Cross-scatterplots may also be replaced with images. \label{fig:cross_image_scatter}%
 }
 \end{center}
 \end{figure}
