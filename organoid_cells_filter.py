@@ -16,7 +16,7 @@ regions = {
 }
 
 for key, val in regions.items():
-	regions[key] = random.sample(val,16)
+	regions[key] = random.sample(val,32)
 
 regions = list(regions.values())
 
@@ -24,5 +24,6 @@ regions = [item for sublist in regions for item in sublist]
 
 
 filtered_genes = data[data.index.isin(regions)==True]
+filtered_genes.reset_index(drop=True, inplace=True)
 
-print(filtered_genes)
+filtered_genes.to_csv("allen_data/organoid/cell_filtered_genes.csv",sep=',', encoding='utf-8')
