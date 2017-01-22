@@ -10,6 +10,8 @@ print(expression_values)
 
 genes = sorted(list(set(expression_values["gene"])))
 
+json.dump(genes, open("allen_data/organoid/list_of_genes.txt",'w'), indent=4)
+
 matrix = collections.OrderedDict()
 
 for gene in genes:
@@ -24,5 +26,5 @@ for gene in genes:
 	heatmap_raw = list(heatmap_raw.values.tolist())
 	matrix[gene] = heatmap_raw
 
-json.dump(matrix, open("allen_data/dev_human/raw_dictionary_no_days.txt",'w'), indent=4)
+json.dump(matrix, open("allen_data/organoid/raw_dictionary_no_days.txt",'w'), indent=4)
 #json.dump(matrix, open("allen_data/organoid/raw_dictionary.txt",'w'), indent=4)

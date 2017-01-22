@@ -57,10 +57,10 @@ for gene in genes:
 
 	sorted_rows = matching_rows.sort_values("age",axis=0)
 
-	heatmap_raw = sorted_rows.loc[:,["age","A1C","AMY","CBC","HIP","IPC","MD","OFC","STC","STR","VFC"]]
-	#heatmap_raw = sorted_rows.loc[:,["A1C","AMY","CBC","HIP","IPC","MD","OFC","STC","STR","VFC"]]
+	#heatmap_raw = sorted_rows.loc[:,["age","A1C","AMY","CBC","HIP","IPC","MD","OFC","STC","STR","VFC"]]
+	heatmap_raw = sorted_rows.loc[:,["A1C","AMY","CBC","HIP","IPC","MD","OFC","STC","STR","VFC"]]
 	heatmap_raw = list(heatmap_raw.values.tolist())
 	matrix[gene] = heatmap_raw
 
-#json.dump(matrix, open("allen_data/dev_human/raw_dictionary_no_days.txt",'w'), indent=4)
-json.dump(matrix, open("allen_data/dev_human/raw_dictionary.txt",'w'), indent=4)
+json.dump(matrix, open("allen_data/dev_human/raw_dictionary_no_days.txt",'w'), indent=4)
+#json.dump(matrix, open("allen_data/dev_human/raw_dictionary.txt",'w'), indent=4)
