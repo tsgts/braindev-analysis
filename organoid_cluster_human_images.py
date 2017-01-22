@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 
 # #with organoid coordinates
-coords = np.transpose(np.loadtxt('allen_data/organoid/tsne.txt'))
+coords = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15550.txt'))
 
 min_1 = coords[:,0].min()
 max_1 = coords[:,0].max()

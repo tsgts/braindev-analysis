@@ -11,15 +11,24 @@ import collections
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-#human
-U = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9950.txt'))
+#human===============================
+U = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_7400.txt'))
+
+#with organoid
+human_mask = json.load(open('allen_data/organoid/human_mask.txt'))
+human_mask = np.asarray(human_mask)
+U = U[human_mask]
+#===============================
+
 U = StandardScaler().fit_transform(U)
-db_U = DBSCAN(eps=0.12, min_samples=8).fit(U)
+db_U = DBSCAN(eps=0.13, min_samples=8).fit(U)
 
 #mouse
 # U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_24650.txt'))
 # U = StandardScaler().fit_transform(U)
 # db_U = DBSCAN(eps=0.13, min_samples=10).fit(U)
+
+#organoid
 
 labels_U = db_U.labels_
 #labels_U = np.random.randint(24, size=1912)
@@ -51,14 +60,20 @@ unique_labels_U = sorted(list(set(labels_U)))
 # plt.close()
 
 #human
-V = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_8950.txt'))
-V = StandardScaler().fit_transform(V)
-db_V = DBSCAN(eps=0.12, min_samples=8).fit(V)
+# V = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_8950.txt'))
+# V = StandardScaler().fit_transform(V)
+# db_V = DBSCAN(eps=0.12, min_samples=8).fit(V)
 
 #mouse
 # V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_12650.txt'))
 # V = StandardScaler().fit_transform(V)
 # db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
+
+#organoid
+V = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15550.txt'))
+V = StandardScaler().fit_transform(V)
+db_V = DBSCAN(eps=0.13, min_samples=8).fit(V)
+
 
 
 labels_V = db_V.labels_
