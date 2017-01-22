@@ -16,25 +16,25 @@ from matplotlib import pyplot as plt
 
 #9000
 #9900
-data = np.loadtxt('allen_data/organoid/autoencoder/encode_9050.txt')
+# data = np.loadtxt('allen_data/organoid/autoencoder/encode_9050.txt')
 
 #===========PCA===================
 
-# data = np.loadtxt('allen_data/organoid/pca.txt')
-# data = np.transpose(data)
+data = np.loadtxt('allen_data/organoid/pca.txt')
+data = np.transpose(data)
 
 #==================================
 
-# model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
-# transformed = model.fit_transform(data) 
-# print(transformed.shape)
-# transformed = np.transpose(transformed)
+model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
+transformed = model.fit_transform(data) 
+print(transformed.shape)
+transformed = np.transpose(transformed)
 
-# np.savetxt('allen_data/organoid/tsne/tsne_9050.txt', transformed)
+np.savetxt('allen_data/organoid/tsne.txt', transformed)
 
-# fig = plt.figure()
-# plt.scatter(transformed[0], transformed[1], c='r', marker='o')
-# fig.savefig('figures/organoid/tsne/tsne_9050.png')
+fig = plt.figure()
+plt.scatter(transformed[0], transformed[1], c='r', marker='o')
+fig.savefig('figures/organoid/tsne.png')
 
 #====================================
 
@@ -51,18 +51,18 @@ data = np.loadtxt('allen_data/organoid/autoencoder/encode_9050.txt')
 
 #===============loop===================
 
-for i in range(0,400):
-	i *= 50
-	data = np.loadtxt('allen_data/organoid/autoencoder/encode_' + str(i) + '.txt')
+# for i in range(0,400):
+# 	i *= 50
+# 	data = np.loadtxt('allen_data/organoid/autoencoder/encode_' + str(i) + '.txt')
 
-	model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
-	transformed = model.fit_transform(data) 
-	print(transformed.shape)
-	transformed = np.transpose(transformed)
+# 	model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
+# 	transformed = model.fit_transform(data) 
+# 	print(transformed.shape)
+# 	transformed = np.transpose(transformed)
 
-	np.savetxt('allen_data/organoid/tsne/tsne_' + str(i) + '.txt', transformed)
+# 	np.savetxt('allen_data/organoid/tsne/tsne_' + str(i) + '.txt', transformed)
 
-	fig = plt.figure()
-	plt.scatter(transformed[0], transformed[1], c='r', marker='o')
-	fig.savefig('figures/organoid/tsne/tsne_' + str(i) + '.png')
-	plt.close()
+# 	fig = plt.figure()
+# 	plt.scatter(transformed[0], transformed[1], c='r', marker='o')
+# 	fig.savefig('figures/organoid/tsne/tsne_' + str(i) + '.png')
+# 	plt.close()
