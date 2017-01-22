@@ -12,5 +12,5 @@ for gene in genes:
 matrix_array = np.array(matrix_array,np.float32)
 print(matrix_array.shape)
 print(matrix_array)
-matrix_array = np.reshape(matrix_array,(1907,224))
+matrix_array = np.reshape(matrix_array,(len(good_genes),224))
 np.savetxt('allen_data/organoid/organoid_numpy_array.txt', matrix_array)

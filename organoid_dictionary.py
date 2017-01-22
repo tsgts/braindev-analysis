@@ -24,7 +24,8 @@ for gene in genes:
 	#heatmap_raw = matching_rows.loc[:,["timepoint"]+[str(i) for i in range(1,33)]]
 	heatmap_raw = matching_rows.loc[:,[str(i) for i in range(1,33)]]
 	heatmap_raw = list(heatmap_raw.values.tolist())
-	matrix[gene] = heatmap_raw
+	if sum(sum(heatmap_raw,[]))>0:  
+		matrix[gene] = heatmap_raw
 
 json.dump(matrix, open("allen_data/organoid/raw_dictionary_no_days.txt",'w'), indent=4)
 #json.dump(matrix, open("allen_data/organoid/raw_dictionary.txt",'w'), indent=4)
