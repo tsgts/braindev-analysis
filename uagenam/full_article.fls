@@ -364,8 +364,6 @@ INPUT ./figures/pearson_spearman.png
 INPUT figures/graph.png
 INPUT ./figures/graph.png
 INPUT ./figures/graph.png
-INPUT figures/CAE.png
-INPUT ./figures/CAE.png
 INPUT figures/input_output.png
 INPUT ./figures/input_output.png
 INPUT ./figures/input_output.png
