@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 JAN 2017 19:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 JAN 2017 22:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1007,12 +1007,12 @@ Package pdftex.def Info: figures/leukemia_clustering.jpg used on input line 152
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [12 <./figures/ISH/ISH.png>] [13 <./figures/leukemia_clustering.jpg>]
-<figures/Abl1/Abl1.png, id=327, 75.87401pt x 52.16339pt>
+<figures/Abl1/Abl1.png, id=327, 578.16pt x 397.485pt>
 File: figures/Abl1/Abl1.png Graphic file (type png)
 
 <use figures/Abl1/Abl1.png>
 Package pdftex.def Info: figures/Abl1/Abl1.png used on input line 167.
-(pdftex.def)             Requested size: 362.37569pt x 249.23196pt.
+(pdftex.def)             Requested size: 362.37569pt x 249.13106pt.
  [14 <./figures/Abl1/Abl1.png>]
 <figures/neuron.png, id=338, 700.6175pt x 357.335pt>
 File: figures/neuron.png Graphic file (type png)
@@ -1044,12 +1044,12 @@ File: figures/convnet.png Graphic file (type png)
 Package pdftex.def Info: figures/convnet.png used on input line 221.
 (pdftex.def)             Requested size: 362.37569pt x 210.45453pt.
 
-<figures/CNN/CNN.png, id=382, 767.86874pt x 343.2825pt>
+<figures/CNN/CNN.png, id=382, 767.86874pt x 281.55188pt>
 File: figures/CNN/CNN.png Graphic file (type png)
 
 <use figures/CNN/CNN.png>
 Package pdftex.def Info: figures/CNN/CNN.png used on input line 230.
-(pdftex.def)             Requested size: 362.37569pt x 162.00803pt.
+(pdftex.def)             Requested size: 362.37569pt x 132.875pt.
  [18 <./figures/convnet.png>]
 <figures/learningtypes.png, id=396, 986.4855pt x 458.9145pt>
 File: figures/learningtypes.png Graphic file (type png)
@@ -1096,85 +1096,85 @@ Package pdftex.def Info: figures/CAE.png used on input line 327.
 File: figures/pearson_spearman.png Graphic file (type png)
 
 <use figures/pearson_spearman.png>
-Package pdftex.def Info: figures/pearson_spearman.png used on input line 403.
+Package pdftex.def Info: figures/pearson_spearman.png used on input line 405.
 (pdftex.def)             Requested size: 452.9679pt x 176.20361pt.
  [30]
 <figures/graph.png, id=502, 2088.1212pt x 1927.2pt>
 File: figures/graph.png Graphic file (type png)
  <use figures/graph.png>
-Package pdftex.def Info: figures/graph.png used on input line 411.
+Package pdftex.def Info: figures/graph.png used on input line 413.
 (pdftex.def)             Requested size: 452.9679pt x 418.04517pt.
 
 [31 <./figures/pearson_spearman.png>]
-<figures/input_output.png, id=514, 2429.2356pt x 1927.2pt>
+<figures/input_output.png, id=516, 2429.2356pt x 1927.2pt>
 File: figures/input_output.png Graphic file (type png)
 
 <use figures/input_output.png>
-Package pdftex.def Info: figures/input_output.png used on input line 422.
+Package pdftex.def Info: figures/input_output.png used on input line 424.
 (pdftex.def)             Requested size: 452.9679pt x 359.34946pt.
  [32 <./figures/graph.png>]
-<figures/raw_coords.png, id=522, 2890.8pt x 1385.6568pt>
+<figures/raw_coords.png, id=524, 2890.8pt x 1385.6568pt>
 File: figures/raw_coords.png Graphic file (type png)
 
 <use figures/raw_coords.png>
-Package pdftex.def Info: figures/raw_coords.png used on input line 432.
+Package pdftex.def Info: figures/raw_coords.png used on input line 434.
 (pdftex.def)             Requested size: 452.9679pt x 217.1215pt.
  [33 <./figures/input_output.png>]
-<figures/correlations.png, id=529, 1927.2pt x 1706.5356pt>
+<figures/correlations.png, id=531, 1927.2pt x 1706.5356pt>
 File: figures/correlations.png Graphic file (type png)
 
 <use figures/correlations.png>
-Package pdftex.def Info: figures/correlations.png used on input line 440.
+Package pdftex.def Info: figures/correlations.png used on input line 442.
 (pdftex.def)             Requested size: 452.9679pt x 401.088pt.
  [34 <./figures/raw_coords.png>]
-<figures/dbscan.png, id=536, 2529.45pt x 1024.3068pt>
+<figures/dbscan.png, id=538, 2529.45pt x 1024.3068pt>
 File: figures/dbscan.png Graphic file (type png)
  <use figures/dbscan.png>
-Package pdftex.def Info: figures/dbscan.png used on input line 450.
+Package pdftex.def Info: figures/dbscan.png used on input line 452.
 (pdftex.def)             Requested size: 452.9679pt x 183.42949pt.
 
 [35 <./figures/correlations.png>]
-<figures/image_cluster.png, id=543, 2890.8pt x 1107.1764pt>
+<figures/image_cluster.png, id=545, 2890.8pt x 1107.1764pt>
 File: figures/image_cluster.png Graphic file (type png)
 
 <use figures/image_cluster.png>
-Package pdftex.def Info: figures/image_cluster.png used on input line 458.
+Package pdftex.def Info: figures/image_cluster.png used on input line 460.
 (pdftex.def)             Requested size: 452.9679pt x 173.48581pt.
 
-<figures/ari_dist.png, id=544, 2028.378pt x 1606.3212pt>
+<figures/ari_dist.png, id=546, 2028.378pt x 1606.3212pt>
 File: figures/ari_dist.png Graphic file (type png)
 
 <use figures/ari_dist.png>
-Package pdftex.def Info: figures/ari_dist.png used on input line 469.
+Package pdftex.def Info: figures/ari_dist.png used on input line 471.
 (pdftex.def)             Requested size: 452.9679pt x 358.71053pt.
  [36 <./figures/dbscan.png> <./figures/image_cluster.png>] <figures/homogeneity
-_min.png, id=553, 2008.1424pt x 2008.1424pt>
+_min.png, id=555, 2008.1424pt x 2008.1424pt>
 File: figures/homogeneity_min.png Graphic file (type png)
 
 <use figures/homogeneity_min.png>
-Package pdftex.def Info: figures/homogeneity_min.png used on input line 478.
+Package pdftex.def Info: figures/homogeneity_min.png used on input line 480.
 (pdftex.def)             Requested size: 452.9679pt x 452.94629pt.
  [37 <./figures/ari_dist.png>]
-<figures/cross_comparison.png, id=561, 2008.1424pt x 703.428pt>
+<figures/cross_comparison.png, id=563, 2008.1424pt x 703.428pt>
 File: figures/cross_comparison.png Graphic file (type png)
 
 <use figures/cross_comparison.png>
-Package pdftex.def Info: figures/cross_comparison.png used on input line 486.
+Package pdftex.def Info: figures/cross_comparison.png used on input line 488.
 (pdftex.def)             Requested size: 452.9679pt x 158.6616pt.
  [38 <./figures/homogeneity_min.png>]
-<figures/trial_comparison.png, id=568, 3212.6424pt x 1811.568pt>
+<figures/trial_comparison.png, id=570, 3212.6424pt x 1811.568pt>
 File: figures/trial_comparison.png Graphic file (type png)
 
 <use figures/trial_comparison.png>
-Package pdftex.def Info: figures/trial_comparison.png used on input line 496.
+Package pdftex.def Info: figures/trial_comparison.png used on input line 498.
 (pdftex.def)             Requested size: 452.9679pt x 255.41454pt.
 
-<figures/dimreduce_comparisons.png, id=569, 942.4008pt x 599.3592pt>
+<figures/dimreduce_comparisons.png, id=571, 942.4008pt x 599.3592pt>
 File: figures/dimreduce_comparisons.png Graphic file (type png)
 
 <use figures/dimreduce_comparisons.png>
 Package pdftex.def Info: figures/dimreduce_comparisons.png used on input line 5
-04.
+06.
 (pdftex.def)             Requested size: 452.9679pt x 288.0824pt.
  [39 <./figures/cross_comparison.png> <./figures/trial_comparison.png>] (./full
 _article.bbl [40 <./figures/dimreduce_comparisons.png>]
@@ -1184,23 +1184,23 @@ l net-works.  \OT1/lmr/m/it/12 CoRR\OT1/lmr/m/n/12 ,
  []
 
 [41] [42] [43]) [44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 526.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 526.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 528.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 528.
  (./full_article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 526.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 526.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 528.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 528.
 Package rerunfilecheck Info: File `full_article.out' has not changed.
 (rerunfilecheck)             Checksum: 85FC8D190E926C7973512498F8FD47DF;2083.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 526.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 528.
  ) 
 Here is how much of TeX's memory you used:
  30265 strings out of 493014
  743665 string characters out of 6133351
- 912328 words of memory out of 5000000
+ 916373 words of memory out of 5000000
  33136 multiletter control sequences out of 15000+600000
  52200 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1225,10 +1225,10 @@ st/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/public/lm/lmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
 /lm/lmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt12.
 pfb>
-Output written on full_article.pdf (44 pages, 23222835 bytes).
+Output written on full_article.pdf (44 pages, 23308328 bytes).
 PDF statistics:
- 696 PDF objects out of 1000 (max. 8388607)
- 557 compressed objects within 6 object streams
+ 698 PDF objects out of 1000 (max. 8388607)
+ 558 compressed objects within 6 object streams
  139 named destinations out of 1000 (max. 500000)
  425 words of extra memory for PDF output out of 10000 (max. 10000000)
 

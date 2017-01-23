@@ -12,21 +12,21 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #human===============================
-U = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_7400.txt'))
+# U = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_7400.txt'))
 
 #with organoid
-human_mask = json.load(open('allen_data/organoid/human_mask.txt'))
-human_mask = np.asarray(human_mask)
-U = U[human_mask]
+# human_mask = json.load(open('allen_data/organoid/human_mask.txt'))
+# human_mask = np.asarray(human_mask)
+# U = U[human_mask]
 #===============================
 
-U = StandardScaler().fit_transform(U)
-db_U = DBSCAN(eps=0.13, min_samples=8).fit(U)
+# U = StandardScaler().fit_transform(U)
+# db_U = DBSCAN(eps=0.13, min_samples=8).fit(U)
 
 #mouse
-# U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_24650.txt'))
-# U = StandardScaler().fit_transform(U)
-# db_U = DBSCAN(eps=0.13, min_samples=10).fit(U)
+U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_15650.txt'))
+U = StandardScaler().fit_transform(U)
+db_U = DBSCAN(eps=0.13, min_samples=10).fit(U)
 
 #organoid
 
@@ -65,16 +65,14 @@ unique_labels_U = sorted(list(set(labels_U)))
 # db_V = DBSCAN(eps=0.12, min_samples=8).fit(V)
 
 #mouse
-# V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_12650.txt'))
-# V = StandardScaler().fit_transform(V)
-# db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
+V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_10600.txt'))
+V = StandardScaler().fit_transform(V)
+db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
 
 #organoid
-V = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15550.txt'))
-V = StandardScaler().fit_transform(V)
-db_V = DBSCAN(eps=0.13, min_samples=8).fit(V)
-
-
+# V = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15550.txt'))
+# V = StandardScaler().fit_transform(V)
+# db_V = DBSCAN(eps=0.13, min_samples=8).fit(V)
 
 labels_V = db_V.labels_
 #labels_V = np.random.randint(24, size=1912)
@@ -139,8 +137,9 @@ plt.savefig('figures/comparison/correlation_heatmaps/cross_cluster',dpi=256)
 flattened_matrix = [item for sublist in matrix for item in sublist]
 flattened_matrix = [i for i in flattened_matrix if i!=0]
 
-plt.figure(figsize=(10,2.5))
+plt.figure(figsize=(8,2))
 sns.set_style("white")
+plt.ylim(0, 150)
 sns.distplot(flattened_matrix, kde=False, bins= np.linspace(0,100,25), rug=False,color="black")
 plt.savefig("figures/comparison/histograms/homogeneity.png",dpi=256)
 
