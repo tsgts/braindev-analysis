@@ -8,10 +8,10 @@ regions = ["A1C","AMY","CBC","HIP","IPC","MD","OFC","STC","STR","VFC"]
 
 def safe_log(x):
 	if math.isnan(x):
-		return -16
+		return -10
 	x = float(x)
 	if x<=0:
-		return -16
+		return -10
 	else:
    		return math.log2(x)
 

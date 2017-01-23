@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #with human coordinates
-coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne.txt'))
+coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9000.txt'))
 
 #with mouse coordinates
 #coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
@@ -39,10 +39,10 @@ cmap.set_bad(color='white')
 
 cmap.set_under(color='black')
 
-plt.imshow(np.rot90(can), interpolation='none',cmap=cmap,vmin=-16)
+plt.imshow(np.rot90(can), interpolation='none',cmap=cmap,vmin=-11,vmax=10)
 plt.axis('off')
 #with human coordinates
-plt.savefig("figures/dev_human/raw_scatter/pca_scatter_minkowski_"+str(RES)+".png",dpi=RES)
+plt.savefig("figures/dev_human/raw_scatter/scatter_"+str(RES)+".png",dpi=RES)
 
 #with mouse coordinates
 # plt.savefig("figures/comparison/raw_scatter/mouse_coords_"+str(RES)+".png",dpi=RES)
