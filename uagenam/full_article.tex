@@ -1,7 +1,7 @@
 % REMOVE DRAFT FROM CLASS TO SHOW FIGURES AND IMAGES
-% \documentclass[12pt,oneside,onecolumn,a4paper,draft]{article}
+\documentclass[12pt,oneside,onecolumn,a4paper,draft]{article}
 
-\documentclass[12pt,oneside,onecolumn,a4paper]{article}
+% \documentclass[12pt,oneside,onecolumn,a4paper]{article}
 
 \setlength{\parindent}{1cm}
 \usepackage{indentfirst}
@@ -66,7 +66,7 @@ The author would like to thank several individuals for their guidance and suppor
 
 \section{Abstract}
 
-Mouse models are fundamental to the current understanding of neurodegenerative disorders and provide a readily available base for experimentation in drug development. However, less than 10\% of drugs that have shown success in mouse-based preclinical trials show similar success in later clinical phases. This project examined the developmental transcriptomes of mouse and human central nervous systems in order to identify the existence of hypothesized significantly different gene expression patterns, which may explain differences in drug performance. Public \textit{in situ} hybridization and RNA-seq data were compiled two datasets of 1,912 orthologs each. A high-precision machine learning model composed of a convolutional autoencoder and a t-distributed stochastic neighbor embedding process then projected the expression profiles of each dataset onto a two-dimensional manifold, and DBSCAN was applied to characterize clusters. Adjusted rand index comparison of orthologs with disease-associated genes discovered a high degree of difference. Immediate applications of this study include validation of future transgenic mouse models as well as a robust method for visualization and comparison of disparate sets of sparse transcriptomic data.
+Mouse models are fundamental to the current understanding of neurodegenerative disorders and provide a readily available base for experimentation in drug development. However, less than 10\% of drugs that have shown success in mouse-based preclinical trials show similar success in later clinical phases. This project examined the developmental transcriptomes of mouse and human central nervous systems in order to identify the existence of hypothesized significantly different gene expression patterns, which may explain differences in drug performance. Public \textit{in situ} hybridization and RNA-seq data were compiled into two datasets each containing 1,912 orthologs. A high-precision machine learning model composed of a convolutional autoencoder and a t-distributed stochastic neighbor embedding process then projected the expression profiles of each dataset onto a two-dimensional manifold, and DBSCAN was applied to characterize clusters of similar expression. Adjusted rand index comparison of orthologs with disease-associated genes discovered a high degree of difference at the local spatial and temporal levels, but not at the global level. Previous studies concluded that expression was highly conserved in mouse and human brains. Immediate applications of this study include validation of future transgenic mouse models as well as a robust method for visualization and comparison of disparate sets of sparse transcriptomic data.
 
 
 \section{Introduction}
@@ -260,7 +260,7 @@ Clustering is an essential method of unsupervised learning. Clustering analysis 
 
 
 \subsection{Researchable question}
-Are there significant differences between patterns of gene expression in developing mouse and human central nervous systems?
+Are there significant differences between spatiotemporal patterns of gene expression in the central nervous systems of mice and humans?
 
 \subsection{Hypothesis}
 
@@ -396,7 +396,7 @@ which are derived using the general hypergeometric distribution for significance
 
 \section{Results}
 
-Initial clustering with traditional methods.
+Both the mouse and the human datasets were initially clustered using Spearman's $\rho^{2}$ measure of correlation to produce correlation matrices. These matrices were then re-indexed according to a clustering determined by application of a hierarchical process based on the Ward distance measurement. The heatmaps of these correlation matrices are shown in Figure~\ref{fig:correlations}.
 
 \subsection{Correlation clustering}
 
@@ -408,16 +408,19 @@ Initial clustering with traditional methods.
 \end{center}
 \end{figure}
 
+Using the correlation matrices given by the Spearman rank analysis, force-based graphs were also constructed with each gene represented as a node and each correlation representing an edge between two genes (Figure~\ref{fig:network}). The force-based layout was computed using the ForceAtlas2 algorithm. However, these layouts were generally found to lack discrete structure.
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/graph}
-\caption{A force-based layout of the correlation relationships between mouse genes computed using the ForceAtlas2 algorithm developed by \cite{Jacomy2014ForceAtlas2AC}. Distances between genes were computed from the same correlation matrix used in figure Figure~\ref{fig:correlations}. \label{fig:network}%
+\caption{A force-based layout of the correlation relationships between mouse genes computed using the ForceAtlas2 algorithm developed by \cite{Jacomy2014ForceAtlas2AC}. Distances between genes were computed from the same correlation matrix used in Figure~\ref{fig:correlations}. \label{fig:network}%
 }
 \end{center}
 \end{figure}
 
 \subsection{CAE-based encoding}
 
+Following the application of existing methods, a more robust machine learning approach was implemented. The constructed CAE was found to have reconstruction accuracy (Figure~\ref{fig:input_output}), despite reducing the expression profiles to only four dimensions. 
 
 \begin{figure}[H]
 \begin{center}
