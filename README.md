@@ -39,8 +39,9 @@ Additionally, the precise numerical values may be downloaded using a Ruby script
 
 These numerical values can be used to construct heatmaps similar to the ones provided by the Allen Brain Atlas. First, the expression values are transformed to their base 10 logarithm (log_mouse.py). The mouse_filter.py program then filters for genes that have samples from all seven stages (E11.5, E13.5, E15.5, E18.5, P4, P14, and P28) of development. The mouse_heatmap program then constructs and saves the heatmaps to the /figures/dev_mouse/heatmaps/ directory with the help of the Seaborn data visualization library. A total of 2012 heatmaps were generated.
 
-## Methodology
+Mouse<img src="https://raw.githubusercontent.com/kevin-who/braindev-analysis/master/figures/dev_mouse/heatmaps/Foxp2.png" width="200"/>Human<img src="https://raw.githubusercontent.com/kevin-who/braindev-analysis/master/figures/dev_human/heatmaps/FOXP2.png" width="200"/> 
 
+## Methodology
 ### Gene selection
 
 ### Preliminary analysis
