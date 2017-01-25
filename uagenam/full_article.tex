@@ -440,20 +440,40 @@ Following the application of existing methods, a more robust machine learning ap
 \end{center}
 \end{figure}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/correlations}
-\caption{Euclidean distances among t-SNE representations reflect hierarchical clustering-derived distances. \textbf{A}: Using the arrangement produced by Spearman clustering, genes in the Spearman matrices (left) were replaced with Euclidean distances of the same genes in the 2D t-SNE representation. The moderate degree of arrangement in the resultant t-SNE distance matrix (right) is evidenced by the presence of discrete color blocks in the matrix, which are especially apparent when compared to a random ordering of the matrix (\textbf{B}). \textbf{C}: Ward distance-based clustering of the t-SNE distance matrix reveals discrete clusters more evident than those in the Spearman matrix. \label{fig:new_matrix}%
-}
-\end{center}
-\end{figure}
-
 \subsection{Clustering}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/dbscan}
 \caption{Coloring/labeling of clusters using DBSCAN. Hyperparameters were determined by automatic minimization of the Calinski-Harabaz index, which computes the quality of a clustering based on how well-defined clusters are as a ratio between the intra- and inter-cluster dispersion means. \label{fig:DBSCAN}%
+}
+\end{center}
+\end{figure}
+
+
+
+\subsection{Clustering comparison}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/ari_dist}
+\caption{Distributions of ARI values computed by comparing 100 mouse and human clusterings for a total of 10,000 values. Clusterings between the same organism, shown in \textbf{A} (human) and \textbf{B} (mouse) were found to have high ARI means of $>0.4$ and $>0.5$, suggesting that the proposed method is relatively consistent. \textbf{C}: Distribution of ARI values between mouse and human clusterings suggests high divergence, with a mean of only 0.0283. \label{fig:ARI_table}%
+}
+\end{center}
+\end{figure}
+
+\section{Discussion}
+
+\subsection{ARI analysis}
+
+\subsection{Clustering validity}
+
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/correlations}
+\caption{Euclidean distances among t-SNE representations reflect hierarchical clustering-derived distances. \textbf{A}: Using the arrangement produced by Spearman clustering, genes in the Spearman matrices (left) were replaced with Euclidean distances of the same genes in the 2D t-SNE representation. The moderate degree of arrangement in the resultant t-SNE distance matrix (right) is evidenced by the presence of discrete color blocks in the matrix, which are especially apparent when compared to a random ordering of the matrix (\textbf{B}). \textbf{C}: Ward distance-based clustering of the t-SNE distance matrix reveals discrete clusters more evident than those in the Spearman matrix. \label{fig:new_matrix}%
 }
 \end{center}
 \end{figure}
@@ -466,18 +486,6 @@ Following the application of existing methods, a more robust machine learning ap
 \end{center}
 \end{figure}
 
-\subsection{Comparison}
-
-% SHOULD ACTUALLY BE A TABLE
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/ari_dist}
-\caption{Distributions of ARI values computed by comparing 100 mouse and human clusterings for a total of 10,000 values. Clusterings between the same organism, shown in \textbf{A} (human) and \textbf{B} (mouse) were found to have high ARI means of $>0.4$ and $>0.5$, suggesting that the proposed method is relatively consistent. \textbf{C}: Distribution of ARI values between mouse and human clusterings suggests high divergence, with a mean of only 0.0283. \label{fig:ARI_table}%
-}
-\end{center}
-\end{figure}
-
-% SHOULD ACTUALLY BE A TABLE
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/homogeneity_min}
@@ -494,7 +502,7 @@ Following the application of existing methods, a more robust machine learning ap
 \end{center}
 \end{figure}
 
-\section{Discussion}
+\subsection{Comparison of methods}
 
 \begin{figure}[H]
 \begin{center}

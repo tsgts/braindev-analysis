@@ -26,9 +26,12 @@
 \contentsline {subsection}{\numberline {6.1}Correlation clustering}{31}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}CAE-based encoding}{32}{subsection.6.2}
 \contentsline {subsection}{\numberline {6.3}t-SNE}{34}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Clustering}{36}{subsection.6.4}
-\contentsline {subsection}{\numberline {6.5}Comparison}{38}{subsection.6.5}
-\contentsline {section}{\numberline {7}Discussion}{41}{section.7}
-\contentsline {section}{\numberline {8}Conclusions}{41}{section.8}
-\contentsline {section}{\numberline {9}Extensions}{41}{section.9}
-\contentsline {section}{\numberline {A}Limitations and Assumptions}{45}{appendix.A}
+\contentsline {subsection}{\numberline {6.4}Clustering}{34}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Clustering comparison}{35}{subsection.6.5}
+\contentsline {section}{\numberline {7}Discussion}{36}{section.7}
+\contentsline {subsection}{\numberline {7.1}ARI analysis}{36}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Clustering validity}{36}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Comparison of methods}{40}{subsection.7.3}
+\contentsline {section}{\numberline {8}Conclusions}{40}{section.8}
+\contentsline {section}{\numberline {9}Extensions}{40}{section.9}
+\contentsline {section}{\numberline {A}Limitations and Assumptions}{44}{appendix.A}

@@ -26,8 +26,11 @@
 \BOOKMARK [2][-]{subsection.6.2}{CAE-based encoding}{section.6}% 26
 \BOOKMARK [2][-]{subsection.6.3}{t-SNE}{section.6}% 27
 \BOOKMARK [2][-]{subsection.6.4}{Clustering}{section.6}% 28
-\BOOKMARK [2][-]{subsection.6.5}{Comparison}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.5}{Clustering comparison}{section.6}% 29
 \BOOKMARK [1][-]{section.7}{Discussion}{}% 30
-\BOOKMARK [1][-]{section.8}{Conclusions}{}% 31
-\BOOKMARK [1][-]{section.9}{Extensions}{}% 32
-\BOOKMARK [1][-]{appendix.A}{Limitations and Assumptions}{}% 33
+\BOOKMARK [2][-]{subsection.7.1}{ARI analysis}{section.7}% 31
+\BOOKMARK [2][-]{subsection.7.2}{Clustering validity}{section.7}% 32
+\BOOKMARK [2][-]{subsection.7.3}{Comparison of methods}{section.7}% 33
+\BOOKMARK [1][-]{section.8}{Conclusions}{}% 34
+\BOOKMARK [1][-]{section.9}{Extensions}{}% 35
+\BOOKMARK [1][-]{appendix.A}{Limitations and Assumptions}{}% 36
