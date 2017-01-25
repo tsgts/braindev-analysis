@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 
 # #with organoid coordinates
-coords = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15550.txt'))
+coords = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15350.txt'))
 
 min_1 = coords[:,0].min()
 max_1 = coords[:,0].max()
@@ -47,7 +47,7 @@ cmap.set_bad(color='white')
 
 cmap.set_under(color='black')
 
-plt.imshow(np.rot90(can), interpolation='none',cmap=cmap,vmin=-16)
+plt.imshow(np.rot90(can), interpolation='none',cmap=cmap,vmin=-11,vmax=10)
 plt.axis('off')
 #with human coordinates
 plt.savefig("figures/organoid/raw_scatter/human_matrices_"+str(RES)+".png",dpi=RES)

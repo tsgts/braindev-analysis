@@ -3,10 +3,10 @@ import json
 import matplotlib.pyplot as plt
 
 #with human coordinates
-coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_7400.txt'))
-human_mask = json.load(open('allen_data/organoid/human_mask.txt'))
-human_mask = np.asarray(human_mask)
-coords = coords[human_mask]
+# coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9000.txt'))
+# human_mask = json.load(open('allen_data/organoid/human_mask.txt'))
+# human_mask = np.asarray(human_mask)
+# coords = coords[human_mask]
 
 # #with mouse coordinates
 # coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
@@ -16,7 +16,7 @@ coords = coords[human_mask]
 
 # #with organoid coordinates
 # 15350
-# coords = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15000.txt'))
+coords = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15350.txt'))
 
 min_1 = coords[:,0].min()
 max_1 = coords[:,0].max()

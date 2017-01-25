@@ -376,6 +376,8 @@ INPUT ./figures/dbscan.png
 INPUT figures/ari_dist.png
 INPUT ./figures/ari_dist.png
 INPUT ./figures/ari_dist.png
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmr.fd
 INPUT figures/correlations.png
 INPUT ./figures/correlations.png
 INPUT ./figures/correlations.png
@@ -408,7 +410,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr6.pfb
