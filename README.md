@@ -1,10 +1,10 @@
 # braindev-analysis
 Unsupervised analysis of gene expression in neurological animal models.
-## The Data
+## Summary
 The focus of this project is to compare relative landscapes of expression in developing mouse and human brains. In particular, this project makes use of dimensionality reduction to apply powerful clustering methods to a 2-dimensional representation of expression data. By comparing these derived clusterings, this project was able to assess the similarity of expression between mouse and human brains without direct analysis, which requires assumptions of homologous developmental timepoints and regions. The results of this study suggest a high divergence between the two organisms' expression profiles that is explained by widespread discrepancies at the local (i.e region and timepoint-specific) levels of expression.
-## Sources and Downloading
+## Sources of Data
 ### Genes in Human Brain Development
-The genes in human development may be downloaded from http://www.brainspan.org/static/download.html through the "RNA-Seq Gencode v10 summarized to genes" option (http://www.brainspan.org/api/v2/well_known_file_download/267666525) as a .zip file. The unpacked file is in this repository at allen_data/dev_human/normalized_genes. The matrix of expression values is zipped in order to comply with GitHub's file size limits.
+The genes in human development were downloaded from http://www.brainspan.org/static/download.html through the "RNA-Seq Gencode v10 summarized to genes" option (http://www.brainspan.org/api/v2/well_known_file_download/267666525) as a .zip file. The unpacked file is in this repository at allen_data/dev_human/normalized_genes. The matrix of expression values is zipped in order to comply with GitHub's file size limits.
 ### Genes in Mouse Brain Development
 For the developing mouse genes, there is no single download file of expression values, meaning that a list of genes must first be obtained. The "Example Queries for Experiment Metadata" page (http://help.brain-map.org/display/api/Example+Queries+for+Experiment+Metadata) provides a link for how to obtain this preliminary list, which is found at:
 
@@ -35,9 +35,16 @@ http://api.brain-map.org/api/v2/data/query.csv?criteria=model::StructureUnionize
 
 The image URLs for the expression matrices also follow a regular format, which is developingmouse.brain-map.org/expressionSummaries/[GENE_ID].png. The matrix_downloader.py script automatically downloads these images from the website into the dev_mouse/expression_matrices/ directory. 
 
-Additionally, the precise numerical values may be downloaded using a Ruby script supplied by the Allen Institute's [API example repository](https://github.com/AllenBrainAtlas/api-examples). The devmouse_histogram_values.rb program was used to compile the devmouse_histogram_values.csv file. **Note: This file has been sorted by gene name in order to group genes with each other. The original file produced from running devmouse_histogram_values.rb is unsorted.**
+Additionally, the precise numerical values may be downloaded using a Ruby script supplied by the Allen Institute's [API example repository](https://github.com/AllenBrainAtlas/api-examples). The devmouse_histogram_values.rb program was used to compile the devmouse_histogram_values.csv file. **Note: This file has been sorted by gene name in order to group genes with each other. The original file produced from running devmouse_histogram_values.rb is unsorted.** The expression values returned by this script were the ones used in the analysis.
 
 These numerical values can be used to construct heatmaps similar to the ones provided by the Allen Brain Atlas. First, the expression values are transformed to their base 10 logarithm (log_mouse.py). The mouse_filter.py program then filters for genes that have samples from all seven stages (E11.5, E13.5, E15.5, E18.5, P4, P14, and P28) of development. The mouse_heatmap program then constructs and saves the heatmaps to the /figures/dev_mouse/heatmaps/ directory with the help of the Seaborn data visualization library. A total of 2012 heatmaps were generated.
 
 ## Methodology
-Unsupervised image clustering will be implemented using the TensorFlow framework. The planned approach is to separately cluster the gene expression patterns of mouse and humans using a recurrent convolutional neural network similar to [Joint Unsupervised Learning](https://github.com/jwyang/joint-unsupervised-learning). The topography of each clustering as well as the relative positions of genes between the two clusterings will then be examined. Discovery of discretely expressed genes may yield insights to gene regulation and neurological disease modeling. Validation of improved accuracy of this approach may lead to applications in other bioinformatic situations such as single-cell sequencing in cancers (characterizing stages of cancer evolution). If possible, this approach will also be applied to examine expression patterns of cerebral organoids.
+
+### Gene selection
+
+### Preliminary analysis
+
+### Autoencoder
+
+### Comparison of clusters
