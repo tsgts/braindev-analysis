@@ -1,7 +1,7 @@
 # braindev-analysis
 Unsupervised analysis of gene expression in neurological animal models.
 ## The Data
-This project focuses on the analysis of two formats of data: matrices displaying normalized expression of a gene over several stages of development, over neuroanatomical regions, and raw images of ISH (in situ hybridization) results for genes over brain sections. 
+The focus of this project is to compare relative landscapes of expression in developing mouse and human brains. In particular, this project makes use of dimensionality reduction to apply powerful clustering methods to a 2-dimensional representation of expression data. By comparing these derived clusterings, this project was able to assess the similarity of expression between mouse and human brains without direct analysis, which requires assumptions of homologous developmental timepoints and regions. The results of this study suggest a high divergence between the two organisms' expression profiles that is explained by widespread discrepancies at the local (i.e region and timepoint-specific) levels of expression.
 ## Sources and Downloading
 ### Genes in Human Brain Development
 The genes in human development may be downloaded from http://www.brainspan.org/static/download.html through the "RNA-Seq Gencode v10 summarized to genes" option (http://www.brainspan.org/api/v2/well_known_file_download/267666525) as a .zip file. The unpacked file is in this repository at allen_data/dev_human/normalized_genes. The matrix of expression values is zipped in order to comply with GitHub's file size limits.
