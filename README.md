@@ -42,9 +42,13 @@ These numerical values can be used to construct heatmaps similar to the ones pro
 Mouse<img src="https://raw.githubusercontent.com/kevin-who/braindev-analysis/master/figures/dev_mouse/heatmaps/Foxp2.png" width="200"/>Human<img src="https://raw.githubusercontent.com/kevin-who/braindev-analysis/master/figures/dev_human/heatmaps/FOXP2.png" width="200"/> 
 
 ## Methodology
-### Gene selection
+### Gene selection and pre-processing
+
+Genes with similar sequence, origin, and products (orthologs) were identified by comparing a list of the human and mouse genes. Incomplete data were also eliminated in the process. Comparison and selection resulted in a list of 1,912 genes that were present in both organisms' datasets without missing data values. The expression values for each dataset were then transformed by taking the base 2 logarithm in order for a more normal distribution, and these resultant values were further transformed to fit in the [-1,1] interval for subsequent analysis.
 
 ### Preliminary analysis
+
+Preliminary analysis of the data consisted of analysis of the expression values using existing methods, namely correlation clustering.
 
 ### Autoencoder
 
