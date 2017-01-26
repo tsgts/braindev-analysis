@@ -59,12 +59,6 @@ Imaizumi, Y. and Okano, H. (2014).
   cells.
 \newblock {\em Journal of neurochemistry}, 129 3:388--99.
 
-\bibitem[\protect\astroncite{Jacomy et~al.}{2014}]{Jacomy2014ForceAtlas2AC}
-Jacomy, M., Venturini, T., Heymann, S., and Bastian, M. (2014).
-\newblock Forceatlas2, a continuous graph layout algorithm for handy network
-  visualization designed for the gephi software.
-\newblock In {\em PloS one}.
-
 \bibitem[\protect\astroncite{Koushik}{2016}]{Koushik2016UnderstandingCN}
 Koushik, J. (2016).
 \newblock Understanding convolutional neural networks.

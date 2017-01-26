@@ -453,11 +453,7 @@ Following the application of existing methods, a more robust machine learning ap
 
 \section{Discussion}
 
-\subsection{ARI analysis}
-
 \subsection{Clustering validity}
-
-
 
 \begin{figure}[H]
 \begin{center}
@@ -487,6 +483,16 @@ Following the application of existing methods, a more robust machine learning ap
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/cross_comparison}
 \caption{Divergence between human and mouse clusterings is evidenced by cross-colored scatterplots of embeddings. Using labels derived from the mouse DBSCAN and coordinates from the human embedding (\textbf{A}), or vice versa (\textbf{B}), similarity of clusterings could be evaluated by examining the resultant colored plot. The near-random coloring of points further shows the high disparity between the two organisms' clusterings. \label{fig:cross_scatter}%
+}
+\end{center}
+\end{figure}
+
+\subsection{ARI analysis}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/cross_matrix_comparison}
+\caption{Using the visualization method from figure~\ref{fig:image_scatter}, visualization of global cross-organism expression relationships may be accomplished by replacement of each point in the t-SNE scatter plot with corresponding expression matrices from the other organism. In \textbf{A} and \textbf{B}, each coordinate has been replaced with the corresponding expression matrix from the same organism in the same manner as figure~\ref{fig:image_scatter}, with \textbf{A} being of human expression and \textbf{B}of mouse expression. In \textbf{C} and \textbf{D}, each expression matrix is from the other organism. In \textbf{C}, the human t-SNE coordinates have been used to arrange mouse expression matrix, and vice-versa in \textbf{D}. Comparison of \textbf{C} against \textbf{A} and \textbf{D} against \textbf{B} reveals that gene expression is shared at the global level (overall expression of genes is shared, evident through the color similarities) but not at the local level. \label{fig:cross_image_scatter}%
 }
 \end{center}
 \end{figure}
