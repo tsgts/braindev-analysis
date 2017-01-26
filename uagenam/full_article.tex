@@ -407,16 +407,6 @@ Both the mouse and the human datasets were initially clustered using Spearman's 
 \end{center}
 \end{figure}
 
-Using the correlation matrices given by the Spearman rank analysis, force-based graphs were also constructed with each gene represented as a node and each correlation representing an edge between two genes (Figure~\ref{fig:network}). The force-based layout was computed using the ForceAtlas2 algorithm. However, these layouts were generally found to lack discrete structure.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/graph}
-\caption{A force-based layout of the correlation relationships between mouse genes computed using the ForceAtlas2 algorithm developed by \cite{Jacomy2014ForceAtlas2AC}. Distances between genes were computed from the same correlation matrix used in Figure~\ref{fig:correlations}. \label{fig:network}%
-}
-\end{center}
-\end{figure}
-
 \subsection{CAE-based encoding}
 
 Following the application of existing methods, a more robust machine learning approach was implemented. The constructed CAE was found to have reconstruction accuracy (Figure~\ref{fig:input_output}), despite reducing the expression profiles to only four dimensions. 
@@ -434,12 +424,14 @@ Following the application of existing methods, a more robust machine learning ap
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/raw_coords}
-\caption{Two-dimensional representation returned by t-SNE for the human (\textbf{A}) and mouse (\textbf{B}) datasets. \label{fig:tsne_scatter}%
+\caption{Two-dimensional representations returned by t-SNE for the human (\textbf{A}) and mouse (\textbf{B}) datasets. \label{fig:tsne_scatter}%
 }
 \end{center}
 \end{figure}
 
 \subsection{Clustering}
+
+2-dimensional representations of the expression matrices were clustered using the DBSCAN algorithm, which detects dense collections of points. The Epsilon hyperparameter was set to 0.13 for both human and mouse datasets, and the minimum sample hyperparameter was set to 8 in the human dataset and 10 in the mouse dataset. These values were determined by attempting to minimize the Calinski-Harabaz index of the resultant clustering. Figure~\ref{fig:DBSCAN} displays an example of the clustering results.
 
 \begin{figure}[H]
 \begin{center}
@@ -448,8 +440,6 @@ Following the application of existing methods, a more robust machine learning ap
 }
 \end{center}
 \end{figure}
-
-
 
 \subsection{Clustering comparison}
 

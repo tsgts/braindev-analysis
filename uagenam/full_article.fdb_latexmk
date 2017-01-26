@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex full_article"] 1485348254 "full_article.aux" "full_article.bbl" "full_article" 1485356253
+["bibtex full_article"] 1485348254 "full_article.aux" "full_article.bbl" "full_article" 1485433522
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/beebe/apa.bst" 1136766823 23582 e3c8338eb1efb7432441aa8861285f53 ""
   "bibliography/biblio.bib" 1484156176 19031 78fe9ba2292ebe35e8269a4533fbb1c6 ""
   "full_article.aux" 1485356252 27074 599f2fe77f5914a5b439df6ddae62785 ""
   "full_article.bcf" 1479758847 92979 9da09f459957b6484c283b6da8ca346f ""
   (generated)
-  "full_article.bbl"
   "full_article.blg"
-["pdflatex"] 1485356239 "full_article.tex" "full_article.pdf" "full_article" 1485356253
+  "full_article.bbl"
+["pdflatex"] 1485356239 "full_article.tex" "full_article.pdf" "full_article" 1485433522
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -255,15 +255,15 @@
   "full_article.tex" 1485355874 51172 de7493ed727def21293b449d9a3b851a ""
   "full_article.toc" 1485356252 2894 7f0e981bf6bbd8dd679283367107e782 ""
   (generated)
-  "full_article-blx.bib"
   "/Users/kevinhu/Desktop/uagenam/full_article.pdf"
+  "/Users/kevinhu/Desktop/github/braindev-analysis/uagenam/full_article.pdf"
+  "full_article-blx.bib"
+  "full_article.bcf"
   "/Users/kevinhu/Desktop/github/braindev-analysis/uagenam/full_article.log"
   "full_article.run.xml"
-  "full_article.toc"
-  "/Users/kevinhu/Desktop/github/braindev-analysis/uagenam/full_article.pdf"
   "full_article.log"
-  "full_article.aux"
   "full_article.out"
-  "full_article.bcf"
   "/Users/kevinhu/Desktop/uagenam/full_article.log"
   "full_article.pdf"
+  "full_article.aux"
+  "full_article.toc"
