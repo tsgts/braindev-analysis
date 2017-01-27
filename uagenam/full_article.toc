@@ -1,14 +1,14 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Abstract}{5}{section.1}
 \contentsline {section}{\numberline {2}Introduction}{5}{section.2}
-\contentsline {section}{\numberline {3}Literature review}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Neurological disease modeling}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Brain development}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Gene expression regulation}{8}{subsection.3.3}
+\contentsline {section}{\numberline {3}Literature review}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Neurological disease modeling}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Brain development}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Gene expression regulation}{9}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Gene expression measurement}{10}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Gene expression analysis}{12}{subsection.3.5}
 \contentsline {subsection}{\numberline {3.6}The Allen Brain Atlas}{13}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Neural networks}{15}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.7}Neural networks}{14}{subsection.3.7}
 \contentsline {subsection}{\numberline {3.8}Unsupervised learning}{20}{subsection.3.8}
 \contentsline {section}{\numberline {4}Research plan}{21}{section.4}
 \contentsline {subsection}{\numberline {4.1}Researchable question}{21}{subsection.4.1}

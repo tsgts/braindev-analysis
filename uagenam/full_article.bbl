@@ -105,6 +105,13 @@ Miller, J., Ding, S., Sunkin, S., Smith, K., Ng, L., Szafer, A., Ebbert, A.,
 \newblock {Transcriptional landscape of the prenatal human brain.}
 \newblock {\em Nature}, 508:199--206.
 
+\bibitem[\protect\astroncite{Monaco et~al.}{2015}]{Monaco_2015}
+Monaco, G., van Dam, S., Ribeiro, J. L. C.~N., Larbi, A., and
+  de~Magalh{\~{a}}es, J.~P. (2015).
+\newblock {A comparison of human and mouse gene co-expression networks reveals
+  conservation and divergence at the tissue pathway and disease levels}.
+\newblock {\em {BMC} Evol Biol}, 15(1).
+
 \bibitem[\protect\astroncite{Muller-Tidow et~al.}{2004}]{leukemia_clustering}
 Muller-Tidow, C., Metzelder, S.~K., Buerger, H., Packeisen, J., Ganser, A.,
   Heil, G., Kugler, K., Adiguzel, G., Schwable, J., Steffen, B., Ludwig, W.-D.,
@@ -131,6 +138,13 @@ Peemen, M., Mesman, B., and Corporaal, H. (2011).
 Sim{\~o}es-Costa, M. and Bronner, M.~E. (2015).
 \newblock Establishing neural crest identity: a gene regulatory recipe.
 \newblock {\em Development}, 142(2):242--257.
+
+\bibitem[\protect\astroncite{Strand et~al.}{2007}]{Strand2007ConservationOR}
+Strand, A.~D., Aragaki, A.~K., Baquet, Z.~C., Hodges, A., Cunningham, P.,
+  Holmans, P., Jones, K.~R., Jones, L., Kooperberg, C., and Olson, J.~M.
+  (2007).
+\newblock Conservation of regional gene expression in mouse and human brain.
+\newblock {\em PLoS Genetics}, 3:1746 -- 1758.
 
 \bibitem[\protect\astroncite{Thompson et~al.}{2014}]{Thompson_2014}
 Thompson, C.~L., Ng, L., Menon, V., Martinez, S., Lee, C.-K., Glattfelder, K.,

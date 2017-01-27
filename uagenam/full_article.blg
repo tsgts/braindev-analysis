@@ -3,7 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: full_article.aux
 The style file: apa.bst
 Database file #1: bibliography/biblio.bib.bib
-I was expecting a `,' or a `}'---line 21 of file bibliography/biblio.bib.bib
+I was expecting a `,' or a `}'---line 30 of file bibliography/biblio.bib.bib
  : 
  : @inproceedings{Jacomy2014ForceAtlas2AC,
 (Error may have been on previous line)
@@ -14,45 +14,45 @@ Warning--empty booktitle in Maaten2008VisualizingDU
 Warning--there's a number but no volume in laurensvandermaaten2014
 Warning--empty booktitle in Yeung2001DetailsOT
 Warning--empty booktitle in Zilouchian2001FundamentalsON
-You've used 26 entries,
+You've used 28 entries,
             1940 wiz_defined-function locations,
-            640 strings with 11309 characters,
-and the built_in function-call counts, 15179 in all, are:
-= -- 1278
-> -- 1267
+            653 strings with 11983 characters,
+and the built_in function-call counts, 16259 in all, are:
+= -- 1372
+> -- 1348
 < -- 13
-+ -- 480
-- -- 478
-* -- 1563
-:= -- 2755
-add.period$ -- 74
-call.type$ -- 26
-change.case$ -- 366
-chr.to.int$ -- 26
-cite$ -- 32
-duplicate$ -- 382
-empty$ -- 708
-format.name$ -- 518
-if$ -- 2747
++ -- 510
+- -- 508
+* -- 1675
+:= -- 2951
+add.period$ -- 80
+call.type$ -- 28
+change.case$ -- 391
+chr.to.int$ -- 28
+cite$ -- 34
+duplicate$ -- 409
+empty$ -- 762
+format.name$ -- 550
+if$ -- 2945
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 28
-newline$ -- 129
-num.names$ -- 78
-pop$ -- 376
+missing$ -- 30
+newline$ -- 139
+num.names$ -- 84
+pop$ -- 397
 preamble$ -- 1
-purify$ -- 369
+purify$ -- 394
 quote$ -- 0
-skip$ -- 256
+skip$ -- 277
 stack$ -- 0
-substring$ -- 630
-swap$ -- 47
+substring$ -- 687
+swap$ -- 51
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 150
+type$ -- 162
 warning$ -- 6
-while$ -- 75
+while$ -- 80
 width$ -- 0
-write$ -- 320
+write$ -- 346
 (There was 1 error message)
