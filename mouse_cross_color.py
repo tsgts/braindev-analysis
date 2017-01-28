@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 import json
 import numpy as np
 
-X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_12650.txt'))
+X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
 X = StandardScaler().fit_transform(X)
 
 # between trials

@@ -27,7 +27,7 @@ with tf.device('/cpu:0'):
 	print(np.amin(target))
 
 	input_img = Input(shape=(77,))
-	encoded = Dense(4, activation='tanh')(input_img)
+	encoded = Dense(6, activation='relu')(input_img)
 	# encoded = Dense(32, activation='sigmoid')(encoded)
 	# encoded = Dense(16, activation='sigmoid')(encoded)
 	# encoded = Dense(8, activation='sigmoid')(encoded)
@@ -52,7 +52,7 @@ with tf.device('/cpu:0'):
 			if epoch % 50 == 0:
 				encoder = Model(input=input_img, output=encoded)
 				encoded_imgs = encoder.predict(target)
-				np.savetxt('allen_data/dev_mouse/autoencoder/encode_' + str(epoch) + '.txt', encoded_imgs)
+				np.savetxt('allen_data/dev_mouse/autoencoder_2/encode_' + str(epoch) + '.txt', encoded_imgs)
 			else:
 				pass
 
@@ -71,7 +71,7 @@ with tf.device('/cpu:0'):
 	encoded_imgs = encoder.predict(target)
 	print(encoded_imgs.shape)
 
-	np.savetxt('allen_data/dev_mouse/encode_final.txt', encoded_imgs)
+	np.savetxt('allen_data/dev_mouse/encode.txt', encoded_imgs)
 
 	plt.figure(figsize=(20, 4))
 	n = 16

@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9000.txt'))
 
 #with mouse coordinates
-coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
+coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
 
 min_1 = coords[:,0].min()
 max_1 = coords[:,0].max()

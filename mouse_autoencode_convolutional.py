@@ -24,41 +24,39 @@ with tf.device('/cpu:0'):
     print(np.amin(target))
 
     input_img = Input(shape=(77,))
-    encoded = Dense(64, activation='relu',init='normal')(input_img)
+    encoded = Dense(64, activation='tanh',init='normal')(input_img)
     encoded = Reshape((1, 8, 8))(encoded)
-    encoded = Convolution2D(16, 3, 3, activation='relu', border_mode='same',init='normal')(encoded)
+    encoded = Convolution2D(16, 3, 3, activation='tanh', border_mode='same',init='normal')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
-    encoded = Convolution2D(8, 3, 3, activation='relu', border_mode='same',init='normal')(encoded)
+    encoded = Convolution2D(8, 3, 3, activation='tanh', border_mode='same',init='normal')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
-    encoded = Convolution2D(4, 3, 3, activation='relu', border_mode='same',init='normal')(encoded)
+    encoded = Convolution2D(4, 3, 3, activation='tanh', border_mode='same',init='normal')(encoded)
 
     encoded = Flatten()(encoded)
-    encoded = Dense(4, activation='relu',init='normal')(encoded)
+    encoded = Dense(4, activation='tanh',init='normal')(encoded)
 
-    decoded = Dense(16, activation='relu',init='normal')(encoded)
+    decoded = Dense(16, activation='tanh',init='normal')(encoded)
     decoded = Reshape((4, 2, 2))(decoded)
 
-    decoded = Convolution2D(4, 3, 3, activation='relu', border_mode='same',init='normal')(decoded)
+    decoded = Convolution2D(4, 3, 3, activation='tanh', border_mode='same',init='normal')(decoded)
     decoded = UpSampling2D((2, 2))(decoded)
-    decoded = Convolution2D(8, 3, 3, activation='relu', border_mode='same',init='normal')(decoded)
+    decoded = Convolution2D(8, 3, 3, activation='tanh', border_mode='same',init='normal')(decoded)
     decoded = UpSampling2D((2, 2))(decoded)
-    decoded = Convolution2D(16, 3, 3, activation='relu', border_mode='same',init='normal')(decoded)
+    decoded = Convolution2D(16, 3, 3, activation='tanh', border_mode='same',init='normal')(decoded)
     decoded = Flatten()(decoded)
     decoded = Dense(77, activation='tanh',init='normal')(decoded)
 
     model = Model(input_img, decoded)
     model.summary()
 
-    RMSprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.0)
-
-    model.compile(optimizer=RMSprop, loss='mean_squared_error',metrics=['accuracy'])
+    model.compile(optimizer="Adam", loss='mean_squared_error',metrics=['accuracy'])
 
     class current_prediction(keras.callbacks.Callback):
         def on_epoch_end(self, epoch, logs={}):
             if epoch % 50 == 0:
                 encoder = Model(input=input_img, output=encoded)
                 encoded_imgs = encoder.predict(target)
-                np.savetxt('allen_data/dev_mouse/autoencoder/encode_' + str(epoch) + '.txt', encoded_imgs)
+                np.savetxt('allen_data/dev_mouse/autoencoder_2/encode_' + str(epoch) + '.txt', encoded_imgs)
             else:
                 pass
             # prediction = model.predict(target[:8])
@@ -83,7 +81,7 @@ with tf.device('/cpu:0'):
 
     model.fit(target, target, 
     				shuffle=True, 
-    				nb_epoch=25000, 
+    				nb_epoch=5000, 
     				verbose=2,
                 	callbacks=[prediction,TensorBoard(log_dir='tensorboard/mouse/autoencoder')])
 

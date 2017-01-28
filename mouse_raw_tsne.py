@@ -22,12 +22,12 @@ from matplotlib import pyplot as plt
 #14200
 #11550
 #13650 use this
-# data = np.loadtxt('allen_data/dev_mouse/autoencoder/encode.txt')
+data = np.loadtxt('allen_data/dev_mouse/autoencoder_2/encode_0.txt')
 
 #===========PCA===================
 
-data = np.loadtxt('allen_data/dev_mouse/pca.txt')
-data = np.transpose(data)
+# data = np.loadtxt('allen_data/dev_mouse/pca.txt')
+# data = np.transpose(data)
 
 #=================================
 
