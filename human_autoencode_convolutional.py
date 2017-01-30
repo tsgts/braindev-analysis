@@ -24,39 +24,41 @@ with tf.device('/cpu:0'):
     print(np.amin(target))
 
     input_img = Input(shape=(150,))
-    encoded = Dense(128, activation='tanh',init='glorot_normal')(input_img)
+    encoded = Dense(128, activation='relu',init='glorot_normal')(input_img)
     encoded = Reshape((1, 16, 8))(encoded)
-    encoded = Convolution2D(16, 3, 3, activation='tanh', border_mode='same',init='glorot_normal')(encoded)
+    encoded = Convolution2D(16, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
-    encoded = Convolution2D(8, 3, 3, activation='tanh', border_mode='same',init='glorot_normal')(encoded)
+    encoded = Convolution2D(8, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
-    encoded = Convolution2D(4, 3, 3, activation='tanh', border_mode='same',init='glorot_normal')(encoded)
+    encoded = Convolution2D(4, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(encoded)
 
     encoded = Flatten()(encoded)
-    encoded = Dense(4, activation='tanh',init='glorot_normal')(encoded)
+    encoded = Dense(4, activation='relu',init='glorot_normal')(encoded)
 
-    decoded = Dense(32, activation='tanh',init='glorot_normal')(encoded)
+    decoded = Dense(32, activation='relu',init='glorot_normal')(encoded)
     decoded = Reshape((4, 4, 2))(decoded)
 
-    decoded = Convolution2D(4, 3, 3, activation='tanh', border_mode='same',init='glorot_normal')(decoded)
+    decoded = Convolution2D(4, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(decoded)
     decoded = UpSampling2D((2, 2))(decoded)
-    decoded = Convolution2D(8, 3, 3, activation='tanh', border_mode='same',init='glorot_normal')(decoded)
+    decoded = Convolution2D(8, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(decoded)
     decoded = UpSampling2D((2, 2))(decoded)
-    decoded = Convolution2D(16, 3, 3, activation='tanh', border_mode='same',init='glorot_normal')(decoded)
+    decoded = Convolution2D(16, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(decoded)
     decoded = Flatten()(decoded)
     decoded = Dense(150, activation='tanh',init='glorot_normal')(decoded)
 
     model = Model(input_img, decoded)
     model.summary()
 
-    model.compile(optimizer="adam", loss='mean_squared_error',metrics=['accuracy'])
+    RMSprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.0)
+
+    model.compile(optimizer=RMSprop, loss='mean_squared_error',metrics=['accuracy'])
 
     class current_prediction(keras.callbacks.Callback):
         def on_epoch_end(self, epoch, logs={}):
             if epoch % 50 == 0:
                 encoder = Model(input=input_img, output=encoded)
                 encoded_imgs = encoder.predict(target)
-                np.savetxt('allen_data/dev_human/autoencoder/encode_' + str(epoch) + '.txt', encoded_imgs)
+                np.savetxt('allen_data/dev_human/autoencoder_2/encode_' + str(epoch) + '.txt', encoded_imgs)
             else:
                 pass
             # prediction = model.predict(target[:8])

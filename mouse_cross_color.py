@@ -19,8 +19,8 @@ with open('allen_data/dev_mouse/tsne_outliers.txt') as data_file:
 # with open('allen_data/dev_human/tsne_colors.txt') as data_file:    
 #     labels = np.asarray(json.load(data_file))
 
-# with open('allen_data/dev_human/tsne_outliers.txt') as data_file:    
-#     core_samples_mask = np.asarray(json.load(data_file))
+with open('allen_data/dev_human/tsne_outliers.txt') as data_file:    
+    core_samples_mask = np.asarray(json.load(data_file))
 
 
 n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)

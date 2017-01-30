@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn.manifold import TSNE
+from sklearn.manifold import TSNE, MDS
 import pandas as pd
 import json
 from matplotlib import pyplot as plt
@@ -22,7 +22,7 @@ from matplotlib import pyplot as plt
 #14200
 #11550
 #13650 use this
-data = np.loadtxt('allen_data/dev_mouse/autoencoder_2/encode_0.txt')
+data = np.loadtxt('allen_data/dev_mouse/autoencoder_2/encode_9950.txt')
 
 #===========PCA===================
 
@@ -31,7 +31,7 @@ data = np.loadtxt('allen_data/dev_mouse/autoencoder_2/encode_0.txt')
 
 #=================================
 
-model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
+model = TSNE(n_components=2, random_state=0,metric='correlation',verbose=2)
 transformed = model.fit_transform(data) 
 print(transformed.shape)
 transformed = np.transpose(transformed)

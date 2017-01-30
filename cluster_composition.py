@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 # db_U = DBSCAN(eps=0.13, min_samples=8).fit(U)
 
 #mouse
-U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_15650.txt'))
+U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
 U = StandardScaler().fit_transform(U)
 db_U = DBSCAN(eps=0.13, min_samples=10).fit(U)
 
@@ -60,14 +60,14 @@ unique_labels_U = sorted(list(set(labels_U)))
 # plt.close()
 
 #human
-# V = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_8950.txt'))
-# V = StandardScaler().fit_transform(V)
-# db_V = DBSCAN(eps=0.12, min_samples=8).fit(V)
+V = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9000.txt'))
+V = StandardScaler().fit_transform(V)
+db_V = DBSCAN(eps=0.12, min_samples=8).fit(V)
 
 #mouse
-V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_10600.txt'))
-V = StandardScaler().fit_transform(V)
-db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
+# V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_9000.txt'))
+# V = StandardScaler().fit_transform(V)
+# db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
 
 #organoid
 # V = np.transpose(np.loadtxt('allen_data/organoid/tsne/tsne_15550.txt'))
@@ -123,23 +123,25 @@ matrix = [[i[1] for i in row.items()] for row in matrix]
 
 for index,row in enumerate(matrix):
 	row_sum = sum(row)
-	matrix[index] = [int(float(val)/row_sum*100) for val in matrix[index]]
+
+	# proportions
+	# matrix[index] = [int(float(val)/row_sum*100) for val in matrix[index]]
 
 flattened_matrix = [item for sublist in matrix for item in sublist]
 
 
 matrix = np.array(matrix)
 
-plt.figure(figsize=(10, 10))
-ax = sns.heatmap(matrix, square=True,cmap="viridis", annot=True,fmt="d",vmin=0,vmax=100)
-plt.savefig('figures/comparison/correlation_heatmaps/cross_cluster',dpi=256)
+# plt.figure(figsize=(10, 10))
+# ax = sns.heatmap(matrix, square=True,cmap="viridis", annot=True,fmt="d",vmin=0,vmax=100)
+# plt.savefig('figures/comparison/correlation_heatmaps/cross_cluster',dpi=256)
 
-flattened_matrix = [item for sublist in matrix for item in sublist]
-flattened_matrix = [i for i in flattened_matrix if i!=0]
+# flattened_matrix = [item for sublist in matrix for item in sublist]
+# flattened_matrix = [i for i in flattened_matrix if i!=0]
 
-plt.figure(figsize=(8,2))
-sns.set_style("white")
-plt.ylim(0, 150)
-sns.distplot(flattened_matrix, kde=False, bins= np.linspace(0,100,25), rug=False,color="black")
-plt.savefig("figures/comparison/histograms/homogeneity.png",dpi=256)
+# plt.figure(figsize=(8,2))
+# sns.set_style("white")
+# plt.ylim(0, 150)
+# sns.distplot(flattened_matrix, kde=False, bins= np.linspace(0,100,25), rug=False,color="black")
+# plt.savefig("figures/comparison/histograms/homogeneity.png",dpi=256)
 

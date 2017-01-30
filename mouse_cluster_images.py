@@ -18,6 +18,7 @@ coords_n[:,1] = (coords[:,1] - min_2) / (max_2 - min_2)
 
 imgs = np.loadtxt('allen_data/dev_mouse/mouse_numpy_array.txt')
 imgs = imgs.reshape(1912, 7, 11)
+print(imgs.shape)
 
 RES = 500
 can = np.zeros((RES+2,RES+2))
