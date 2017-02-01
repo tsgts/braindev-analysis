@@ -65,7 +65,7 @@ The author would like to thank several individuals for their guidance and suppor
 
 \section{Abstract}
 
-Mouse models are fundamental to the current understanding of neurodegenerative disorders, serving as a readily available base for experimentation in drug development. However, less than 10\% of drugs that have shown success in mouse-based preclinical trials show similar success in later human clinical phases, suggesting that significant differences are present at the molecular level. This study examined the developmental transcriptomes of mouse and human central nervous systems in order to identify the existence of hypothesized differences in expression. Publicly-available \textit{in situ} hybridization and RNA-seq data were compiled into species-specific datasets each containing 1,912 protein-coding orthologs. A high-precision machine learning model composed of a convolutional autoencoder and a t-distributed stochastic neighbor embedding process then projected the expression profiles of each dataset onto a two-dimensional manifold, and DBSCAN was applied to characterize clusters of similar expression. Adjusted rand index analysis revealed a high degree of divergence at the spatial and temporal levels, disputing the results of several previous studies. Immediate applications of this study include justification for the low success of mouse-derived treatments, a method of validation for future transgenic mouse models, and a robust process for deep analysis and visualization of sparse transcriptomic data.
+Mouse models are fundamental to the current understanding of neurodegenerative disorders and serve as a readily available base for experimentation in drug development. However, less than 10\% of drugs that have shown success in mouse-based preclinical trials show similar success in subsequent human clinical phases, which suggests that significant differences are present at the molecular level.  This study indirectly compared the developmental transcriptomes of mouse and human brains in order to further examine this divergence. Publicly-available ISH and RNA-seq data were compiled into species-specific datasets. A novel high-precision machine learning model projected each dataset onto a 2D manifold, and a density-based clustering algorithm was applied. Cross-organism adjusted rand index analysis revealed a high degree of divergence at the spatial and temporal levels, which disputes the results of several previous analyses. Immediate applications of this study include justification for the low success of mouse-derived treatments, a method of validation for future transgenic mouse models, and a robust process for deep analysis and visualization of sparse transcriptomic data.
 
 \section{Introduction}
 
@@ -258,7 +258,7 @@ Clustering is an essential method of unsupervised learning. Clustering analysis 
 
 
 \subsection{Researchable question}
-Does a significant divergence exist between the spatiotemporal gene expression patterns of developing mouse and human nervous systems?
+Does a significant divergence exist between the spatiotemporal gene expression patterns of developing mouse and human central nervous systems?
 
 \subsection{Hypothesis}
 
@@ -394,9 +394,9 @@ which are derived using the general hypergeometric distribution for significance
 
 \section{Results}
 
-Both the mouse and the human datasets were initially clustered using Spearman's $\rho^{2}$ measure of correlation to produce correlation matrices. These matrices were then re-indexed according to a clustering determined by application of a hierarchical process based on the Ward distance measurement. The heatmaps of these correlation matrices are shown in Figure~\ref{fig:correlations}.
-
 \subsection{Correlation clustering}
+
+Both the mouse and the human datasets were initially clustered using Spearman's $\rho^{2}$ measure of correlation to produce correlation matrices. These matrices were then re-indexed according to a clustering determined by application of a hierarchical process based on the Ward distance measurement. The heatmaps of these correlation matrices are shown in Figure~\ref{fig:correlations}.
 
 \begin{figure}[H]
 \begin{center}
@@ -481,12 +481,20 @@ Following the application of existing methods, a more robust machine learning ap
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/cross_comparison}
-\caption{Divergence between human and mouse clusterings is evidenced by cross-colored scatterplots of embeddings. Using labels derived from the mouse DBSCAN and coordinates from the human embedding (\textbf{A}), or vice versa (\textbf{B}), similarity of clusterings could be evaluated by examining the resultant colored plot. The near-random coloring of points further shows the high disparity between the two organisms' clusterings. \label{fig:cross_scatter}%
+\caption{Clustering consistency. \label{fig:cross_scatter_same}%
 }
 \end{center}
 \end{figure}
 
 \subsection{ARI analysis}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/ari_dist}
+\caption{Divergence between human and mouse clusterings is evidenced by cross-colored scatterplots of embeddings. Using labels derived from the mouse DBSCAN and coordinates from the human embedding (\textbf{A}), or vice versa (\textbf{B}), similarity of clusterings could be evaluated by examining the resultant colored plot. The near-random coloring of points further shows the high disparity between the two organisms' clusterings. \label{fig:cross_scatter_different}%
+}
+\end{center}
+\end{figure}
 
 \begin{figure}[H]
 \begin{center}

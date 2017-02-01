@@ -5,7 +5,7 @@ from sklearn import metrics
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.preprocessing import StandardScaler
 import json
-from sklearn.metrics import calinski_harabaz_score
+from sklearn.metrics import calinski_harabaz_score,silhouette_score
 
 centers = [[1, 1], [-1, -1], [1, -1]]
 
@@ -59,7 +59,7 @@ for k, col in zip(unique_labels, colors):
     plt.plot(xy[:, 0], xy[:, 1], 'o', markerfacecolor=col,
              markeredgecolor='k', markersize=4)
 
-print("CH score: ", calinski_harabaz_score(X,labels))
+print("Silhouette score: ", silhouette_score(X,labels))
 
 plt.axis('off')
 plt.ylim([-2.5,2.5])

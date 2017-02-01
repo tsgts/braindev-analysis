@@ -1,6 +1,7 @@
 import json
 import pandas as pd
 import collections
+import numpy as np
 
 def ranks(input):
 	seq = sorted(input)
@@ -14,28 +15,18 @@ def spearman_rho(a,b):
 	df = n-2
 	return 1-6*sum(d_squareds)/(n*(n**2-1))
 
-with open('allen_data/dev_mouse/raw_dictionary_no_days.txt') as data_file:    
-    data = json.load(data_file)
-
-with open('allen_data/dev_mouse/list_of_genes.txt') as data_file:    
-    genes = json.load(data_file)
-
-for key, value in data.items():
-	data[key] = [item for sublist in value for item in sublist]
+data = np.loadtxt('allen_data/dev_mouse/mouse_numpy_array.txt')
 
 matrix = []
-
-for i in genes:
-	print(i)
+k=0
+for i in data:
+	print(k)
 	correlations = []
-	for j in genes:
-		correlations.append(spearman_rho(data[i], data[j]))
+	for j in data:
+		correlations.append(spearman_rho(i, j))
 	matrix.append(correlations)
+	k+=1
 
 print(len(matrix))
 
-df=pd.DataFrame(matrix,columns=genes)
-df.index = genes
-print(df.shape)
-
-df.to_csv("allen_data/dev_mouse/mouse_corr_spearman_matrix.csv",sep=',', encoding='utf-8')
+np.savetxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt', matrix)

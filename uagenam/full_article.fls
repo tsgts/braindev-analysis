@@ -387,6 +387,8 @@ INPUT ./figures/homogeneity_min.png
 INPUT figures/cross_comparison.png
 INPUT ./figures/cross_comparison.png
 INPUT ./figures/cross_comparison.png
+INPUT figures/ari_dist.png
+INPUT ./figures/ari_dist.png
 INPUT figures/cross_matrix_comparison.png
 INPUT ./figures/cross_matrix_comparison.png
 INPUT ./figures/cross_matrix_comparison.png

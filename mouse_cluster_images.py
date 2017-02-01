@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #with mouse coordinates
-# coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
-coords = np.loadtxt('allen_data/dev_mouse/autoencoder_2/encode_300.txt')
+coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
+# coords = np.loadtxt('allen_data/dev_mouse/autoencoder_2/encode_300.txt')
 
 #with human coordinates
 # coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9000.txt'))

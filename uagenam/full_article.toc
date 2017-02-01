@@ -31,7 +31,7 @@
 \contentsline {section}{\numberline {7}Discussion}{36}{section.7}
 \contentsline {subsection}{\numberline {7.1}Clustering validity}{36}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}ARI analysis}{40}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Comparison of methods}{41}{subsection.7.3}
-\contentsline {section}{\numberline {8}Conclusions}{41}{section.8}
-\contentsline {section}{\numberline {9}Extensions}{41}{section.9}
-\contentsline {section}{\numberline {A}Limitations and Assumptions}{45}{appendix.A}
+\contentsline {subsection}{\numberline {7.3}Comparison of methods}{42}{subsection.7.3}
+\contentsline {section}{\numberline {8}Conclusions}{42}{section.8}
+\contentsline {section}{\numberline {9}Extensions}{42}{section.9}
+\contentsline {section}{\numberline {A}Limitations and Assumptions}{46}{appendix.A}

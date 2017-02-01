@@ -16,12 +16,12 @@ from matplotlib import pyplot as plt
 
 #9000
 #9900
-data = np.loadtxt('allen_data/dev_human/autoencoder_2/encode_3450.txt')
+# data = np.loadtxt('allen_data/dev_human/autoencoder_2/encode_3450.txt')
 
 #===========PCA===================
 
-# data = np.loadtxt('allen_data/dev_human/pca.txt')
-# data = np.transpose(data)
+data = np.loadtxt('allen_data/dev_human/pca.txt')
+data = np.transpose(data)
 
 #==================================
 
