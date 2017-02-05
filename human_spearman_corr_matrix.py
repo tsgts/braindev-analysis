@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import collections
 import numpy as np
+from scipy.stats import spearmanr
 
 def ranks(input):
 	seq = sorted(input)
@@ -18,15 +19,21 @@ def spearman_rho(a,b):
 data = np.loadtxt('allen_data/dev_human/human_numpy_array.txt')
 
 matrix = []
+p_values = []
 k=0
 for i in data:
 	print(k)
 	correlations = []
+	row_ps = []
 	for j in data:
-		correlations.append(spearman_rho(i, j))
+		# correlations.append(spearman_rho(i, j))
+		correlations.append(spearmanr(i, j)[0])
+		row_ps.append(spearmanr(i, j)[1])
 	matrix.append(correlations)
+	p_values.append(row_ps)
 	k+=1
 
 print(len(matrix))
 
 np.savetxt('allen_data/dev_human/human_corr_spearman_matrix.txt', matrix)
+np.savetxt('allen_data/dev_human/human_spearman_pvals.txt', p_values)

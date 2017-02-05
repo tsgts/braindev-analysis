@@ -24,7 +24,7 @@ sns.set(color_codes=True)
 sns.set_style("white")
 plt.figure(figsize=(20, 10))
 
-plt.scatter(human_averages,mouse_averages)
+sns.regplot(x=human_averages,y=mouse_averages,logx=True,truncate=True)
 
 print(spearman_rho(human_averages,mouse_averages))
 

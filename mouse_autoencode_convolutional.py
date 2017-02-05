@@ -10,7 +10,7 @@ from keras.optimizers import RMSprop, Adam, Adamax
 config = tf.ConfigProto()
 config.gpu_options.allow_growth=True
 with tf.device('/cpu:0'):
-    target = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
+    target = np.loadtxt("allen_data/dev_mouse/random_mouse_array.txt")
 
     #fit target expression values to range (0,1)
     target_max = np.amax(target)
@@ -33,7 +33,7 @@ with tf.device('/cpu:0'):
     encoded = Convolution2D(4, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(encoded)
 
     encoded = Flatten()(encoded)
-    encoded = Dense(4, activation='relu',init='glorot_normal')(encoded)
+    encoded = Dense(8, activation='relu',init='glorot_normal')(encoded)
 
     decoded = Dense(16, activation='relu',init='glorot_normal')(encoded)
     decoded = Reshape((4, 2, 2))(decoded)

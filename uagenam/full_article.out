@@ -25,8 +25,8 @@
 \BOOKMARK [2][-]{subsection.6.1}{Correlation clustering}{section.6}% 25
 \BOOKMARK [2][-]{subsection.6.2}{CAE-based encoding}{section.6}% 26
 \BOOKMARK [2][-]{subsection.6.3}{t-SNE}{section.6}% 27
-\BOOKMARK [2][-]{subsection.6.4}{Clustering}{section.6}% 28
-\BOOKMARK [2][-]{subsection.6.5}{Clustering comparison}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.4}{Low-dimensional clustering}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.5}{Low-dimensional clustering comparison}{section.6}% 29
 \BOOKMARK [1][-]{section.7}{Discussion}{}% 30
 \BOOKMARK [2][-]{subsection.7.1}{Clustering validity}{section.7}% 31
 \BOOKMARK [2][-]{subsection.7.2}{ARI analysis}{section.7}% 32

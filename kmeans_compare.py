@@ -32,7 +32,7 @@ for i in range(2,15):
 
 	print(i)
 
-	mouse_matrices = np.loadtxt('allen_data/dev_mouse/mouse_numpy_array.txt')
+	mouse_matrices = np.loadtxt('allen_data/dev_human/human_numpy_array.txt')
 
 	mouse_matrices = StandardScaler().fit_transform(mouse_matrices)
 

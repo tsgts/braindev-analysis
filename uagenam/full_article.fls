@@ -361,6 +361,12 @@ INPUT ./figures/CAE.png
 INPUT figures/pearson_spearman.png
 INPUT ./figures/pearson_spearman.png
 INPUT ./figures/pearson_spearman.png
+INPUT figures/hierarchical_graph.png
+INPUT ./figures/hierarchical_graph.png
+INPUT ./figures/hierarchical_graph.png
+INPUT figures/regulators.png
+INPUT ./figures/regulators.png
+INPUT ./figures/regulators.png
 INPUT figures/input_output.png
 INPUT ./figures/input_output.png
 INPUT ./figures/input_output.png
@@ -373,8 +379,6 @@ INPUT ./figures/dbscan.png
 INPUT figures/ari_dist.png
 INPUT ./figures/ari_dist.png
 INPUT ./figures/ari_dist.png
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmr.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmr.fd
 INPUT figures/correlations.png
 INPUT ./figures/correlations.png
 INPUT ./figures/correlations.png
@@ -387,6 +391,9 @@ INPUT ./figures/homogeneity_min.png
 INPUT figures/cross_comparison.png
 INPUT ./figures/cross_comparison.png
 INPUT ./figures/cross_comparison.png
+INPUT figures/global_correlation.png
+INPUT ./figures/global_correlation.png
+INPUT ./figures/global_correlation.png
 INPUT figures/ari_dist.png
 INPUT ./figures/ari_dist.png
 INPUT figures/cross_matrix_comparison.png

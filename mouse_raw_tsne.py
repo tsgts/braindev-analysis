@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 
 #===========RAW DATA=================
 
-# data=np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")
+# data=np.loadtxt("allen_data/dev_mouse/random_mouse_array.txt")
 # data=np.reshape(data,(1912,77))
 
 #===========AUTOENCODER============
@@ -22,16 +22,16 @@ from matplotlib import pyplot as plt
 #14200
 #11550
 #13650 use this
-# data = np.loadtxt('allen_data/dev_mouse/autoencoder_2/encode_9950.txt')
+data = np.loadtxt('allen_data/dev_mouse/autoencoder/encode_13650.txt')
 
 #===========PCA===================
 
-data = np.loadtxt('allen_data/dev_mouse/pca.txt')
-data = np.transpose(data)
+# data = np.loadtxt('allen_data/dev_mouse/pca.txt')
+# data = np.transpose(data)
 
 #=================================
 
-model = TSNE(n_components=2, random_state=0,metric='correlation',verbose=2, perplexity=15)
+model = TSNE(n_components=2, random_state=0,metric='minkowski',verbose=2, early_exaggeration=100.0)
 transformed = model.fit_transform(data) 
 print(transformed.shape)
 transformed = np.transpose(transformed)

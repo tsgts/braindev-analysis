@@ -5,9 +5,8 @@ import json
 from matplotlib import pyplot as plt
 # import pyqtgraph as pg
 # from pyqtgraph.Qt import QtGui, QtCore
-
-# with open('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt') as data_file:    
-#     data = json.load(data_file)
+   
+# data = data=np.loadtxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt')
 
 #===========RAW DATA=================
 
@@ -18,7 +17,7 @@ data=np.reshape(data,(1912,77))
 
 #data = np.loadtxt('allen_data/dev_mouse/encode.txt')
 
-pca = PCA(n_components=4)
+pca = PCA(n_components=8)
 transformed = pca.fit_transform(data) 
 print(transformed.shape)
 print(pca.explained_variance_ratio_) 

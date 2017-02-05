@@ -65,7 +65,8 @@ The author would like to thank several individuals for their guidance and suppor
 
 \section{Abstract}
 
-Mouse models are fundamental to the current understanding of neurodegenerative disorders and serve as a readily available base for experimentation in drug development. However, less than 10\% of drugs that have shown success in mouse-based preclinical trials show similar success in subsequent human clinical phases, which suggests that significant differences are present at the molecular level.  This study indirectly compared the developmental transcriptomes of mouse and human brains in order to further examine this divergence. Publicly-available ISH and RNA-seq data were compiled into species-specific datasets. A novel high-precision machine learning model projected each dataset onto a 2D manifold, and a density-based clustering algorithm was applied. Cross-organism adjusted rand index analysis revealed a high degree of divergence at the spatial and temporal levels, which disputes the results of several previous analyses. Immediate applications of this study include justification for the low success of mouse-derived treatments, a method of validation for future transgenic mouse models, and a robust process for deep analysis and visualization of sparse transcriptomic data.
+Mouse models are fundamental to the current understanding of neurodegenerative disorders and serve as a readily available base for experimentation in drug development. However, less than 10\% of drugs that have shown success in mouse-based preclinical trials show similar success in subsequent human clinical trials, which suggests that significant differences in gene expression are present at the molecular level. This study indirectly compared the developmental transcriptomes of mouse and human brains in order to further examine this inconsistency. Publicly available in situ hybridization and RNA-sequence data were compiled into species-specific datasets. Correlation networks were constructed in each dataset, and an optimized hierarchical method was used to identify clusters of inter-correlated expression. Cross-organism adjusted rand index analysis revealed a high degree of divergence, which contradicts the results of several previous analyses. Further examination using a deep manifold projection model revealed this divergence to be explained by widespread differences at the spatial and temporal levels. Immediate applications of this study include justification for the low success of mouse-derived treatments, a method of validation for future transgenic mouse models, and a robust process for deep analysis and visualization of high-dimensional transcriptomic data.
+
 
 \section{Introduction}
 
@@ -262,7 +263,7 @@ Does a significant divergence exist between the spatiotemporal gene expression p
 
 \subsection{Hypothesis}
 
-It was hypothesized that significant differences exist between the gene expression profiles of developing mouse and human central nervous systems.
+Significant differences exist between the gene expression profiles of developing mouse and human central nervous systems.
 
 \subsection{Procedure}
 This project was entirely performed on a computer. Gene expression profiles for developing mouse and human brains were first downloaded from the Allen Brain Atlas. Next, the data were formatted and transformed into sets of region versus time expression matrices into two datasets, a developing human dataset and a developing mouse dataset. 
@@ -396,29 +397,51 @@ which are derived using the general hypergeometric distribution for significance
 
 \subsection{Correlation clustering}
 
-Both the mouse and the human datasets were initially clustered using Spearman's $\rho^{2}$ measure of correlation to produce correlation matrices. These matrices were then re-indexed according to a clustering determined by application of a hierarchical process based on the Ward distance measurement. The heatmaps of these correlation matrices are shown in Figure~\ref{fig:correlations}.
+The mouse and the human datasets were initially clustered using Spearman's $\rho$ measure of correlation to produce correlation matrices of size 1,912 by 1,912. These matrices were then re-indexed according to a clustering determined by application of a hierarchical process based on Ward's minimum variance method. The optimal number of clusters was determined by attempting to minimize the silhouette coefficient of the resultant clusterings, which provides a rough estimate of the separation between clusters. The heatmaps of these correlation matrices are shown in Figure~\ref{fig:correlations}. Cooler colors represent more negative correlations and warmer colors represent more positive correlations between genes. The red diagonal line is due to each gene being perfectly positively correlated with itself. Comparison of these clusters using the ARI found a high divergence (0.0423) that was just above one expected from random chance.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/pearson_spearman}
-\caption{Correlation matrices produced by taking the Spearman $\rho$ measures between genes in developing human (\textbf{A}) and mouse (\textbf{B}). Genes were hierarchically clustered using the Ward distance measurement. Clusters shown in the dendrograms to the right of each matrix are correlated with similarly-colored blocks in the matrices. \label{fig:correlations}%
+\caption{Correlation matrices produced by taking the Spearman $\rho$ measures between genes in developing human (\textbf{A}) and mouse (\textbf{B}) brains. Genes were hierarchically clustered using the Ward distance measurement. Clusters shown in the dendrograms to the right of each matrix are correlated with similarly-colored blocks in the matrices. \label{fig:correlations}%
+}
+\end{center}
+\end{figure}
+
+The correlation matrices were further used in the construction of graph networks in which nodes were represented by genes and edges were correlations between genes. To construct these networks, positive or negative correlations above or below a certain correlation threshold ($\rho > 0.75$) and p-value ($<10^{-3}$) were drawn from these correlation matrices and used to assemble graphs. By superimposing cluster labels derived from the original hierarchical clustering (Figure~\ref{fig:correlations}), one could examine the general level of preservation between the two methods. Figure~\ref{fig:hierarchical_graph} shows one such graph obtained and colored using this method.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/hierarchical_graph}
+\caption{Construction of directed graphs using the Spearman correlation matrices preserves raw matrix clustering labels. In the above graphs, the nodes have been colored using labels derived from the dendrograms shown in Figure~\ref{fig:correlations} with different levels of tree cutting. \label{fig:hierarchical_graph}%
+}
+\end{center}
+\end{figure}
+
+In addition, similar correlation networks were constructed which were composed exclusively of significant negatively-correlated gene expressions (($\rho > 0.75$) and p-value ($<10^{-3}$)). Analysis of these networks discovered the existence of several ``hubs'' of single genes negatively correlated with a multitude of other genes (Figure~\ref{fig:regulators}). These genes could be extracted from the raw correlation matrices through filtering for genes with multiple significant negative correlations. The functional significance of these hubs is that a high proportion ($>0.9$) of these hubs were found to produce regulatory proteins. The similarity between the human and mouse hubs was measured by extracting the top 200 such genes from each correlation matrix and counting the number of genes in common, which was found to be 40 genes. The statistical significance of this intersection was determined by conducting a Monte Carlo simulation consisting of 1,000,000 intersections of random samples of 200 genes, of which the average intersection was approximately 20 genes with a standard deviation of 4 in a normal distribution. Therefore, the p-value of such an intersection was less than $10^{-6}$ despite being quite low (20\%) in proportion.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/regulators}
+\caption{Directed graphs constructed using only high negative correlations reveal "hubs" of negative regulator genes. Nodes are colored by hierarchically-derived labels, showing preservation of structure in the graph similar to that of Figure~\ref{fig:hierarchical_graph}.\label{fig:regulators}%
 }
 \end{center}
 \end{figure}
 
 \subsection{CAE-based encoding}
 
-Following the application of existing methods, a more robust machine learning approach was implemented. The constructed CAE was found to have reconstruction accuracy (Figure~\ref{fig:input_output}), despite reducing the expression profiles to only four dimensions. 
+In order to better examine the differences between these two organisms' expression landscapes, a robust machine learning approach was implemented to facilitate the visualization of each dataset on a lower-dimensional scale. A CAE was constructed to initially reduce the dimensionality of each dataset to 4 dimensions. The constructed CAE was found to have high reconstruction accuracy (Figure~\ref{fig:input_output}) in both datasets. In both datasets, the CAE was trained until an automatic halting program detected that no significant gains in accuracy were made after a certain timepoint.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/input_output}
-\caption{Comparison between CAE inputs and outputs for human (\textbf{A}) and mouse (\textbf{B}) expression matrices. The average accuracies were found to be 28.49\% for human expression profiles and 30.23\% for mouse profiles, which are relatively high considering the high dimensionality of the data relative to the embedded dimensionality. \label{fig:input_output}%
+\caption{Comparison between CAE inputs and outputs for a random sample of human (\textbf{A}) and mouse (\textbf{B}) expression matrices. The average accuracies were found to be 28.49\% for human expression profiles and 30.23\% for mouse profiles, which are relatively high considering the high dimensionality of the data relative to the embedded dimensionality. \label{fig:input_output}%
 }
 \end{center}
 \end{figure}
 
 \subsection{t-SNE}
+
+The four-dimensional CAE-derived representations were then reduced to two dimensions using t-SNE. Reducing the representations to 2 dimensions allowed for manual assessment of the expression landscapes in each dataset as well as visualization of any potential clusters (Figure~\ref{fig:tsne_scatter}). The mouse dataset was found to contain more distinct clusters in the two-dimensional representation compared to the human dataset, which may be due to the fact that the large number of dimensions in the original human representations had a negative impact on the performance of the CAE. However, this notion is contradicted by the similar accuracies of the CAE at recreating the expression profiles.
 
 \begin{figure}[H]
 \begin{center}
@@ -428,7 +451,7 @@ Following the application of existing methods, a more robust machine learning ap
 \end{center}
 \end{figure}
 
-\subsection{Clustering}
+\subsection{Low-dimensional clustering}
 
 2-dimensional representations of the expression matrices were clustered using the DBSCAN algorithm, which detects dense collections of points. The Epsilon hyperparameter was set to 0.13 for both human and mouse datasets, and the minimum sample hyperparameter was set to 8 in the human dataset and 10 in the mouse dataset. These values were determined by attempting to minimize the Calinski-Harabaz index of the resultant clustering. Figure~\ref{fig:DBSCAN} displays an example of the clustering results.
 
@@ -440,12 +463,14 @@ Following the application of existing methods, a more robust machine learning ap
 \end{center}
 \end{figure}
 
-\subsection{Clustering comparison}
+\subsection{Low-dimensional clustering comparison}
+
+Initial comparison of the correlation matrix-derived clusters found a significantly low adjusted rand index value of 0.03853, which suggests a high divergence between the mouse and human expression sets. This value is similar to that obtained from comparing the clusters derived from the correlation matrices (Figure~\ref{fig:correlations}). Because both t-SNE and the CAE are stochastic processes, the 2-dimensional embeddings, and thus the clusterings, were characterized multiple times. By generating 100 clusterings in each dataset, 10,000 ARI value combinations were computed to provide the general distribution of similarity between the two datasets (Figure~\ref{fig:ARI_table}). In addition, the general similarity between two embeddings could be visually assessed by superimposing DBSCAN-generated labels from one organism onto the 2-dimensional coordinates of another (Figure~\ref{fig:correlations}). This method further shows the dissimilarity between the two organisms' gene expression landscapes.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/ari_dist}
-\caption{Distributions of ARI values computed by comparing 100 mouse and human clusterings for a total of 10,000 values. Clusterings between the same organism, shown in \textbf{A} (human) and \textbf{B} (mouse) were found to have high ARI means of \textgreater 0.4 and \textgreater 0.5, suggesting that the proposed method is relatively consistent. \textbf{C}: Distribution of ARI values between mouse and human clusterings suggests high divergence, with a mean of only 0.0283. \label{fig:ARI_table}%
+\caption{Distributions of ARI values computed by comparing 100 mouse and human clusterings for a total of 10,000 values. Cross-labeling of scatterplots, shown in \textbf{A} (human) and \textbf{B} (mouse) further show the divergence between the two organisms. \textbf{C}: Distribution of ARI values between mouse and human clusterings suggests high divergence with a mean of only 0.0283. \label{fig:ARI_table}%
 }
 \end{center}
 \end{figure}
@@ -487,6 +512,14 @@ Following the application of existing methods, a more robust machine learning ap
 \end{figure}
 
 \subsection{ARI analysis}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/global_correlation}
+\caption{Two-dimensional representations returned by t-SNE for the human (\textbf{A}) and mouse (\textbf{B}) datasets. \label{fig:tsne_scatter}%
+}
+\end{center}
+\end{figure}
 
 \begin{figure}[H]
 \begin{center}

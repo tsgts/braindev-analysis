@@ -56,9 +56,9 @@ var color = d3.scaleOrdinal(d3.schemeCategory20);
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) {
         return d.id;
-    }).distance(100).strength(0.5))
+    }).distance(50).strength(0.5))
     .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+    .force("center", d3.forceCenter(width / 2, height / 2))
 
 d3.json("graph.json", function(error, graph) {
     if (error) throw error;
@@ -116,7 +116,7 @@ d3.json("graph.json", function(error, graph) {
 
     var node = gnodes.append("circle")
         .attr("class", "node")
-        .attr("r", 10)
+        .attr("r",function(d){return 10+d.degree/3;})
         .attr("fill", function(d) {
             return color(d.color);
         })

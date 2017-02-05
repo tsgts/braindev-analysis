@@ -14,8 +14,9 @@ import random
 # mouse_X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
 # # mouse_data = np.loadtxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt')
 # mouse_data = np.loadtxt('allen_data/dev_mouse/mouse_numpy_array.txt')
+# mouse_data = np.subtract(np.ones_like(mouse_data),mouse_data)
 
-# mouse_clustering = AgglomerativeClustering(n_clusters=2,linkage="ward")
+# mouse_clustering = AgglomerativeClustering(n_clusters=8,linkage="ward")
 # mouse_labels=mouse_clustering.fit_predict(mouse_data)
 
 # print("Silhouette score: ", silhouette_score(mouse_data,mouse_labels))
@@ -23,13 +24,14 @@ import random
 # pylab.scatter(mouse_X[:,0], mouse_X[:,1], c=mouse_labels)
 # plt.savefig('figures/dev_mouse/tsne/tsne_cluster.png',dpi=256)
 
-# # plt.clear()
+# plt.clear()
 
 # human_X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
 # # human_data = np.loadtxt('allen_data/dev_human/human_corr_spearman_matrix.txt')
 # human_data = np.loadtxt('allen_data/dev_human/human_numpy_array.txt')
+# mouse_data = np.subtract(np.ones_like(human_data),human_data)
 
-# human_clustering = AgglomerativeClustering(n_clusters=2,linkage="ward")
+# human_clustering = AgglomerativeClustering(n_clusters=8,linkage="centroid")
 # human_labels=human_clustering.fit_predict(human_data)
 
 # print("Silhouette score: ", silhouette_score(human_data,human_labels))
@@ -38,7 +40,7 @@ import random
 # plt.savefig('figures/dev_human/tsne/tsne_cluster.png',dpi=256)
 
 # print(adjusted_rand_score(mouse_labels,human_labels))
-#====================================
+# # ====================================
 
 # plt.figure()
 # sns.clustermap(data)
@@ -47,7 +49,8 @@ import random
 
 #=====================================
 
-data = np.loadtxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt')
+data = np.loadtxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt')\
+# data = np.subtract(np.ones_like(data),data)
 
 with open('allen_data/dev_human/list_of_genes.txt') as data_file:    
     genes = json.load(data_file)
@@ -65,7 +68,7 @@ assignments = sch.fcluster(Y, 75, criterion='distance')
 unique_clusters = list(set(assignments))
 print(len(unique_clusters))
 
-print("Silhouette score: ", silhouette_score(data,assignments))
+# print("Silhouette score: ", silhouette_score(data,assignments))
 
 hex_colors = {str(i):'#' + str(format(int(int(i) / (len(unique_clusters)+1) * 16777215),'02x')).upper() for i in range(0,len(unique_clusters)+1)}
 
@@ -96,7 +99,7 @@ index = Z['leaves'][::-1]
 D = np.array(D)[index,:]
 D = np.array(D)[:,index]
 
-np.savetxt("allen_data/dev_mouse/raw_indices.txt", index)
+np.savetxt("allen_data/dev_human/raw_indices.txt", index)
 
 im = axmatrix.matshow(D, aspect='auto', origin='upper',vmax=1,vmin=-1)
 axmatrix.set_xticks([])

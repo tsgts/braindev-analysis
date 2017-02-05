@@ -17,7 +17,7 @@ print(X.shape)
 
 X = StandardScaler().fit_transform(X)
 
-db = KMeans(n_clusters=15, random_state=0).fit(X)
+db = KMeans(n_clusters=8, random_state=3).fit(X)
 core_samples_mask = np.ones_like(db.labels_, dtype=bool)
 
 labels = db.labels_
@@ -41,7 +41,7 @@ print('Estimated number of clusters: %d' % n_clusters_)
 
 import matplotlib.pyplot as plt
 
-X = np.transpose(np.loadtxt('allen_data/dev_human/tsne.txt'))
+X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
 
 # # Black removed and is used for noise instead.
 # unique_labels = set(labels)

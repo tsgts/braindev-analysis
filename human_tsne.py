@@ -16,16 +16,16 @@ from matplotlib import pyplot as plt
 
 #9000
 #9900
-# data = np.loadtxt('allen_data/dev_human/autoencoder_2/encode_3450.txt')
+data = np.loadtxt('allen_data/dev_human/autoencoder_2/encode_850.txt')
 
 #===========PCA===================
 
-data = np.loadtxt('allen_data/dev_human/pca.txt')
-data = np.transpose(data)
+# data = np.loadtxt('allen_data/dev_human/pca.txt')
+# data = np.transpose(data)
 
 #==================================
 
-model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation',verbose=2)
+model = TSNE(n_components=2, random_state=0, n_iter=10000,metric='correlation')
 transformed = model.fit_transform(data) 
 print(transformed.shape)
 transformed = np.transpose(transformed)

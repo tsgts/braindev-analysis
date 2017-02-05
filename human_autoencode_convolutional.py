@@ -24,8 +24,8 @@ with tf.device('/cpu:0'):
     print(np.amin(target))
 
     input_img = Input(shape=(150,))
-    encoded = Dense(128, activation='relu',init='glorot_normal')(input_img)
-    encoded = Reshape((1, 16, 8))(encoded)
+    encoded = Dense(64, activation='relu',init='glorot_normal')(input_img)
+    encoded = Reshape((1, 8, 8))(encoded)
     encoded = Convolution2D(16, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(encoded)
     encoded = MaxPooling2D((2, 2))(encoded)
     encoded = Convolution2D(8, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(encoded)
@@ -35,8 +35,8 @@ with tf.device('/cpu:0'):
     encoded = Flatten()(encoded)
     encoded = Dense(4, activation='relu',init='glorot_normal')(encoded)
 
-    decoded = Dense(32, activation='relu',init='glorot_normal')(encoded)
-    decoded = Reshape((4, 4, 2))(decoded)
+    decoded = Dense(16, activation='relu',init='glorot_normal')(encoded)
+    decoded = Reshape((4, 2, 2))(decoded)
 
     decoded = Convolution2D(4, 3, 3, activation='relu', border_mode='same',init='glorot_normal')(decoded)
     decoded = UpSampling2D((2, 2))(decoded)
