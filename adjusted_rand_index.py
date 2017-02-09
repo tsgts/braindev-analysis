@@ -1,7 +1,7 @@
 import json
 from sklearn.metrics.cluster import adjusted_rand_score
 from sklearn.metrics.cluster import adjusted_mutual_info_score
-from sklearn.cluster import DBSCAN
+from sklearn.cluster import DBSCAN, AgglomerativeClustering
 from sklearn import metrics
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.preprocessing import StandardScaler
@@ -22,21 +22,35 @@ import pandas as pd
 # print(adjusted_rand_score(mouse_labels,human_labels))
 # print(adjusted_mutual_info_score(mouse_labels,human_labels))
 
-U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
+data_A = np.loadtxt('allen_data/dev_human/human_cropped_corr_spearman_matrix.txt')
+data_A = np.nan_to_num(data_A)
 
-U = StandardScaler().fit_transform(U)
-db_U = DBSCAN(eps=0.13, min_samples=10).fit(U)
-labels_U = db_U.labels_
+clustering_A = AgglomerativeClustering(n_clusters=40,linkage="ward")
+labels_A=clustering_A.fit_predict(data_A)
+
+data_B = np.loadtxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt')
+data_B = np.nan_to_num(data_B)
+
+clustering_B = AgglomerativeClustering(n_clusters=40,linkage="ward")
+labels_B=clustering_B.fit_predict(data_B)
+
+print(adjusted_rand_score(labels_A,labels_B))
+
+# U = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne.txt'))
+
+# U = StandardScaler().fit_transform(U)
+# db_U = DBSCAN(eps=0.13, min_samples=10).fit(U)
+# labels_U = db_U.labels_
 
 
-V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
+# V = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
 
-V = StandardScaler().fit_transform(V)
-db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
+# V = StandardScaler().fit_transform(V)
+# db_V = DBSCAN(eps=0.13, min_samples=10).fit(V)
 
-labels_V = db_V.labels_
+# labels_V = db_V.labels_
 
-print(adjusted_rand_score(labels_U,labels_V))
+# print(adjusted_rand_score(labels_U,labels_V))
 
 # aris = []
 # amis = []

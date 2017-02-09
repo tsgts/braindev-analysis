@@ -10,14 +10,16 @@ import pylab
 
 centers = [[1, 1], [-1, -1], [1, -1]]
 
-X = np.loadtxt('allen_data/dev_mouse/mouse_numpy_array.txt')
+# X = np.loadtxt('allen_data/dev_mouse/mouse_numpy_array.txt')
+X = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9750.txt'))
 print(X.shape)
 # X, labels_true = make_blobs(n_samples=750, centers=centers, cluster_std=0.4,
 #                             random_state=0)
 
 X = StandardScaler().fit_transform(X)
 
-db = KMeans(n_clusters=8, random_state=3).fit(X)
+# db = KMeans(n_clusters=8, random_state=3).fit(X)
+db =DBSCAN(eps=0.13, min_samples=10).fit(X)
 core_samples_mask = np.ones_like(db.labels_, dtype=bool)
 
 labels = db.labels_
@@ -41,7 +43,7 @@ print('Estimated number of clusters: %d' % n_clusters_)
 
 import matplotlib.pyplot as plt
 
-X = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
+X = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9650.txt'))
 
 # # Black removed and is used for noise instead.
 # unique_labels = set(labels)
@@ -69,5 +71,5 @@ print("CH score: ", calinski_harabaz_score(X,labels))
 # plt.savefig('figures/dev_mouse/tsne/tsne_cluster.png',dpi=256)
 # json.dump(labels.tolist(), open("allen_data/dev_mouse/tsne_colors.txt",'w'), indent=4)
 
-pylab.scatter(X[:,0], X[:,1], c=labels)
+pylab.scatter(X[:,0], X[:,1], c=labels,cmap="hsv")
 plt.savefig('figures/dev_mouse/tsne/tsne_cluster.png',dpi=256)

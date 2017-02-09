@@ -49,7 +49,7 @@ import random
 
 #=====================================
 
-data = np.loadtxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt')\
+data = np.loadtxt('allen_data/dev_human/human_corr_spearman_matrix.txt')\
 # data = np.subtract(np.ones_like(data),data)
 
 with open('allen_data/dev_human/list_of_genes.txt') as data_file:    
@@ -61,7 +61,7 @@ D = data
 fig = pylab.figure()
 axdendro = fig.add_axes([0.09,0.1,0.2,0.8])
 Y = sch.linkage(D, method="ward")
-Z = sch.dendrogram(Y,no_labels=True,color_threshold=0.2*max(Y[:,2]),orientation="left")
+Z = sch.dendrogram(Y,no_labels=True,color_threshold=0.1*max(Y[:,2]),orientation="left")
 
 assignments = sch.fcluster(Y, 75, criterion='distance')
 

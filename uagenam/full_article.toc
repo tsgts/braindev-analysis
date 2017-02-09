@@ -28,10 +28,8 @@
 \contentsline {subsection}{\numberline {6.3}t-SNE}{34}{subsection.6.3}
 \contentsline {subsection}{\numberline {6.4}Low-dimensional clustering}{35}{subsection.6.4}
 \contentsline {subsection}{\numberline {6.5}Low-dimensional clustering comparison}{36}{subsection.6.5}
-\contentsline {section}{\numberline {7}Discussion}{38}{section.7}
-\contentsline {subsection}{\numberline {7.1}Clustering validity}{38}{subsection.7.1}
+\contentsline {section}{\numberline {7}Discussion}{37}{section.7}
+\contentsline {subsection}{\numberline {7.1}Clustering validity}{37}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}ARI analysis}{42}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Comparison of methods}{45}{subsection.7.3}
 \contentsline {section}{\numberline {8}Conclusions}{45}{section.8}
-\contentsline {section}{\numberline {9}Extensions}{45}{section.9}
 \contentsline {section}{\numberline {A}Limitations and Assumptions}{49}{appendix.A}

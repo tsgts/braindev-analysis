@@ -14,7 +14,7 @@ def spearman_rho(a,b):
 	df = n-2
 	return 1-6*sum(d_squareds)/(n*(n**2-1))
 
-human_numpy_array = np.loadtxt("allen_data/dev_human/human_numpy_array.txt")
+human_numpy_array = np.loadtxt("allen_data/dev_human/human_cropped2_numpy_array.txt")
 human_averages = np.mean(human_numpy_array,axis=1)
 
 mouse_numpy_array = np.loadtxt("allen_data/dev_mouse/mouse_numpy_array.txt")

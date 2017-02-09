@@ -394,14 +394,9 @@ INPUT ./figures/cross_comparison.png
 INPUT figures/global_correlation.png
 INPUT ./figures/global_correlation.png
 INPUT ./figures/global_correlation.png
-INPUT figures/ari_dist.png
-INPUT ./figures/ari_dist.png
 INPUT figures/cross_matrix_comparison.png
 INPUT ./figures/cross_matrix_comparison.png
 INPUT ./figures/cross_matrix_comparison.png
-INPUT figures/dimreduce_comparisons.png
-INPUT ./figures/dimreduce_comparisons.png
-INPUT ./figures/dimreduce_comparisons.png
 INPUT full_article.bbl
 INPUT full_article.bbl
 INPUT full_article.aux
@@ -419,6 +414,7 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr6.pfb

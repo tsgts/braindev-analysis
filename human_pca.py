@@ -11,14 +11,14 @@ from matplotlib import pyplot as plt
 
 #===========RAW DATA=================
 
-data=np.loadtxt("allen_data/dev_human/human_numpy_array.txt")
-data=np.reshape(data,(1912,150))
+data=np.loadtxt("allen_data/dev_mouse/mouse_cropped_numpy_array.txt")
+data=np.reshape(data,(1912,90))
 
 #==============AUTOENCODER============
 
 #data = np.loadtxt('allen_data/dev_human/encode.txt')
 
-pca = PCA(n_components=8)
+pca = PCA(n_components=4)
 transformed = pca.fit_transform(data) 
 print(transformed.shape)
 print(pca.explained_variance_ratio_) 

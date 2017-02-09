@@ -16,7 +16,7 @@ def spearman_rho(a,b):
 	df = n-2
 	return 1-6*sum(d_squareds)/(n*(n**2-1))
 
-data = np.loadtxt('allen_data/dev_human/human_numpy_array.txt')
+data = np.loadtxt('allen_data/dev_human/human_cropped_numpy_array.txt')
 
 matrix = []
 p_values = []
@@ -35,5 +35,5 @@ for i in data:
 
 print(len(matrix))
 
-np.savetxt('allen_data/dev_human/human_corr_spearman_matrix.txt', matrix)
-np.savetxt('allen_data/dev_human/human_spearman_pvals.txt', p_values)
+np.savetxt('allen_data/dev_human/human_cropped_corr_spearman_matrix.txt', matrix)
+np.savetxt('allen_data/dev_human/human_croppped_spearman_pvals.txt', p_values)
