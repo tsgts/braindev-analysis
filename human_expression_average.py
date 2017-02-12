@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-coords = np.transpose(np.loadtxt('allen_data/dev_mouse/tsne/tsne_13650.txt'))
+coords = np.transpose(np.loadtxt('allen_data/dev_human/tsne/tsne_9000.txt'))
 
 min_1 = coords[:,0].min()
 max_1 = coords[:,0].max()
@@ -45,8 +45,8 @@ cmap.set_under(color='black')
 
 plt.imshow(np.rot90(can), interpolation='none',cmap=cmap,vmin=-12)
 plt.axis('off')
-#with mouse coordinates
-# plt.savefig("figures/dev_mouse/raw_scatter/scatter_test_"+str(RES)+".png",dpi=RES)
+#with human coordinates
+plt.savefig("figures/dev_human/raw_scatter/scatter_test_"+str(RES)+".png",dpi=RES)
 
 #with human coordinates
-plt.savefig("figures/comparison/raw_scatter/mouse_coords_average_"+str(RES)+".png",dpi=RES)
+# plt.savefig("figures/comparison/raw_scatter/mouse_coords_average_"+str(RES)+".png",dpi=RES)

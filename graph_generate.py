@@ -14,10 +14,11 @@ output_json = {
 
 G=nx.Graph()
 
+# data = np.loadtxt('allen_data/dev_mouse/mouse_corr_spearman_matrix.txt')
 data = np.loadtxt('allen_data/dev_human/human_corr_spearman_matrix.txt')
 data = np.nan_to_num(data)
 
-clustering = AgglomerativeClustering(n_clusters=8,linkage="ward")
+clustering = AgglomerativeClustering(n_clusters=16,linkage="ward")
 labels=clustering.fit_predict(data)
 
 with open('allen_data/dev_human/list_of_genes.txt') as data_file:    
@@ -46,12 +47,12 @@ for i in range(0,len(genes)):
 	for j in range(0,i):
 		#if genes[i] in genes_of_interest or genes[j] in genes_of_interest:
 		expression_val = data[i][j]
-		if expression_val < -1.7:
+		if expression_val < -0.75:
 			G.add_edge(genes[i],genes[j])
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#c0392b"})
 			edges.append(genes[i])
 			edges.append(genes[j])
-		elif expression_val > 0.75:
+		elif expression_val > 1.9:
 			G.add_edge(genes[i],genes[j])
 			output_json["links"].append({"source":genes[i],"target":genes[j],"value":expression_val,"color":"#2ecc71"})
 			edges.append(genes[i])
